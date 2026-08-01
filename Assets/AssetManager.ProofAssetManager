@@ -2,6 +2,9 @@ Assets:
   - Asset: 7926897985642502757
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_white.png
+  - Asset: 10779809030910958185
+    Type: InputBindingContext
+    Path: Input\IB_CharacterMovement.InputBindingContext.ProofAsset
   - Asset: 5552814101948105576
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Firetruck\Firetruck.fbx
@@ -23,6 +26,9 @@ Assets:
   - Asset: 9295879751421473566
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_pink.png
+  - Asset: 2813241134489422334
+    Type: InputAction
+    Path: Input\IA_Move.InputAction.ProofAsset
   - Asset: 9557603770653395776
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_normal.png
@@ -50,15 +56,15 @@ Assets:
   - Asset: 9527969207428906263
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_brown.png
+  - Asset: 17031507126295987400
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Monster Truck\Monster Truck.fbx
   - Asset: 4597026409517987644
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green1.png
   - Asset: 16728913287645260424
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_orange.png
-  - Asset: 17031507126295987400
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Monster Truck\Monster Truck.fbx
   - Asset: 6374224968914657865
     Type: Material
     Path: Materials\m_Grid.Material.ProofAsset
@@ -152,3 +158,6 @@ Assets:
   - Asset: 1369138178875155048
     Type: ScriptFile
     Path: Script\CharacterInput.cs
+  - Asset: 7925034265926402795
+    Type: InputAction
+    Path: Input\IA_Turn.InputAction.ProofAsset
