@@ -1,0 +1,10 @@
+ScriptImportSettings:
+  Scripts:
+    - Script: CrossyBro.CharacterInput
+      ScriptName: CrossyBro.CharacterInput
+      Fields:
+        []
+    - Script: CrossyBro.CharacterMovement
+      ScriptName: CrossyBro.CharacterMovement
+      Fields:
+        []

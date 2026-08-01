@@ -1,0 +1,25 @@
+#Directories
+bin/
+bin-int/
+.vs/
+.idea/
+cache/
+Binaries/
+Intermediates/
+#Proof.sln
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.obj
+**.mtl 
+**.fbx 
+**.png 
+**.jpg 
+**.dll 
+**.lib
+**.pfs
+
+

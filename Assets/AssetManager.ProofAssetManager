@@ -1,0 +1,154 @@
+Assets:
+  - Asset: 7926897985642502757
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_white.png
+  - Asset: 5552814101948105576
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Firetruck\Firetruck.fbx
+  - Asset: 11504867747892748888
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Hatchback\Hatchback.fbx
+  - Asset: 15808981455371913637
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_yellow.png
+  - Asset: 4064393673162086786
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_purple.png
+  - Asset: 12550584486862917536
+    Type: Material
+    Path: Materials\m_OneLaneGrid.Material.ProofAsset
+  - Asset: 3822512906096149810
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_cyan.png
+  - Asset: 9295879751421473566
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_pink.png
+  - Asset: 9557603770653395776
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_normal.png
+  - Asset: 9592454411987497901
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Taxi\Taxi.fbx
+  - Asset: 11844633589730614320
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_magenta.png
+  - Asset: 2336856480488276867
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Bus\Bus.fbx
+  - Asset: 8356341418287868379
+    Type: World
+    Path: Worlds\w_GridSettings.ProofWorld
+  - Asset: 8481359823738590144
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_blue1.png
+  - Asset: 4274812740934028000
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_blue2.png
+  - Asset: 6743430912474750547
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_blue3.png
+  - Asset: 9527969207428906263
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_brown.png
+  - Asset: 4597026409517987644
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green1.png
+  - Asset: 16728913287645260424
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_orange.png
+  - Asset: 17031507126295987400
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Monster Truck\Monster Truck.fbx
+  - Asset: 6374224968914657865
+    Type: Material
+    Path: Materials\m_Grid.Material.ProofAsset
+  - Asset: 1971837349121219481
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Muscle\Muscle.fbx
+  - Asset: 8399477019720286908
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green2.png
+  - Asset: 3070666344971500363
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Muscle\Police Muscle.fbx
+  - Asset: 10921158918994213502
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green3.png
+  - Asset: 6709721670982325930
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey1.png
+  - Asset: 4312778283651883251
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey2.png
+  - Asset: 14512856475224668411
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Truck\Truck.fbx
+  - Asset: 13850971847090447574
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey3.png
+  - Asset: 6138703702806618358
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey4.png
+  - Asset: 11211857988642080187
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_olive.png
+  - Asset: 5216678231565415865
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_red.png
+  - Asset: 5015500688139947100
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Van\Van.fbx
+  - Asset: 10435445134820361027
+    Type: Mesh
+    Path: Meshes\Cars\PoliceSports.Mesh.ProofAsset
+  - Asset: 8608494002335834397
+    Type: Material
+    Path: Materials\m_Black.Material.ProofAsset
+  - Asset: 5773312660425688614
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sports\Police Sports.fbx
+  - Asset: 13077629818733049876
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\All vehicles.fbx
+  - Asset: 9885106835534353386
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Ambulance\Ambulance.fbx
+  - Asset: 9545860178206264038
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Limousine\Limousine.fbx
+  - Asset: 5099432416236590989
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Sports\Sports.fbx
+  - Asset: 13693147779349410403
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Muscle 2\Muscle 2.fbx
+  - Asset: 14480898567318740075
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sedan\Police Sedan.fbx
+  - Asset: 1848860107628645725
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Roadster\Roadster.fbx
+  - Asset: 1098182486674326457
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Pickup\Pickup.fbx
+  - Asset: 1259505450261768208
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police SUV\Police SUV.fbx
+  - Asset: 12616668631168992177
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Sedan\Sedan.fbx
+  - Asset: 12114968419490752971
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\SUV\SUV.fbx
+  - Asset: 8499301728916414779
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Truck with trailer\Truck with trailer.fbx
+  - Asset: 12011726453359119438
+    Type: World
+    Path: Worlds\w_GameWorld.ProofWorld
+  - Asset: 2139510519972232775
+    Type: ScriptFile
+    Path: Script\CharacterMove.cs
+  - Asset: 1369138178875155048
+    Type: ScriptFile
+    Path: Script\CharacterInput.cs

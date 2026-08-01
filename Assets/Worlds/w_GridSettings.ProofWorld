@@ -1,0 +1,278 @@
+World:
+  ID: 8356341418287868379
+  Entities:
+    - Entity: 16944334063670153037
+      TagComponent:
+        Tag: Sky Light
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [0.188495561, 0.146607652, 0.116937056]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      SkyLightComponent:
+        TintColor: [1, 1, 1]
+        SkyBoxLod: 0
+        MapRotation: 0
+        Intensity: 0.5
+        EnvironmentState: PreethamSky
+        TextureDataImage: 0
+        HosekWilkieTurbidity: 4
+        HosekWilkieGroundReflectance: 0.100000001
+        PreethamTurbidity: 4
+    - Entity: 6140223129279573928
+      TagComponent:
+        Tag: Directional Light
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [1.39626336, 0.17453292, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      DirectionalLightComponent:
+        Color: [1, 1, 1]
+        Intensity: 1
+        CastShadow: false
+        ShadowStrength: 0.5
+        CastSoftShadow: true
+        ShadowSoftness: 0.5
+    - Entity: 3224298984251077683
+      TagComponent:
+        Tag: Plane
+        tags: []
+      TransformComponent:
+        Location: [0, -0.00172579288, 2.38418579e-07]
+        Rotation: [0, 0, 0]
+        Scale: [32, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6374224968914657865
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 3683302534023677514
+      TagComponent:
+        Tag: TextSettings
+        tags: []
+      TransformComponent:
+        Location: [-0.514195442, 16.6708736, 0]
+        Rotation: [0, 0, 0]
+        Scale: [3.26229978, 3.26200008, 3.26229978]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      TextComponent:
+        Color: [1, 1, 1, 1]
+        Kerning: 0
+        LineSpacing: 1
+        Text: "The World is 8 by 8 for each grid. \nTHe width and lendth of a lne is 8 engine cubes 1 by 1 cubes, \n"
+        Visible: true
+        UseLocalRotation: false
+        RenderInViewSpace: false
+    - Entity: 7974531499743480270
+      TagComponent:
+        Tag: Cube
+        tags: []
+      TransformComponent:
+        Location: [4, 1.68453562, 4]
+        Rotation: [0, 1.57079637, 0]
+        Scale: [2, 2, 2]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [14646816119819944357]
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 8608494002335834397
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.CharacterInput
+            ScriptClassName: CrossyBro.CharacterInput
+            ScriptName: CrossyBro.CharacterInput
+            Fields:
+              []
+          - Script: CrossyBro.CharacterMovement
+            ScriptClassName: CrossyBro.CharacterMovement
+            ScriptName: CrossyBro.CharacterMovement
+            Fields:
+              - NameID: CrossyBro.CharacterMovement.PlayerHeight
+                Type: Float
+                Data: 2
+              - NameID: CrossyBro.CharacterMovement.TurnDuration
+                Type: Float
+                Data: 0.100000001
+              - NameID: CrossyBro.CharacterMovement.JumpHeight
+                Type: Float
+                Data: 1
+              - NameID: CrossyBro.CharacterMovement.JumpDuration
+                Type: Float
+                Data: 0.219999999
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 2
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 18027397627223726900
+      TagComponent:
+        Tag: PoliceSports
+        tags: []
+      TransformComponent:
+        Location: [-4, 2.03848028, -3.13896871]
+        Rotation: [0, 0, 0]
+        Scale: [2, 2, 2]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 10435445134820361027
+        Visible: true
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0.699999988, 0]
+        Size: [2.0999999, 1.89999998, 5.4000001]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 14646816119819944357
+      TagComponent:
+        Tag: Empty Entity
+        tags: []
+      TransformComponent:
+        Location: [-0.419711828, 1.14387846, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 7974531499743480270
+        Children: [12149772635272923757]
+    - Entity: 12149772635272923757
+      TagComponent:
+        Tag: Camera
+        tags: []
+      TransformComponent:
+        Location: [0.87856102, 0, 0.0199377537]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 14646816119819944357
+        Children: []
+      CameraComponent:
+        NearPlane: 0.300000012
+        FarPlane: 1000
+        FOV: 75
+        UseLocalRotation: false
+        ActiveForRendering: true
+    - Entity: 1517516457882164631
+      TagComponent:
+        Tag: OneTile
+        tags: []
+      TransformComponent:
+        Location: [-4, 0, 0]
+        Rotation: [0, 0, 0]
+        Scale: [8, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 12550584486862917536
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 12752452297419231210
+      TagComponent:
+        Tag: OneLane
+        tags: []
+      TransformComponent:
+        Location: [4, -0.00172579288, 4]
+        Rotation: [0, 0, 0]
+        Scale: [8, 1, 8]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 12550584486862917536
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
