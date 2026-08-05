@@ -26,10 +26,8 @@ namespace CrossyBro
         public abstract bool CanSpawnBackToBack { get; }
         public abstract LaneType[] CannotSpawnAfter { get; }
 
-        public float LaneWidth
-        {
-            get { return Transform.Scale.z; }
-        }
+        public float LaneWidth = 64.0f; // some laens might be wider like the car lanes
+        
 
         public bool CanSpawnAfter(Lane previousLane)
         {

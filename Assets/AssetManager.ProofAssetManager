@@ -200,3 +200,15 @@ Assets:
   - Asset: 264337976024594251
     Type: DynamicMesh
     Path: Meshes\Cars\DM_PoliceSedan.DynamicMesh.ProofAsset
+  - Asset: 14788984015062256238
+    Type: ScriptFile
+    Path: Script\Objects\Enemies\Car.cs
+  - Asset: 5908798640950620153
+    Type: Texture
+    Path: Textures\SingleRoadLane.png
+  - Asset: 18222663250217117664
+    Type: Material
+    Path: Materials\Raoad\m_Road.Material.ProofAsset
+  - Asset: 5124677930488879996
+    Type: Prefab
+    Path: Prefabs\Cars\DM_PoliceSedan.Prefab.ProofAsset

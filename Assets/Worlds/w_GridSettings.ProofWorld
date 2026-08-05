@@ -182,23 +182,12 @@ World:
         InputPlayer: Player0
         PlayerPrefab: 0
         DontSpawn: true
-    - Entity: 8479409515684475891
-      TagComponent:
-        Tag: Police Sedan wheel rear left
-        tags: []
-      TransformComponent:
-        Location: [1.02653885, 0.400000036, -1.60882568]
-        Rotation: [-1.57079649, 0, 0]
-        Scale: [100, 99.9999924, 99.9999924]
-      HierarchyComponent:
-        ParentHandle: 9576896164403815046
-        Children: [16137764355856672318, 14000972844893079368]
     - Entity: 18027397627223726900
       TagComponent:
         Tag: PoliceSports
         tags: []
       TransformComponent:
-        Location: [-4, 0.537999988, -11.2390003]
+        Location: [20.8962669, 0.537999988, 32]
         Rotation: [0, 0, 0]
         Scale: [2, 2, 2]
       HierarchyComponent:
@@ -223,6 +212,17 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
+    - Entity: 8479409515684475891
+      TagComponent:
+        Tag: Police Sedan wheel rear left
+        tags: []
+      TransformComponent:
+        Location: [1.02653885, 0.400000036, -1.60882568]
+        Rotation: [-0.260054052, 0, 0]
+        Scale: [100, 99.9999924, 99.9999924]
+      HierarchyComponent:
+        ParentHandle: 9576896164403815046
+        Children: [16137764355856672318, 14000972844893079368]
     - Entity: 14646816119819944357
       TagComponent:
         Tag: Empty Entity
@@ -257,7 +257,7 @@ World:
         tags: []
       TransformComponent:
         Location: [0, 1.86264515e-09, 4.65661287e-10]
-        Rotation: [1.4210853e-14, -0, 0]
+        Rotation: [0, -0, 0]
         Scale: [1.00000012, 1.00000012, 1.00000012]
       HierarchyComponent:
         ParentHandle: 17344673137308057876
@@ -342,7 +342,7 @@ World:
         Tag: GrassTile
         tags: []
       TransformComponent:
-        Location: [39.4092598, 0, 0]
+        Location: [20.3216343, 0, 0]
         Rotation: [0, 0, 0]
         Scale: [8, 1, 64]
       HierarchyComponent:
@@ -374,6 +374,9 @@ World:
               - NameID: CrossyBro.GrassLane.MaxTreeDensity
                 Type: Float
                 Data: 0.5
+              - NameID: CrossyBro.GrassLane.LaneWidth
+                Type: Float
+                Data: 64
       BoxColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -395,12 +398,51 @@ World:
         Tag: DM_PoliceSedan
         tags: []
       TransformComponent:
-        Location: [0, 1.94713986, 0]
+        Location: [10.8082495, 1.15600002, -9.39999962]
         Rotation: [0, 0, 0]
-        Scale: [1, 1, 1]
+        Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
         Children: [9576896164403815046]
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.Car
+            ScriptClassName: CrossyBro.Car
+            ScriptName: CrossyBro.Car
+            Fields:
+              - NameID: CrossyBro.Car.Speed
+                Type: Float
+                Data: 8
+              - NameID: CrossyBro.Car.WheelRadius
+                Type: Float
+                Data: 2
+              - NameID: CrossyBro.Car.WheelRotationDirection
+                Type: Float
+                Data: 1
+              - NameID: CrossyBro.Car.Wheels
+                Type: Entity
+                Length: 4
+                Data:
+                  - 45925359452266502
+                  - 3849427625203494132
+                  - 8479409515684475891
+                  - 17344673137308057876
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 2, 0]
+        Size: [2.5, 2, 5]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 9576896164403815046
       TagComponent:
         Tag: RootNode
@@ -446,7 +488,7 @@ World:
         Tag: Cube.002
         tags: []
       TransformComponent:
-        Location: [0, -7.27196081e-15, 0]
+        Location: [0, 0, -1.25728548e-07]
         Rotation: [1.4210853e-14, -0, 0]
         Scale: [1.00000012, 1.00000012, 1.00000012]
       HierarchyComponent:
@@ -627,7 +669,7 @@ World:
         tags: []
       TransformComponent:
         Location: [-1.02653885, 0.400000036, -1.60882568]
-        Rotation: [-1.57079649, 0, 0]
+        Rotation: [1.22871184, 0, 0]
         Scale: [100, 99.9999924, 99.9999924]
       HierarchyComponent:
         ParentHandle: 9576896164403815046
@@ -656,7 +698,7 @@ World:
         tags: []
       TransformComponent:
         Location: [1.02653885, 0.400000036, 1.60882378]
-        Rotation: [-1.57079649, 0, 0]
+        Rotation: [-1.65806282, 0, 0]
         Scale: [100, 99.9999924, 99.9999924]
       HierarchyComponent:
         ParentHandle: 9576896164403815046
@@ -685,8 +727,131 @@ World:
         tags: []
       TransformComponent:
         Location: [-1.02653885, 0.400000036, 1.60882378]
-        Rotation: [-1.57079649, 0, 0]
+        Rotation: [2.86059451, 0, 0]
         Scale: [100, 99.9999924, 99.9999924]
       HierarchyComponent:
         ParentHandle: 9576896164403815046
         Children: [917729441104740290, 12753258708013629468]
+    - Entity: 15602082560169625998
+      TagComponent:
+        Tag: SingleRoadLane
+        tags: []
+      TransformComponent:
+        Location: [46, -0.0775442719, -0.0617669225]
+        Rotation: [0, 0, 0]
+        Scale: [8, 1, 128]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [17792659655311556055, 6376566051638946665]
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 18222663250217117664
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.SingleRoadLane
+            ScriptClassName: CrossyBro.SingleRoadLane
+            ScriptName: CrossyBro.SingleRoadLane
+            Fields:
+              - NameID: CrossyBro.SingleRoadLane.Direction
+                Type: Int32
+                Data: 1
+              - NameID: CrossyBro.SingleRoadLane.MinSpeed
+                Type: Float
+                Data: 6
+              - NameID: CrossyBro.SingleRoadLane.Cars
+                Type: Prefab
+                Length: 1
+                Data:
+                  - 5124677930488879996
+              - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
+                Type: Float
+                Data: 24
+              - NameID: CrossyBro.SingleRoadLane.MaxSpeed
+                Type: Float
+                Data: 12
+              - NameID: CrossyBro.SingleRoadLane.MinSpawnPadding
+                Type: Float
+                Data: 12
+              - NameID: CrossyBro.SingleRoadLane.MaxSpawnPadding
+                Type: Float
+                Data: 20
+              - NameID: CrossyBro.SingleRoadLane.SpawnPaddingPerSpeed
+                Type: Float
+                Data: 0.5
+              - NameID: CrossyBro.SingleRoadLane.LaneWidth
+                Type: Float
+                Data: 64
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 17792659655311556055
+      TagComponent:
+        Tag: SpawnPoint2
+        tags: []
+      TransformComponent:
+        Location: [0, 5.6910882, -0.390142441]
+        Rotation: [0, -0, 0]
+        Scale: [0.625, 10, 0.0390625]
+      HierarchyComponent:
+        ParentHandle: 15602082560169625998
+        Children: []
+      BoxColliderComponent:
+        IsTrigger: true
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 6376566051638946665
+      TagComponent:
+        Tag: SpawnPoint1
+        tags: []
+      TransformComponent:
+        Location: [0, 5.6910882, 0.391107559]
+        Rotation: [0, -0, 0]
+        Scale: [0.625, 10, 0.0390625]
+      HierarchyComponent:
+        ParentHandle: 15602082560169625998
+        Children: []
+      BoxColliderComponent:
+        IsTrigger: true
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete

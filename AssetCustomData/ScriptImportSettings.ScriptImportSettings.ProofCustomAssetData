@@ -20,6 +20,14 @@ ScriptImportSettings:
     - Script: CrossyBro.SingleRoadLane
       ScriptName: CrossyBro.SingleRoadLane
       Fields:
+        - NameID: CrossyBro.SingleRoadLane.Cars
+          Type: Prefab
+          Length: 0
+          Data:
+            []
+    - Script: CrossyBro.Car
+      ScriptName: CrossyBro.Car
+      Fields:
         []
     - Script: CrossyBro.GrassLane
       ScriptName: CrossyBro.GrassLane

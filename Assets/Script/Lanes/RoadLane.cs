@@ -3,7 +3,139 @@ using Proof;
 
 namespace CrossyBro
 {
-    public class SingleRoadLane : Lane
+	public abstract class RoadLane : Lane
+	{
+		protected class TrafficStream
+		{
+			public int RowIndex;
+			public LaneDirection Direction;
+			public float SpawnTimer;
+		}
+
+		public Prefab[] Cars;
+
+		public float MinSpeed = 4.0f;
+		public float MaxSpeed = 10.0f;
+
+		// Base distance between cars.
+		public float MinSpawnPadding = 8.0f;
+		public float MaxSpawnPadding = 14.0f;
+
+		// Faster lanes receive additional distance between cars.
+		public float SpawnPaddingPerSpeed = 0.5f;
+
+		// Cars spawn slightly outside the visible lane.
+		public float EdgeSpawnPadding = 4.0f;
+
+		private float m_Speed;
+		private TrafficStream[] m_TrafficStreams;
+
+		protected abstract LaneDirection GetDirectionForRow(int rowIndex);
+
+		public void OnCreate()
+		{
+			if (Cars == null || Cars.Length == 0)
+				return;
+
+			float minSpeed = MinSpeed;
+			float maxSpeed = MaxSpeed;
+
+			if (minSpeed < 0.1f)
+				minSpeed = 0.1f;
+
+			if (maxSpeed < minSpeed)
+				maxSpeed = minSpeed;
+
+			// One speed is selected for the entire road lane.
+			m_Speed = Proof.Random.Float(minSpeed, maxSpeed);
+
+			m_TrafficStreams = new TrafficStream[RowCount];
+
+			for (int i = 0; i < RowCount; i++)
+			{
+				TrafficStream stream = new TrafficStream();
+				stream.RowIndex = i;
+				stream.Direction = GetDirectionForRow(i);
+
+				// Prevent every stream from spawning at the exact same time.
+				stream.SpawnTimer = Proof.Random.Float(0.0f, GetNextSpawnDelay());
+
+				m_TrafficStreams[i] = stream;
+			}
+		}
+
+		public void OnUpdate(float deltaTime)
+		{
+			if (m_TrafficStreams == null)
+				return;
+
+			for (int i = 0; i < m_TrafficStreams.Length; i++)
+			{
+				TrafficStream stream = m_TrafficStreams[i];
+
+				stream.SpawnTimer -= deltaTime;
+
+				if (stream.SpawnTimer > 0.0f)
+					continue;
+
+				SpawnCar(stream);
+				stream.SpawnTimer = GetNextSpawnDelay();
+			}
+		}
+
+		private void SpawnCar(TrafficStream stream)
+		{
+			int carIndex = Proof.Random.Int(0, Cars.Length - 1);
+
+			float rowSize = WorldData.GridSize * 0.5f;
+			float rowOffset = (stream.RowIndex - (RowCount - 1) * 0.5f) * rowSize;
+			float spawnEdge = LaneWidth * 0.5f + EdgeSpawnPadding;
+
+			Vector3 spawnPosition = Transform.Location;
+
+			// Road rows are positioned along X.
+			spawnPosition.x += rowOffset;
+
+			// Cars move across the lane along Z.
+			if (stream.Direction == LaneDirection.Right)
+				spawnPosition.z -= spawnEdge;
+			else
+				spawnPosition.z += spawnEdge;
+
+			Entity carEntity = World.Instantiate(Cars[carIndex], spawnPosition);
+			carEntity.Transform.Scale = new Vector3(2.0f);
+			// The car gets deleted automatically when this lane is deleted.
+			AddChild(carEntity);
+
+			// Replace As<Car>() only if your script getter has another name.
+			Car car = carEntity.GetScript<Car>();
+
+			if (car != null)
+			{
+				float travelDistance = LaneWidth + EdgeSpawnPadding * 4.0f;
+				car.Initialize(stream.Direction, m_Speed, travelDistance);
+				Log.Info("Car Spwned");
+			}
+		}
+
+		private float GetNextSpawnDelay()
+		{
+			float speedPadding = m_Speed * SpawnPaddingPerSpeed;      //Speed 6  → spacing receives +3 units
+																		//Speed 12 → spacing receives +6 units
+			
+			float minimumDistance = MinSpawnPadding + speedPadding;
+			float maximumDistance = MaxSpawnPadding + speedPadding;
+
+			if (maximumDistance < minimumDistance)
+				maximumDistance = minimumDistance;
+
+			float spawnDistance = Proof.Random.Float(minimumDistance, maximumDistance);
+
+			// Time required for a car to travel the selected spacing distance.
+			return spawnDistance / m_Speed;
+		}
+	}
+    public class SingleRoadLane : RoadLane
     {
         private static readonly LaneType[] s_CannotSpawnAfter =
         {
@@ -14,6 +146,16 @@ namespace CrossyBro
         public override int RowCount => 1;
         public override bool CanSpawnBackToBack => false;
         public override LaneType[] CannotSpawnAfter => s_CannotSpawnAfter;
+
+
+        public LaneDirection Direction = LaneDirection.Right;
+
+        protected override LaneDirection GetDirectionForRow(int rowIndex)
+        {
+	        return Direction;
+        }
+    
+      
 
     }
 
@@ -28,6 +170,10 @@ namespace CrossyBro
         public override int RowCount => 2;
         public override bool CanSpawnBackToBack => true;
         public override LaneType[] CannotSpawnAfter => s_CannotSpawnAfter;
+        public void OnCreate()
+        {
 
+        }
     }
+
 }
