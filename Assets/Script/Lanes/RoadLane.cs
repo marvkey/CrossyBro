@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Proof;
+using Random = System.Random;
 
 namespace CrossyBro
 {
@@ -32,7 +35,8 @@ namespace CrossyBro
 
 		protected abstract LaneDirection GetDirectionForRow(int rowIndex);
 
-		public void OnCreate()
+		private List<Entity> m_SpawnedCars = new  List<Entity>();
+		protected virtual void OnCreate()
 		{
 			if (Cars == null || Cars.Length == 0)
 				return;
@@ -102,10 +106,16 @@ namespace CrossyBro
 			else
 				spawnPosition.z += spawnEdge;
 
-			Entity carEntity = World.Instantiate(Cars[carIndex], spawnPosition);
-			carEntity.Transform.Scale = new Vector3(2.0f);
+			Transform transform = new Transform();
+			transform.Scale = new Vector3(2.0f);
+			//if(LaneDirection.Left == stream.Direction)
+			//	transform.Rotation= new Vector3(0,180,0);
+			transform.Location = spawnPosition;
+
+			Entity carEntity = World.Instantiate(Cars[carIndex], transform);
+			m_SpawnedCars.Add(carEntity);
 			// The car gets deleted automatically when this lane is deleted.
-			AddChild(carEntity);
+			//AddChild(carEntity);
 
 			// Replace As<Car>() only if your script getter has another name.
 			Car car = carEntity.GetScript<Car>();
@@ -114,7 +124,6 @@ namespace CrossyBro
 			{
 				float travelDistance = LaneWidth + EdgeSpawnPadding * 4.0f;
 				car.Initialize(stream.Direction, m_Speed, travelDistance);
-				Log.Info("Car Spwned");
 			}
 		}
 
@@ -134,6 +143,16 @@ namespace CrossyBro
 			// Time required for a car to travel the selected spacing distance.
 			return spawnDistance / m_Speed;
 		}
+
+		protected override void OnDestroy()
+		{
+			for(int i =0; i <m_SpawnedCars.Count; i++)
+			{
+				Entity e = m_SpawnedCars[i];
+				if(Entity.IsValid(e))
+					World.DeleteEntity(e);
+			}
+		}
 	}
     public class SingleRoadLane : RoadLane
     {
@@ -149,7 +168,14 @@ namespace CrossyBro
 
 
         public LaneDirection Direction = LaneDirection.Right;
-
+		 
+        protected virtual void OnCreate() 
+		{
+			Direction = Proof.Random.Bool() == false ? Direction = LaneDirection.Right  : Direction =  LaneDirection.Left;
+			Direction = LaneDirection.Left;
+			Log.Info($"Lane Direction {Direction.ToString()}");
+			base.OnCreate();
+		}
         protected override LaneDirection GetDirectionForRow(int rowIndex)
         {
 	        return Direction;

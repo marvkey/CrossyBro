@@ -6,72 +6,95 @@ namespace CrossyBro
     public class Car : Entity
     {
         public float Speed = 8.0f;
-        public float WheelRadius =2.0f;
+        public float WheelRadius = 2.0f;
         public float WheelRotationDirection = -1.0f;
         public Entity[] Wheels;
 
-        private LaneDirection m_Direction =  LaneDirection.Right;
+        private LaneDirection m_Direction = LaneDirection.Right;
 
         private float m_DistanceTravelled;
         private float m_MaxTravelDistance;
-        private Vector3 m_MoveDirection
-        {
-            get
-            {
-                    return -Transform.Forward;
-            } 
 
-        }
+        private RigidBodyComponent m_RigidBody;
+
+        private Quaternion m_BaseRotation;
+        private bool m_HasBaseRotation;
+
         private Quaternion[] m_WheelBaseRotations;
         private float m_WheelRotation;
 
         void OnCreate()
         {
+            m_RigidBody = GetComponent<RigidBodyComponent>();
+
+            // Keep disabled until the wheel hierarchy is fixed.
             //CacheWheelRotations();
         }
 
         void OnUpdate(float deltaTime)
         {
-         
-         
+            // Keep disabled until the wheel hierarchy is fixed.
+            //UpdateWheels(deltaTime);
         }
 
         public void OnPhysicsUpdate(float fixedPhysicsDeltaTime)
         {
-            //UpdateWheels(fixedPhysicsDeltaTime);
-            GetComponent<RigidBodyComponent>().Location += m_MoveDirection * Speed * fixedPhysicsDeltaTime;
+            if (m_RigidBody == null)
+                return;
 
             float movement = Speed * fixedPhysicsDeltaTime;
 
+            // Always move using the car entity's actual direction.
+            m_RigidBody.Location += -Transform.Forward * movement;
+
             m_DistanceTravelled += movement;
 
-            if (m_DistanceTravelled >= m_MaxTravelDistance)
+            if (m_MaxTravelDistance > 0.0f && m_DistanceTravelled >= m_MaxTravelDistance)
                 World.DeleteEntity(this);
+        }
+
+        public void Initialize(LaneDirection direction, float speed, float maxTravelDistance)
+        {
+            if (m_RigidBody == null)
+                m_RigidBody = GetComponent<RigidBodyComponent>();
+
+            Speed = speed;
+            m_MaxTravelDistance = maxTravelDistance;
+            m_DistanceTravelled = 0.0f;
+
+            // Save the rotation that came from the prefab.
+            if (!m_HasBaseRotation)
+            {
+                m_BaseRotation = Transform.RotationQuat;
+                m_HasBaseRotation = true;
+            }
+
+            SetDirection(direction);
         }
 
         public void SetDirection(LaneDirection direction)
         {
             m_Direction = direction;
-            switch (m_Direction)
+
+            Quaternion rotation = m_BaseRotation;
+
+            // Right uses the prefab's original rotation.
+            // Left turns the prefab around by 180 degrees.
+            if (m_Direction == LaneDirection.Left)
             {
-                case LaneDirection.Left:
-                    Transform.RotationQuat = Quaternion.LookRotation(Transform.Forward, Mathf.Up);
-                    break;
-                case LaneDirection.Right:
-                    Transform.RotationQuat = Quaternion.LookRotation(-Transform.Forward, Mathf.Up);
-                    break;
+                Quaternion turnAround = new Quaternion(
+                    new Vector3(0.0f, Mathf.PI, 0.0f)
+                );
+
+                rotation = m_BaseRotation * turnAround;
             }
+
+            Transform.RotationQuat = rotation;
+
+            if (m_RigidBody != null)
+                m_RigidBody.Rotation = rotation;
         }
 
-
-        public void Initialize(LaneDirection direction, float speed, float maxTravelDistance)
-        {
-            Speed = speed;
-            m_MaxTravelDistance = maxTravelDistance;
-            m_DistanceTravelled = 0.0f;
-
-            SetDirection(direction);
-        }
         private void CacheWheelRotations()
         {
             if (Wheels == null)
@@ -99,14 +122,17 @@ namespace CrossyBro
             if (Mathf.Abs(m_WheelRotation) >= Mathf.PI * 2.0f)
                 m_WheelRotation = 0.0f;
 
-            Quaternion wheelSpin = new Quaternion(new Vector3(m_WheelRotation, 0.0f, 0.0f));
+            Quaternion wheelSpin = new Quaternion(
+                new Vector3(m_WheelRotation, 0.0f, 0.0f)
+            );
 
             for (int i = 0; i < Wheels.Length; i++)
             {
                 if (Wheels[i] == null)
                     continue;
 
-                Wheels[i].Transform.RotationQuat = m_WheelBaseRotations[i] * wheelSpin;
+                Wheels[i].Transform.RotationQuat =
+                    m_WheelBaseRotations[i] * wheelSpin;
             }
         }
     }

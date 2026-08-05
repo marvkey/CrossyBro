@@ -398,7 +398,7 @@ World:
         Tag: DM_PoliceSedan
         tags: []
       TransformComponent:
-        Location: [10.8082495, 1.15600002, -9.39999962]
+        Location: [9.90799999, 1.15600002, -0.800000012]
         Rotation: [0, 0, 0]
         Scale: [2, 2, 2]
       HierarchyComponent:
@@ -737,7 +737,7 @@ World:
         Tag: SingleRoadLane
         tags: []
       TransformComponent:
-        Location: [46, -0.0775442719, -0.0617669225]
+        Location: [81, -0.0775442719, -0.0617669225]
         Rotation: [0, 0, 0]
         Scale: [8, 1, 128]
       HierarchyComponent:
