@@ -9,7 +9,23 @@ ScriptImportSettings:
         - NameID: CrossyBro.CharacterInput.TurnAction
           Type: InputAction
           Data: 0
+    - Script: CrossyBro.DoubleRoadLane
+      ScriptName: CrossyBro.DoubleRoadLane
+      Fields:
+        []
     - Script: CrossyBro.CharacterMovement
       ScriptName: CrossyBro.CharacterMovement
       Fields:
         []
+    - Script: CrossyBro.SingleRoadLane
+      ScriptName: CrossyBro.SingleRoadLane
+      Fields:
+        []
+    - Script: CrossyBro.GrassLane
+      ScriptName: CrossyBro.GrassLane
+      Fields:
+        - NameID: CrossyBro.GrassLane.Trees
+          Type: Prefab
+          Length: 0
+          Data:
+            []

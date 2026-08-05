@@ -4,24 +4,24 @@ InputBindings:
   - InputActionID: 2813241134489422334
     KeyBindings:
       - InputKeyBindingType: Bundle
-        InputKeyBindingBundleName: ""
+        InputKeyBindingBundleName: Arrows
         InputKeyBundleKeys:
           - InputKeyBindingBundleType: PositiveX
             InputKeySettings:
               InputKeyBindingType: Key
-              InputKeyName: D
+              InputKeyName: Right
           - InputKeyBindingBundleType: NegativeX
             InputKeySettings:
               InputKeyBindingType: Key
-              InputKeyName: A
+              InputKeyName: Left
           - InputKeyBindingBundleType: PositiveY
             InputKeySettings:
               InputKeyBindingType: Key
-              InputKeyName: W
+              InputKeyName: Up
           - InputKeyBindingBundleType: NegativeY
             InputKeySettings:
               InputKeyBindingType: Key
-              InputKeyName: S
+              InputKeyName: Down
           - InputKeyBindingBundleType: PositiveZ
             InputKeySettings:
               InputKeyBindingType: Key
@@ -30,6 +30,10 @@ InputBindings:
             InputKeySettings:
               InputKeyBindingType: Key
               InputKeyName: Invalid
+    InputInteractions:
+      - InputInteractionType: ClickRelease
+        InteractionThreshold: 0.5
+        Mode: Click
   - InputActionID: 7925034265926402795
     KeyBindings:
       - InputKeyBindingType: Bundle

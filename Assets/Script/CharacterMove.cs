@@ -45,11 +45,15 @@ namespace CrossyBro
 			if (m_IsJumping || m_IsTurning || !IsGrounded())
 				return false;
 
+			
 			float moveDistance = WorldData.GridSize * 0.5f;
 
 			direction.y = 0.0f;
 			direction.x = Mathf.Round(direction.x);
 			direction.z = Mathf.Round(direction.z);
+
+			if (!CanJump(direction, moveDistance))
+				return false;
 
 			m_JumpStart = SnapPosition(m_RigidBody.Location, moveDistance);
 			m_JumpTarget = m_JumpStart + direction * moveDistance;
@@ -85,7 +89,24 @@ namespace CrossyBro
 			m_IsTurning = true;
 			return true;
 		}
+		private bool CanJump(Vector3 direction, float distance)
+		{
+			RaycastData data = new RaycastData();
+			data.Origin = m_RigidBody.Location;
+			data.Direction = direction;
+			data.MaxDistance = distance;
 
+			data.ExcludedEntities = new ulong[1];
+			data.ExcludedEntities[0] = ID;
+
+			if (Physics.RayCast(data, out RaycastHit hit))
+			{
+				if (hit.Entity.HasSubTag("Tree"))
+					return false;
+			}
+
+			return true;
+		}
 		private void UpdateJump(float deltaTime)
 		{
 			if (!m_IsJumping)

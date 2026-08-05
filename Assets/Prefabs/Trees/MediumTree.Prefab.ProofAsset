@@ -1,0 +1,83 @@
+AssetType: Prefab
+ID: 322701242459618158
+EntityOwner: 17988611072422879048
+Entities:
+  - Entity: 1950652927569418251
+    TagComponent:
+      Tag: TreeTop
+      tags: [Tree]
+    TransformComponent:
+      Location: [0, 7, 0]
+      Rotation: [0, -0, 0]
+      Scale: [4, 6, 4]
+    HierarchyComponent:
+      ParentHandle: 17988611072422879048
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 13549522107164269480
+          Index: 0
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      FreezeLocation: [false, false, false]
+      FreezeRotation: [false, false, false]
+      Kinematic: false
+      CollisionDetection: Discrete
+  - Entity: 17988611072422879048
+    TagComponent:
+      Tag: MediumTree
+      tags: []
+    TransformComponent:
+      Location: [20, 0, 8]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: [1950652927569418251, 16969548553101522033]
+  - Entity: 16969548553101522033
+    TagComponent:
+      Tag: Log
+      tags: [Tree]
+    TransformComponent:
+      Location: [0, 2, 0]
+      Rotation: [0, -0, 0]
+      Scale: [2, 4.5, 2]
+    HierarchyComponent:
+      ParentHandle: 17988611072422879048
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 4352790529145298051
+          Index: 0
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      FreezeLocation: [false, false, false]
+      FreezeRotation: [false, false, false]
+      Kinematic: false
+      CollisionDetection: Discrete
