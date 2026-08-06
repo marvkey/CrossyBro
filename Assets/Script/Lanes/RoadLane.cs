@@ -97,14 +97,29 @@ namespace CrossyBro
 
 			Vector3 spawnPosition = Transform.Location;
 
-			// Road rows are positioned along X.
-			spawnPosition.x += rowOffset;
+		
+			// Single road stays directly in the center.
+			// Double road puts each direction on one side of X.
+			if (RowCount == 2)
+			{
+				float sideOffset = WorldData.GridSize * 0.5f;
+
+				if (stream.RowIndex == 0)
+					spawnPosition.x = Transform.Location.x - sideOffset;
+				else
+					spawnPosition.x = Transform.Location.x + sideOffset;
+			}
+			
 
 			// Cars move across the lane along Z.
 			if (stream.Direction == LaneDirection.Right)
+			{
 				spawnPosition.z -= spawnEdge;
+			}
 			else
+			{
 				spawnPosition.z += spawnEdge;
+			}
 
 			Transform transform = new Transform();
 			transform.Scale = new Vector3(2.0f);
@@ -129,7 +144,7 @@ namespace CrossyBro
 
 		private float GetNextSpawnDelay()
 		{
-			float speedPadding = m_Speed * SpawnPaddingPerSpeed;      //Speed 6  → spacing receives +3 units
+			float speedPadding = m_Speed * SpawnPaddingPerSpeed;		//Speed 6  → spacing receives +3 units
 																		//Speed 12 → spacing receives +6 units
 			
 			float minimumDistance = MinSpawnPadding + speedPadding;
@@ -172,8 +187,7 @@ namespace CrossyBro
         protected virtual void OnCreate() 
 		{
 			Direction = Proof.Random.Bool() == false ? Direction = LaneDirection.Right  : Direction =  LaneDirection.Left;
-			Direction = LaneDirection.Left;
-			Log.Info($"Lane Direction {Direction.ToString()}");
+			Log.Trace($"Lane Direction {Direction.ToString()}");
 			base.OnCreate();
 		}
         protected override LaneDirection GetDirectionForRow(int rowIndex)
@@ -185,7 +199,7 @@ namespace CrossyBro
 
     }
 
-    public class DoubleRoadLane : Lane
+    public class DoubleRoadLane : RoadLane
     {
         private static readonly LaneType[] s_CannotSpawnAfter =
         {
@@ -196,9 +210,26 @@ namespace CrossyBro
         public override int RowCount => 2;
         public override bool CanSpawnBackToBack => true;
         public override LaneType[] CannotSpawnAfter => s_CannotSpawnAfter;
-        public void OnCreate()
-        {
 
+        LaneDirection m_FirstLane = LaneDirection.Right;
+		LaneDirection m_SecondLane = LaneDirection.Left;
+        protected override LaneDirection GetDirectionForRow(int rowIndex)
+        {
+			if(rowIndex == 0)
+				return m_FirstLane;
+			if(rowIndex == 1)
+				return m_SecondLane;
+
+			return  LaneDirection.Right;
+        }
+        protected virtual void OnCreate() 
+        {
+	        m_FirstLane = Proof.Random.Bool() == false ? m_FirstLane = LaneDirection.Right  : m_FirstLane =  LaneDirection.Left;
+	        m_SecondLane = Proof.Random.Bool() == true ? m_SecondLane = LaneDirection.Right  : m_SecondLane =  LaneDirection.Left;
+
+	        Log.Trace($"FirstLane Direction {m_FirstLane.ToString()}");
+	        Log.Trace($"SecondLane Direction {m_SecondLane.ToString()}");
+	        base.OnCreate();
         }
     }
 

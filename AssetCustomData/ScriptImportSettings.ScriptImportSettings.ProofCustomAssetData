@@ -12,7 +12,11 @@ ScriptImportSettings:
     - Script: CrossyBro.DoubleRoadLane
       ScriptName: CrossyBro.DoubleRoadLane
       Fields:
-        []
+        - NameID: CrossyBro.DoubleRoadLane.Cars
+          Type: Prefab
+          Length: 0
+          Data:
+            []
     - Script: CrossyBro.CharacterMovement
       ScriptName: CrossyBro.CharacterMovement
       Fields:

@@ -212,3 +212,9 @@ Assets:
   - Asset: 5124677930488879996
     Type: Prefab
     Path: Prefabs\Cars\DM_PoliceSedan.Prefab.ProofAsset
+  - Asset: 9147501192425585373
+    Type: Texture
+    Path: Textures\DoubleRoadLane.png
+  - Asset: 8217162502355390526
+    Type: Material
+    Path: Materials\Raoad\m_DoubleRoadLane.Material.ProofAsset
