@@ -28,7 +28,10 @@ namespace CrossyBro
 
         public float LaneWidth = 64.0f; // some laens might be wider like the car lanes
         
-
+        public void Initialize(int laneIndex)
+        {
+            LaneIndex = laneIndex;
+        }
         public bool CanSpawnAfter(Lane previousLane)
         {
             if (previousLane == null)

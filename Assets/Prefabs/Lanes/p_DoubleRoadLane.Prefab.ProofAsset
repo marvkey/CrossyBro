@@ -1,0 +1,70 @@
+AssetType: Prefab
+ID: 18108221406145107977
+EntityOwner: 16084721836304101037
+Entities:
+  - Entity: 16084721836304101037
+    TagComponent:
+      Tag: DoubleRoadLane
+      tags: []
+    TransformComponent:
+      Location: [149.100006, -0.0775442719, -0.0617669225]
+      Rotation: [0, 0, 0]
+      Scale: [16, 0.5, 128]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 8217162502355390526
+          Index: 0
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.DoubleRoadLane
+          ScriptClassName: CrossyBro.DoubleRoadLane
+          ScriptName: CrossyBro.DoubleRoadLane
+          Fields:
+            - NameID: CrossyBro.DoubleRoadLane.MinSpeed
+              Type: Float
+              Data: 8
+            - NameID: CrossyBro.DoubleRoadLane.Cars
+              Type: Prefab
+              Length: 0
+              Data:
+                []
+            - NameID: CrossyBro.DoubleRoadLane.MaxSpeed
+              Type: Float
+              Data: 12
+            - NameID: CrossyBro.DoubleRoadLane.MinSpawnPadding
+              Type: Float
+              Data: 24
+            - NameID: CrossyBro.DoubleRoadLane.LaneWidth
+              Type: Float
+              Data: 64
+            - NameID: CrossyBro.DoubleRoadLane.SpawnPaddingPerSpeed
+              Type: Float
+              Data: 0.5
+            - NameID: CrossyBro.DoubleRoadLane.MaxSpawnPadding
+              Type: Float
+              Data: 35
+            - NameID: CrossyBro.DoubleRoadLane.EdgeSpawnPadding
+              Type: Float
+              Data: 24
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      FreezeLocation: [false, false, false]
+      FreezeRotation: [false, false, false]
+      Kinematic: false
+      CollisionDetection: Discrete

@@ -27,14 +27,12 @@ namespace CrossyBro
         {
             m_RigidBody = GetComponent<RigidBodyComponent>();
 
-            // Keep disabled until the wheel hierarchy is fixed.
-            //CacheWheelRotations();
+            CacheWheelRotations();
         }
 
         void OnUpdate(float deltaTime)
         {
-            // Keep disabled until the wheel hierarchy is fixed.
-            //UpdateWheels(deltaTime);
+            UpdateWheels(deltaTime);
         }
 
         public void OnPhysicsUpdate(float fixedPhysicsDeltaTime)

@@ -73,6 +73,8 @@ namespace CrossyBro
 			if (m_TrafficStreams == null)
 				return;
 
+			if(Cars.Length ==0)
+				Log.Error($"There are no cars on this lane prefab");
 			for (int i = 0; i < m_TrafficStreams.Length; i++)
 			{
 				TrafficStream stream = m_TrafficStreams[i];

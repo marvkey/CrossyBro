@@ -41,3 +41,24 @@ ScriptImportSettings:
           Length: 0
           Data:
             []
+    - Script: CrossyBro.LaneManager
+      ScriptName: CrossyBro.LaneManager
+      Fields:
+        - NameID: CrossyBro.LaneManager.DoubleRoadLanes
+          Type: Prefab
+          Length: 0
+          Data:
+            []
+        - NameID: CrossyBro.LaneManager.PlayerBaseLane
+          Type: Prefab
+          Data: 0
+        - NameID: CrossyBro.LaneManager.SingleRoadLanes
+          Type: Prefab
+          Length: 0
+          Data:
+            []
+        - NameID: CrossyBro.LaneManager.GrassLanes
+          Type: Prefab
+          Length: 0
+          Data:
+            []

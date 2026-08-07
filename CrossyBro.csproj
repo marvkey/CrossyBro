@@ -88,6 +88,7 @@
     <Compile Include="Assets\Script\CharacterMove.cs" />
     <Compile Include="Assets\Script\Lanes\GrassLane.cs" />
     <Compile Include="Assets\Script\Lanes\Lane.cs" />
+    <Compile Include="Assets\Script\Lanes\LaneManager.cs" />
     <Compile Include="Assets\Script\Lanes\RoadLane.cs" />
     <Compile Include="Assets\Script\Objects\Enemies\Car.cs" />
     <Compile Include="Assets\Script\WorldSettings.cs" />
