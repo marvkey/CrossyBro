@@ -4,6 +4,14 @@ ScriptImportSettings:
       ScriptName: CrossyBro.CameraMovement
       Fields:
         []
+    - Script: CrossyBro.DoubleRoadLane
+      ScriptName: CrossyBro.DoubleRoadLane
+      Fields:
+        - NameID: CrossyBro.DoubleRoadLane.MovingObjects
+          Type: Prefab
+          Length: 0
+          Data:
+            []
     - Script: CrossyBro.CharacterInput
       ScriptName: CrossyBro.CharacterInput
       Fields:
@@ -16,28 +24,16 @@ ScriptImportSettings:
         - NameID: CrossyBro.CharacterInput.TurnAction
           Type: InputAction
           Data: 0
-    - Script: CrossyBro.DoubleRoadLane
-      ScriptName: CrossyBro.DoubleRoadLane
+    - Script: CrossyBro.SingleRoadLane
+      ScriptName: CrossyBro.SingleRoadLane
       Fields:
-        - NameID: CrossyBro.DoubleRoadLane.Cars
+        - NameID: CrossyBro.SingleRoadLane.MovingObjects
           Type: Prefab
           Length: 0
           Data:
             []
     - Script: CrossyBro.CharacterMovement
       ScriptName: CrossyBro.CharacterMovement
-      Fields:
-        []
-    - Script: CrossyBro.SingleRoadLane
-      ScriptName: CrossyBro.SingleRoadLane
-      Fields:
-        - NameID: CrossyBro.SingleRoadLane.Cars
-          Type: Prefab
-          Length: 0
-          Data:
-            []
-    - Script: CrossyBro.Car
-      ScriptName: CrossyBro.Car
       Fields:
         []
     - Script: CrossyBro.GrassLane
@@ -48,9 +44,22 @@ ScriptImportSettings:
           Length: 0
           Data:
             []
+    - Script: CrossyBro.WaterLane
+      ScriptName: CrossyBro.WaterLane
+      Fields:
+        - NameID: CrossyBro.WaterLane.MovingObjects
+          Type: Prefab
+          Length: 0
+          Data:
+            []
     - Script: CrossyBro.LaneManager
       ScriptName: CrossyBro.LaneManager
       Fields:
+        - NameID: CrossyBro.LaneManager.WaterLanes
+          Type: Prefab
+          Length: 0
+          Data:
+            []
         - NameID: CrossyBro.LaneManager.DoubleRoadLanes
           Type: Prefab
           Length: 0
@@ -69,3 +78,15 @@ ScriptImportSettings:
           Length: 0
           Data:
             []
+    - Script: CrossyBro.Car
+      ScriptName: CrossyBro.Car
+      Fields:
+        []
+    - Script: CrossyBro.FloatingLog
+      ScriptName: CrossyBro.FloatingLog
+      Fields:
+        []
+    - Script: CrossyBro.MovingLaneObject
+      ScriptName: CrossyBro.MovingLaneObject
+      Fields:
+        []

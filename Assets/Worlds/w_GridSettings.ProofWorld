@@ -17,7 +17,7 @@ World:
         SkyBoxLod: 0
         MapRotation: 0
         Intensity: 1
-        EnvironmentState: HosekWilkie
+        EnvironmentState: PreethamSky
         TextureDataImage: 0
         HosekWilkieTurbidity: 4
         HosekWilkieGroundReflectance: 0.100000001
@@ -92,6 +92,59 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
+    - Entity: 3683302534023677514
+      TagComponent:
+        Tag: TextSettings
+        tags: []
+      TransformComponent:
+        Location: [-0.514195442, 42.4710007, 0]
+        Rotation: [0, 0, 0]
+        Scale: [3.26229978, 3.26200008, 3.26229978]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      TextComponent:
+        Color: [1, 1, 1, 1]
+        Kerning: 0
+        LineSpacing: 1
+        Text: "The World is 8 by 8 for each grid. \nTHe width and lendth of a lne is 8 engine cubes 1 by 1 cubes, \n"
+        Visible: true
+        UseLocalRotation: false
+        RenderInViewSpace: false
+    - Entity: 14140380457437004866
+      TagComponent:
+        Tag: Plane
+        tags: []
+      TransformComponent:
+        Location: [-69.9341278, 5.96046448e-08, 2.38418579e-07]
+        Rotation: [0, 0, 0]
+        Scale: [32, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6374224968914657865
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 15573708685544759561
       TagComponent:
         Tag: Cube.107
@@ -137,6 +190,9 @@ World:
               - NameID: CrossyBro.CharacterInput.MoveAction
                 Type: InputAction
                 Data: 2813241134489422334
+              - NameID: CrossyBro.CharacterInput.RotateAction
+                Type: InputAction
+                Data: 0
               - NameID: CrossyBro.CharacterInput.TurnAction
                 Type: InputAction
                 Data: 7925034265926402795
@@ -156,6 +212,9 @@ World:
               - NameID: CrossyBro.CharacterMovement.JumpDuration
                 Type: Float
                 Data: 0.219999999
+              - NameID: CrossyBro.CharacterMovement.Camera
+                Type: Entity
+                Data: 0
       BoxColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -181,36 +240,6 @@ World:
         InputPlayer: Player0
         PlayerPrefab: 0
         DontSpawn: true
-    - Entity: 3683302534023677514
-      TagComponent:
-        Tag: TextSettings
-        tags: []
-      TransformComponent:
-        Location: [-0.514195442, 42.4710007, 0]
-        Rotation: [0, 0, 0]
-        Scale: [3.26229978, 3.26200008, 3.26229978]
-      HierarchyComponent:
-        ParentHandle: 0
-        Children: []
-      TextComponent:
-        Color: [1, 1, 1, 1]
-        Kerning: 0
-        LineSpacing: 1
-        Text: "The World is 8 by 8 for each grid. \nTHe width and lendth of a lne is 8 engine cubes 1 by 1 cubes, \n"
-        Visible: true
-        UseLocalRotation: false
-        RenderInViewSpace: false
-    - Entity: 8479409515684475891
-      TagComponent:
-        Tag: Police Sedan wheel rear left
-        tags: []
-      TransformComponent:
-        Location: [1.02653885, 0.400000036, -1.60882568]
-        Rotation: [-0.260054052, 0, 0]
-        Scale: [100, 99.9999924, 99.9999924]
-      HierarchyComponent:
-        ParentHandle: 9576896164403815046
-        Children: [16137764355856672318, 14000972844893079368]
     - Entity: 18027397627223726900
       TagComponent:
         Tag: PoliceSports
@@ -241,6 +270,17 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
+    - Entity: 8479409515684475891
+      TagComponent:
+        Tag: Police Sedan wheel rear left
+        tags: []
+      TransformComponent:
+        Location: [1.02653885, 0.400000036, -1.60882568]
+        Rotation: [-0.260054052, 0, 0]
+        Scale: [100, 99.9999924, 99.9999924]
+      HierarchyComponent:
+        ParentHandle: 9576896164403815046
+        Children: [16137764355856672318, 14000972844893079368]
     - Entity: 14646816119819944357
       TagComponent:
         Tag: Empty Entity
@@ -252,24 +292,6 @@ World:
       HierarchyComponent:
         ParentHandle: 7974531499743480270
         Children: [12149772635272923757]
-    - Entity: 10141686563820452269
-      TagComponent:
-        Tag: Cube.002
-        tags: []
-      TransformComponent:
-        Location: [0, 0, 4.65661287e-10]
-        Rotation: [1.4210853e-14, -0, 0]
-        Scale: [1.00000012, 1.00000012, 1.00000012]
-      HierarchyComponent:
-        ParentHandle: 14173978324522178158
-        Children: []
-      DynamicMeshComponent:
-        DynamicMeshAssetPointerID: 264337976024594251
-        CastShadow: true
-        Visible: true
-        SubMeshIndex: 4
-        MaterialTable:
-          []
     - Entity: 12149772635272923757
       TagComponent:
         Tag: Camera
@@ -287,22 +309,22 @@ World:
         FOV: 75
         UseLocalRotation: false
         ActiveForRendering: true
-    - Entity: 917729441104740290
+    - Entity: 10141686563820452269
       TagComponent:
-        Tag: Cube.109
+        Tag: Cube.002
         tags: []
       TransformComponent:
-        Location: [0, 1.86264515e-09, 4.65661287e-10]
-        Rotation: [0, -0, 0]
+        Location: [0, 0, 4.65661287e-10]
+        Rotation: [1.4210853e-14, -0, 0]
         Scale: [1.00000012, 1.00000012, 1.00000012]
       HierarchyComponent:
-        ParentHandle: 17344673137308057876
+        ParentHandle: 14173978324522178158
         Children: []
       DynamicMeshComponent:
         DynamicMeshAssetPointerID: 264337976024594251
         CastShadow: true
         Visible: true
-        SubMeshIndex: 13
+        SubMeshIndex: 4
         MaterialTable:
           []
     - Entity: 1517516457882164631
@@ -339,6 +361,24 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
+    - Entity: 917729441104740290
+      TagComponent:
+        Tag: Cube.109
+        tags: []
+      TransformComponent:
+        Location: [0, 1.86264515e-09, 4.65661287e-10]
+        Rotation: [0, -0, 0]
+        Scale: [1.00000012, 1.00000012, 1.00000012]
+      HierarchyComponent:
+        ParentHandle: 17344673137308057876
+        Children: []
+      DynamicMeshComponent:
+        DynamicMeshAssetPointerID: 264337976024594251
+        CastShadow: true
+        Visible: true
+        SubMeshIndex: 13
+        MaterialTable:
+          []
     - Entity: 12752452297419231210
       TagComponent:
         Tag: OneLane
@@ -369,56 +409,6 @@ World:
         AngularDrag: 0.0500000007
         Gravity: true
         Type: Static
-        FreezeLocation: [false, false, false]
-        FreezeRotation: [false, false, false]
-        Kinematic: false
-        CollisionDetection: Discrete
-    - Entity: 13884608884879809657
-      TagComponent:
-        Tag: DM_PoliceSedan
-        tags: []
-      TransformComponent:
-        Location: [0.78275764, 1.15600002, -0.800000012]
-        Rotation: [0, 0, 0]
-        Scale: [2, 2, 2]
-      HierarchyComponent:
-        ParentHandle: 0
-        Children: [18123892674464829098]
-      ScriptComponent:
-        Scripts:
-          - Script: CrossyBro.Car
-            ScriptClassName: CrossyBro.Car
-            ScriptName: CrossyBro.Car
-            Fields:
-              - NameID: CrossyBro.Car.Speed
-                Type: Float
-                Data: 8
-              - NameID: CrossyBro.Car.WheelRadius
-                Type: Float
-                Data: 2
-              - NameID: CrossyBro.Car.WheelRotationDirection
-                Type: Float
-                Data: 1
-              - NameID: CrossyBro.Car.Wheels
-                Type: Entity
-                Length: 4
-                Data:
-                  - 9011465607757702633
-                  - 3744142875622804470
-                  - 525288970473421941
-                  - 6347889005966952909
-      BoxColliderComponent:
-        IsTrigger: false
-        Center: [0, 2, 0]
-        Size: [2.5, 2, 5]
-        PhysicsMaterialPointerID: 0
-      RigidBodyComponent:
-        Mass: 1
-        LinearDrag: 0.00999999978
-        PhysicsLayerID: 0
-        AngularDrag: 0.0500000007
-        Gravity: true
-        Type: Dynamic
         FreezeLocation: [false, false, false]
         FreezeRotation: [false, false, false]
         Kinematic: false
@@ -479,6 +469,106 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
+    - Entity: 13884608884879809657
+      TagComponent:
+        Tag: DM_PoliceSedan
+        tags: []
+      TransformComponent:
+        Location: [0.78275764, 1.15600002, -0.800000012]
+        Rotation: [0, 0, 0]
+        Scale: [2, 2, 2]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [18123892674464829098]
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.Car
+            ScriptClassName: CrossyBro.Car
+            ScriptName: CrossyBro.Car
+            Fields:
+              - NameID: CrossyBro.Car.WheelRadius
+                Type: Float
+                Data: 2
+              - NameID: CrossyBro.Car.WheelRotationDirection
+                Type: Float
+                Data: 1
+              - NameID: CrossyBro.Car.Wheels
+                Type: Entity
+                Length: 4
+                Data:
+                  - 9011465607757702633
+                  - 3744142875622804470
+                  - 525288970473421941
+                  - 6347889005966952909
+              - NameID: CrossyBro.Car.Speed
+                Type: Float
+                Data: 8
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 2, 0]
+        Size: [2.5, 2, 5]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 1658493311115647337
+      TagComponent:
+        Tag: DM_PoliceSedan
+        tags: []
+      TransformComponent:
+        Location: [9.90799999, 1.15600002, -0.800000012]
+        Rotation: [0, 0, 0]
+        Scale: [2, 2, 2]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [9576896164403815046]
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.Car
+            ScriptClassName: CrossyBro.Car
+            ScriptName: CrossyBro.Car
+            Fields:
+              - NameID: CrossyBro.Car.WheelRadius
+                Type: Float
+                Data: 2
+              - NameID: CrossyBro.Car.WheelRotationDirection
+                Type: Float
+                Data: 1
+              - NameID: CrossyBro.Car.Wheels
+                Type: Entity
+                Length: 4
+                Data:
+                  - 45925359452266502
+                  - 3849427625203494132
+                  - 8479409515684475891
+                  - 17344673137308057876
+              - NameID: CrossyBro.Car.Speed
+                Type: Float
+                Data: 8
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 2, 0]
+        Size: [2.5, 2, 5]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 3275482012099906262
       TagComponent:
         Tag: Cube.107
@@ -497,56 +587,6 @@ World:
         SubMeshIndex: 10
         MaterialTable:
           []
-    - Entity: 1658493311115647337
-      TagComponent:
-        Tag: DM_PoliceSedan
-        tags: []
-      TransformComponent:
-        Location: [9.90799999, 1.15600002, -0.800000012]
-        Rotation: [0, 0, 0]
-        Scale: [2, 2, 2]
-      HierarchyComponent:
-        ParentHandle: 0
-        Children: [9576896164403815046]
-      ScriptComponent:
-        Scripts:
-          - Script: CrossyBro.Car
-            ScriptClassName: CrossyBro.Car
-            ScriptName: CrossyBro.Car
-            Fields:
-              - NameID: CrossyBro.Car.Speed
-                Type: Float
-                Data: 8
-              - NameID: CrossyBro.Car.WheelRadius
-                Type: Float
-                Data: 2
-              - NameID: CrossyBro.Car.WheelRotationDirection
-                Type: Float
-                Data: 1
-              - NameID: CrossyBro.Car.Wheels
-                Type: Entity
-                Length: 4
-                Data:
-                  - 45925359452266502
-                  - 3849427625203494132
-                  - 8479409515684475891
-                  - 17344673137308057876
-      BoxColliderComponent:
-        IsTrigger: false
-        Center: [0, 2, 0]
-        Size: [2.5, 2, 5]
-        PhysicsMaterialPointerID: 0
-      RigidBodyComponent:
-        Mass: 1
-        LinearDrag: 0.00999999978
-        PhysicsLayerID: 0
-        AngularDrag: 0.0500000007
-        Gravity: true
-        Type: Dynamic
-        FreezeLocation: [false, false, false]
-        FreezeRotation: [false, false, false]
-        Kinematic: false
-        CollisionDetection: Discrete
     - Entity: 9576896164403815046
       TagComponent:
         Tag: RootNode
@@ -558,17 +598,6 @@ World:
       HierarchyComponent:
         ParentHandle: 1658493311115647337
         Children: [4997918023472058864, 45925359452266502, 3849427625203494132, 8479409515684475891, 17344673137308057876]
-    - Entity: 4997918023472058864
-      TagComponent:
-        Tag: Police Sedan
-        tags: []
-      TransformComponent:
-        Location: [0, 0.600000024, 0]
-        Rotation: [-1.57079649, 0, 0]
-        Scale: [100, 99.9999924, 99.9999924]
-      HierarchyComponent:
-        ParentHandle: 9576896164403815046
-        Children: [4679308145379180253, 928271235117407374, 13622980244498252068, 18170416128344566653, 6232510106107597849, 3435223383132532222, 2573243387433153840]
     - Entity: 18170416128344566653
       TagComponent:
         Tag: Cube.002
@@ -587,7 +616,7 @@ World:
         SubMeshIndex: 3
         MaterialTable:
           []
-    - Entity: 14173978324522178158
+    - Entity: 4997918023472058864
       TagComponent:
         Tag: Police Sedan
         tags: []
@@ -596,8 +625,8 @@ World:
         Rotation: [-1.57079649, 0, 0]
         Scale: [100, 99.9999924, 99.9999924]
       HierarchyComponent:
-        ParentHandle: 18123892674464829098
-        Children: [10690428498100087902, 12167115611068768151, 9018143050649097943, 14583237553024968684, 10141686563820452269, 6916218382690454468, 10994307258558082218]
+        ParentHandle: 9576896164403815046
+        Children: [4679308145379180253, 928271235117407374, 13622980244498252068, 18170416128344566653, 6232510106107597849, 3435223383132532222, 2573243387433153840]
     - Entity: 4679308145379180253
       TagComponent:
         Tag: Cube.002
@@ -616,22 +645,33 @@ World:
         SubMeshIndex: 0
         MaterialTable:
           []
-    - Entity: 928271235117407374
+    - Entity: 14173978324522178158
       TagComponent:
-        Tag: Cube.002
+        Tag: Police Sedan
         tags: []
       TransformComponent:
-        Location: [0, 0, 4.65661287e-10]
+        Location: [0, 0.600000024, 0]
+        Rotation: [-1.57079649, 0, 0]
+        Scale: [100, 99.9999924, 99.9999924]
+      HierarchyComponent:
+        ParentHandle: 18123892674464829098
+        Children: [10690428498100087902, 12167115611068768151, 9018143050649097943, 14583237553024968684, 10141686563820452269, 6916218382690454468, 10994307258558082218]
+    - Entity: 16137764355856672318
+      TagComponent:
+        Tag: Cube.108
+        tags: []
+      TransformComponent:
+        Location: [0, 1.86264515e-09, 0]
         Rotation: [1.4210853e-14, -0, 0]
         Scale: [1.00000012, 1.00000012, 1.00000012]
       HierarchyComponent:
-        ParentHandle: 4997918023472058864
+        ParentHandle: 8479409515684475891
         Children: []
       DynamicMeshComponent:
         DynamicMeshAssetPointerID: 264337976024594251
         CastShadow: true
         Visible: true
-        SubMeshIndex: 1
+        SubMeshIndex: 11
         MaterialTable:
           []
     - Entity: 17657847271051598669
@@ -652,25 +692,7 @@ World:
         SubMeshIndex: 7
         MaterialTable:
           []
-    - Entity: 16137764355856672318
-      TagComponent:
-        Tag: Cube.108
-        tags: []
-      TransformComponent:
-        Location: [0, 1.86264515e-09, 0]
-        Rotation: [1.4210853e-14, -0, 0]
-        Scale: [1.00000012, 1.00000012, 1.00000012]
-      HierarchyComponent:
-        ParentHandle: 8479409515684475891
-        Children: []
-      DynamicMeshComponent:
-        DynamicMeshAssetPointerID: 264337976024594251
-        CastShadow: true
-        Visible: true
-        SubMeshIndex: 11
-        MaterialTable:
-          []
-    - Entity: 13622980244498252068
+    - Entity: 928271235117407374
       TagComponent:
         Tag: Cube.002
         tags: []
@@ -685,7 +707,7 @@ World:
         DynamicMeshAssetPointerID: 264337976024594251
         CastShadow: true
         Visible: true
-        SubMeshIndex: 2
+        SubMeshIndex: 1
         MaterialTable:
           []
     - Entity: 14000972844893079368
@@ -706,6 +728,85 @@ World:
         SubMeshIndex: 12
         MaterialTable:
           []
+    - Entity: 13622980244498252068
+      TagComponent:
+        Tag: Cube.002
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 4.65661287e-10]
+        Rotation: [1.4210853e-14, -0, 0]
+        Scale: [1.00000012, 1.00000012, 1.00000012]
+      HierarchyComponent:
+        ParentHandle: 4997918023472058864
+        Children: []
+      DynamicMeshComponent:
+        DynamicMeshAssetPointerID: 264337976024594251
+        CastShadow: true
+        Visible: true
+        SubMeshIndex: 2
+        MaterialTable:
+          []
+    - Entity: 1479106724744751502
+      TagComponent:
+        Tag: SmallLog
+        tags: []
+      TransformComponent:
+        Location: [-84.327858, 1.06935883, -32.8115196]
+        Rotation: [0, 0, 0]
+        Scale: [2, 1, 6]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 16461665877640561401
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.FloatingLog
+            ScriptClassName: CrossyBro.FloatingLog
+            ScriptName: CrossyBro.FloatingLog
+            Fields:
+              - NameID: CrossyBro.FloatingLog.Speed
+                Type: Float
+                Data: 8
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 12753258708013629468
+      TagComponent:
+        Tag: Cube.109
+        tags: []
+      TransformComponent:
+        Location: [0, 1.86264515e-09, 4.65661287e-10]
+        Rotation: [1.4210853e-14, -0, 0]
+        Scale: [1.00000012, 1.00000012, 1.00000012]
+      HierarchyComponent:
+        ParentHandle: 17344673137308057876
+        Children: []
+      DynamicMeshComponent:
+        DynamicMeshAssetPointerID: 264337976024594251
+        CastShadow: true
+        Visible: true
+        SubMeshIndex: 14
+        MaterialTable:
+          []
     - Entity: 6232510106107597849
       TagComponent:
         Tag: Cube.002
@@ -724,22 +825,22 @@ World:
         SubMeshIndex: 4
         MaterialTable:
           []
-    - Entity: 12753258708013629468
+    - Entity: 3435223383132532222
       TagComponent:
-        Tag: Cube.109
+        Tag: Cube.002
         tags: []
       TransformComponent:
-        Location: [0, 1.86264515e-09, 4.65661287e-10]
+        Location: [0, 0, 4.65661287e-10]
         Rotation: [1.4210853e-14, -0, 0]
         Scale: [1.00000012, 1.00000012, 1.00000012]
       HierarchyComponent:
-        ParentHandle: 17344673137308057876
+        ParentHandle: 4997918023472058864
         Children: []
       DynamicMeshComponent:
         DynamicMeshAssetPointerID: 264337976024594251
         CastShadow: true
         Visible: true
-        SubMeshIndex: 14
+        SubMeshIndex: 5
         MaterialTable:
           []
     - Entity: 13702508912012497812
@@ -769,29 +870,32 @@ World:
               - NameID: CrossyBro.SingleRoadLane.Direction
                 Type: Int32
                 Data: 1
-              - NameID: CrossyBro.SingleRoadLane.MinSpeed
-                Type: Float
-                Data: 20
-              - NameID: CrossyBro.SingleRoadLane.Cars
+              - NameID: CrossyBro.SingleRoadLane.MovingObjects
                 Type: Prefab
                 Length: 1
                 Data:
                   - 5124677930488879996
-              - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
-                Type: Float
-                Data: 24
-              - NameID: CrossyBro.SingleRoadLane.MaxSpeed
-                Type: Float
-                Data: 22
               - NameID: CrossyBro.SingleRoadLane.MinSpawnPadding
                 Type: Float
                 Data: 12
+              - NameID: CrossyBro.SingleRoadLane.SpawnHeight
+                Type: Float
+                Data: 0
+              - NameID: CrossyBro.SingleRoadLane.MinSpeed
+                Type: Float
+                Data: 20
+              - NameID: CrossyBro.SingleRoadLane.MaxSpeed
+                Type: Float
+                Data: 22
               - NameID: CrossyBro.SingleRoadLane.MaxSpawnPadding
                 Type: Float
                 Data: 20
               - NameID: CrossyBro.SingleRoadLane.SpawnPaddingPerSpeed
                 Type: Float
                 Data: 0.5
+              - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
+                Type: Float
+                Data: 24
               - NameID: CrossyBro.SingleRoadLane.LaneWidth
                 Type: Float
                 Data: 64
@@ -811,24 +915,6 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
-    - Entity: 3435223383132532222
-      TagComponent:
-        Tag: Cube.002
-        tags: []
-      TransformComponent:
-        Location: [0, 0, 4.65661287e-10]
-        Rotation: [1.4210853e-14, -0, 0]
-        Scale: [1.00000012, 1.00000012, 1.00000012]
-      HierarchyComponent:
-        ParentHandle: 4997918023472058864
-        Children: []
-      DynamicMeshComponent:
-        DynamicMeshAssetPointerID: 264337976024594251
-        CastShadow: true
-        Visible: true
-        SubMeshIndex: 5
-        MaterialTable:
-          []
     - Entity: 2573243387433153840
       TagComponent:
         Tag: Cube.002
@@ -858,24 +944,6 @@ World:
       HierarchyComponent:
         ParentHandle: 9576896164403815046
         Children: [17657847271051598669, 12021224098134826345]
-    - Entity: 14583237553024968684
-      TagComponent:
-        Tag: Cube.002
-        tags: []
-      TransformComponent:
-        Location: [0, 0, 4.65661287e-10]
-        Rotation: [1.4210853e-14, -0, 0]
-        Scale: [1.00000012, 1.00000012, 1.00000012]
-      HierarchyComponent:
-        ParentHandle: 14173978324522178158
-        Children: []
-      DynamicMeshComponent:
-        DynamicMeshAssetPointerID: 264337976024594251
-        CastShadow: true
-        Visible: true
-        SubMeshIndex: 3
-        MaterialTable:
-          []
     - Entity: 12021224098134826345
       TagComponent:
         Tag: Cube.106
@@ -892,6 +960,24 @@ World:
         CastShadow: true
         Visible: true
         SubMeshIndex: 8
+        MaterialTable:
+          []
+    - Entity: 14583237553024968684
+      TagComponent:
+        Tag: Cube.002
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 4.65661287e-10]
+        Rotation: [1.4210853e-14, -0, 0]
+        Scale: [1.00000012, 1.00000012, 1.00000012]
+      HierarchyComponent:
+        ParentHandle: 14173978324522178158
+        Children: []
+      DynamicMeshComponent:
+        DynamicMeshAssetPointerID: 264337976024594251
+        CastShadow: true
+        Visible: true
+        SubMeshIndex: 3
         MaterialTable:
           []
     - Entity: 3849427625203494132
@@ -958,32 +1044,35 @@ World:
             ScriptClassName: CrossyBro.DoubleRoadLane
             ScriptName: CrossyBro.DoubleRoadLane
             Fields:
-              - NameID: CrossyBro.DoubleRoadLane.MinSpeed
-                Type: Float
-                Data: 20
-              - NameID: CrossyBro.DoubleRoadLane.Cars
+              - NameID: CrossyBro.DoubleRoadLane.MovingObjects
                 Type: Prefab
                 Length: 1
                 Data:
                   - 5124677930488879996
-              - NameID: CrossyBro.DoubleRoadLane.MaxSpeed
-                Type: Float
-                Data: 22
               - NameID: CrossyBro.DoubleRoadLane.MinSpawnPadding
                 Type: Float
                 Data: 12
-              - NameID: CrossyBro.DoubleRoadLane.LaneWidth
+              - NameID: CrossyBro.DoubleRoadLane.SpawnHeight
                 Type: Float
-                Data: 64
-              - NameID: CrossyBro.DoubleRoadLane.SpawnPaddingPerSpeed
+                Data: 0
+              - NameID: CrossyBro.DoubleRoadLane.MinSpeed
                 Type: Float
-                Data: 0.5
+                Data: 20
+              - NameID: CrossyBro.DoubleRoadLane.MaxSpeed
+                Type: Float
+                Data: 22
               - NameID: CrossyBro.DoubleRoadLane.MaxSpawnPadding
                 Type: Float
                 Data: 20
+              - NameID: CrossyBro.DoubleRoadLane.SpawnPaddingPerSpeed
+                Type: Float
+                Data: 0.5
               - NameID: CrossyBro.DoubleRoadLane.EdgeSpawnPadding
                 Type: Float
                 Data: 24
+              - NameID: CrossyBro.DoubleRoadLane.LaneWidth
+                Type: Float
+                Data: 64
       BoxColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -1000,17 +1089,6 @@ World:
         FreezeRotation: [false, false, false]
         Kinematic: false
         CollisionDetection: Discrete
-    - Entity: 3744142875622804470
-      TagComponent:
-        Tag: Police Sedan wheel front left
-        tags: []
-      TransformComponent:
-        Location: [1.02653885, 0.400000036, 1.60882378]
-        Rotation: [-1.65806282, 0, 0]
-        Scale: [100, 99.9999924, 99.9999924]
-      HierarchyComponent:
-        ParentHandle: 18123892674464829098
-        Children: [10267024500842280956, 3275482012099906262]
     - Entity: 18123892674464829098
       TagComponent:
         Tag: RootNode
@@ -1022,6 +1100,28 @@ World:
       HierarchyComponent:
         ParentHandle: 13884608884879809657
         Children: [14173978324522178158, 9011465607757702633, 3744142875622804470, 525288970473421941, 6347889005966952909]
+    - Entity: 3744142875622804470
+      TagComponent:
+        Tag: Police Sedan wheel front left
+        tags: []
+      TransformComponent:
+        Location: [1.02653885, 0.400000036, 1.60882378]
+        Rotation: [-1.65806282, 0, 0]
+        Scale: [100, 99.9999924, 99.9999924]
+      HierarchyComponent:
+        ParentHandle: 18123892674464829098
+        Children: [10267024500842280956, 3275482012099906262]
+    - Entity: 6347889005966952909
+      TagComponent:
+        Tag: Police Sedan wheel front right
+        tags: []
+      TransformComponent:
+        Location: [-1.02653885, 0.400000036, 1.60882378]
+        Rotation: [2.86059451, 0, 0]
+        Scale: [100, 99.9999924, 99.9999924]
+      HierarchyComponent:
+        ParentHandle: 18123892674464829098
+        Children: [13535475403464820477, 8285742343268621641]
     - Entity: 10690428498100087902
       TagComponent:
         Tag: Cube.002
@@ -1040,17 +1140,6 @@ World:
         SubMeshIndex: 0
         MaterialTable:
           []
-    - Entity: 6347889005966952909
-      TagComponent:
-        Tag: Police Sedan wheel front right
-        tags: []
-      TransformComponent:
-        Location: [-1.02653885, 0.400000036, 1.60882378]
-        Rotation: [2.86059451, 0, 0]
-        Scale: [100, 99.9999924, 99.9999924]
-      HierarchyComponent:
-        ParentHandle: 18123892674464829098
-        Children: [13535475403464820477, 8285742343268621641]
     - Entity: 12167115611068768151
       TagComponent:
         Tag: Cube.002
@@ -1105,6 +1194,40 @@ World:
         SubMeshIndex: 6
         MaterialTable:
           []
+    - Entity: 1863648949649397375
+      TagComponent:
+        Tag: Plane
+        tags: []
+      TransformComponent:
+        Location: [-101.533478, 5.96046448e-08, 2.38418579e-07]
+        Rotation: [0, 0, 0]
+        Scale: [32, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6374224968914657865
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 9011465607757702633
       TagComponent:
         Tag: Police Sedan wheel rear right
@@ -1152,6 +1275,80 @@ World:
         SubMeshIndex: 8
         MaterialTable:
           []
+    - Entity: 11594890102683722353
+      TagComponent:
+        Tag: WaterLane
+        tags: []
+      TransformComponent:
+        Location: [60, 0, -0.0617669225]
+        Rotation: [0, 0, 0]
+        Scale: [8, 0.5, 128]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6703406187088560127
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.WaterLane
+            ScriptClassName: CrossyBro.WaterLane
+            ScriptName: CrossyBro.WaterLane
+            Fields:
+              - NameID: CrossyBro.WaterLane.EdgeSpawnPadding
+                Type: Float
+                Data: 24
+              - NameID: CrossyBro.WaterLane.MaxSpeed
+                Type: Float
+                Data: 15
+              - NameID: CrossyBro.WaterLane.Direction
+                Type: Int32
+                Data: 1
+              - NameID: CrossyBro.WaterLane.SpawnPaddingPerSpeed
+                Type: Float
+                Data: 0.5
+              - NameID: CrossyBro.WaterLane.MovingObjects
+                Type: Prefab
+                Length: 3
+                Data:
+                  - 5905817804326057340
+                  - 11001776052585427340
+                  - 2118340032093922690
+              - NameID: CrossyBro.WaterLane.MinSpawnPadding
+                Type: Float
+                Data: 8
+              - NameID: CrossyBro.WaterLane.SpawnHeight
+                Type: Float
+                Data: 1
+              - NameID: CrossyBro.WaterLane.MinSpeed
+                Type: Float
+                Data: 10
+              - NameID: CrossyBro.WaterLane.MaxSpawnPadding
+                Type: Float
+                Data: 8.5
+              - NameID: CrossyBro.WaterLane.LaneWidth
+                Type: Float
+                Data: 64
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 2, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 10267024500842280956
       TagComponent:
         Tag: Cube.107
@@ -1235,6 +1432,40 @@ World:
         SubMeshIndex: 13
         MaterialTable:
           []
+    - Entity: 11871588898289380912
+      TagComponent:
+        Tag: Plane
+        tags: []
+      TransformComponent:
+        Location: [-101.942566, 5.96046448e-08, -31.42593]
+        Rotation: [0, 0, 0]
+        Scale: [32, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6374224968914657865
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 8285742343268621641
       TagComponent:
         Tag: Cube.109
@@ -1253,3 +1484,153 @@ World:
         SubMeshIndex: 14
         MaterialTable:
           []
+    - Entity: 9710298002821633287
+      TagComponent:
+        Tag: Cylinder
+        tags: []
+      TransformComponent:
+        Location: [-7.79350567, 4.03100014, 0]
+        Rotation: [0, 0, 0]
+        Scale: [2, 0.100000001, 2]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 53
+        Visible: true
+      MeshColliderComponent:
+        ColliderID: 14547167100313758272
+        IsTrigger: false
+        UseSharedShape: false
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 3246408586929542385
+      TagComponent:
+        Tag: Plane
+        tags: []
+      TransformComponent:
+        Location: [-69.9341278, 5.96046448e-08, -31.4229202]
+        Rotation: [0, 0, 0]
+        Scale: [32, 1, 32]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 6374224968914657865
+            Index: 0
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 44667086234408445
+      TagComponent:
+        Tag: MediumLog
+        tags: []
+      TransformComponent:
+        Location: [-84.327858, 1.06935883, -21.2884026]
+        Rotation: [0, 0, 0]
+        Scale: [2, 1, 10]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 16461665877640561401
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.FloatingLog
+            ScriptClassName: CrossyBro.FloatingLog
+            ScriptName: CrossyBro.FloatingLog
+            Fields:
+              - NameID: CrossyBro.FloatingLog.Speed
+                Type: Float
+                Data: 8
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 1687522791656987642
+      TagComponent:
+        Tag: LargeLog
+        tags: []
+      TransformComponent:
+        Location: [-84.327858, 1.06935883, -8.85139465]
+        Rotation: [0, 0, 0]
+        Scale: [2, 1, 14]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 16461665877640561401
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.FloatingLog
+            ScriptClassName: CrossyBro.FloatingLog
+            ScriptName: CrossyBro.FloatingLog
+            Fields:
+              - NameID: CrossyBro.FloatingLog.Speed
+                Type: Float
+                Data: 8
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        FreezeLocation: [false, false, false]
+        FreezeRotation: [false, false, false]
+        Kinematic: false
+        CollisionDetection: Discrete

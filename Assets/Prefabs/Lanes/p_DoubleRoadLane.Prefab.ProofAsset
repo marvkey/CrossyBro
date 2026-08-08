@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 18108221406145107977
-EntityOwner: 11391004999573538912
+EntityOwner: 17511845758696769642
 Entities:
-  - Entity: 11391004999573538912
+  - Entity: 17511845758696769642
     TagComponent:
       Tag: DoubleRoadLane
       tags: []
@@ -26,32 +26,35 @@ Entities:
           ScriptClassName: CrossyBro.DoubleRoadLane
           ScriptName: CrossyBro.DoubleRoadLane
           Fields:
-            - NameID: CrossyBro.DoubleRoadLane.MinSpeed
-              Type: Float
-              Data: 8
-            - NameID: CrossyBro.DoubleRoadLane.Cars
+            - NameID: CrossyBro.DoubleRoadLane.MovingObjects
               Type: Prefab
               Length: 1
               Data:
                 - 5124677930488879996
+            - NameID: CrossyBro.DoubleRoadLane.MinSpawnPadding
+              Type: Float
+              Data: 24
+            - NameID: CrossyBro.DoubleRoadLane.SpawnHeight
+              Type: Float
+              Data: 0
+            - NameID: CrossyBro.DoubleRoadLane.MinSpeed
+              Type: Float
+              Data: 8
             - NameID: CrossyBro.DoubleRoadLane.MaxSpeed
               Type: Float
               Data: 12
-            - NameID: CrossyBro.DoubleRoadLane.MinSpawnPadding
+            - NameID: CrossyBro.DoubleRoadLane.MaxSpawnPadding
+              Type: Float
+              Data: 35
+            - NameID: CrossyBro.DoubleRoadLane.SpawnPaddingPerSpeed
+              Type: Float
+              Data: 0.5
+            - NameID: CrossyBro.DoubleRoadLane.EdgeSpawnPadding
               Type: Float
               Data: 24
             - NameID: CrossyBro.DoubleRoadLane.LaneWidth
               Type: Float
               Data: 64
-            - NameID: CrossyBro.DoubleRoadLane.SpawnPaddingPerSpeed
-              Type: Float
-              Data: 0.5
-            - NameID: CrossyBro.DoubleRoadLane.MaxSpawnPadding
-              Type: Float
-              Data: 35
-            - NameID: CrossyBro.DoubleRoadLane.EdgeSpawnPadding
-              Type: Float
-              Data: 24
     BoxColliderComponent:
       IsTrigger: false
       Center: [0, 0, 0]

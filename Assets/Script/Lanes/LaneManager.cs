@@ -20,6 +20,7 @@ namespace CrossyBro
 		public Prefab[] GrassLanes;
 		public Prefab[] SingleRoadLanes;
 		public Prefab[] DoubleRoadLanes;
+		public Prefab[] WaterLanes;
 
 		public int RowsAhead = 20;
 		public int RowsBehind = 5;
@@ -147,7 +148,7 @@ namespace CrossyBro
 
 		private LaneType ChooseNextLaneType()
 		{
-			LaneType[] availableTypes = new LaneType[3];
+			LaneType[] availableTypes = new LaneType[4];
 			int availableCount = 0;
 
 			if (HasPrefabs(GrassLanes) && CanSpawnType(LaneType.Grass))
@@ -158,6 +159,9 @@ namespace CrossyBro
 
 			if (HasPrefabs(DoubleRoadLanes) && CanSpawnType(LaneType.DoubleRoad))
 				availableTypes[availableCount++] = LaneType.DoubleRoad;
+
+			if (HasPrefabs(WaterLanes) && CanSpawnType(LaneType.Water))
+				availableTypes[availableCount++] = LaneType.Water;
 
 			if (availableCount == 0) return LaneType.Grass;
 
@@ -193,6 +197,7 @@ namespace CrossyBro
 				case LaneType.Grass: prefabs = GrassLanes; break;
 				case LaneType.SingleRoad: prefabs = SingleRoadLanes; break;
 				case LaneType.DoubleRoad: prefabs = DoubleRoadLanes; break;
+				case LaneType.Water: prefabs = WaterLanes; break;
 			}
 
 			if (!HasPrefabs(prefabs)) return null;

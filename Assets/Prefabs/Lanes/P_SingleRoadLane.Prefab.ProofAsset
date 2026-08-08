@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 4494858977215965303
-EntityOwner: 17731328331005498076
+EntityOwner: 4336489497327475606
 Entities:
-  - Entity: 17731328331005498076
+  - Entity: 4336489497327475606
     TagComponent:
       Tag: SingleRoadLane
       tags: []
@@ -29,29 +29,32 @@ Entities:
             - NameID: CrossyBro.SingleRoadLane.Direction
               Type: Int32
               Data: 1
-            - NameID: CrossyBro.SingleRoadLane.MinSpeed
-              Type: Float
-              Data: 8
-            - NameID: CrossyBro.SingleRoadLane.Cars
+            - NameID: CrossyBro.SingleRoadLane.MovingObjects
               Type: Prefab
               Length: 1
               Data:
                 - 5124677930488879996
-            - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
-              Type: Float
-              Data: 24
-            - NameID: CrossyBro.SingleRoadLane.MaxSpeed
-              Type: Float
-              Data: 12
             - NameID: CrossyBro.SingleRoadLane.MinSpawnPadding
               Type: Float
               Data: 24
+            - NameID: CrossyBro.SingleRoadLane.SpawnHeight
+              Type: Float
+              Data: 0
+            - NameID: CrossyBro.SingleRoadLane.MinSpeed
+              Type: Float
+              Data: 8
+            - NameID: CrossyBro.SingleRoadLane.MaxSpeed
+              Type: Float
+              Data: 12
             - NameID: CrossyBro.SingleRoadLane.MaxSpawnPadding
               Type: Float
               Data: 35
             - NameID: CrossyBro.SingleRoadLane.SpawnPaddingPerSpeed
               Type: Float
               Data: 0.5
+            - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
+              Type: Float
+              Data: 24
             - NameID: CrossyBro.SingleRoadLane.LaneWidth
               Type: Float
               Data: 64

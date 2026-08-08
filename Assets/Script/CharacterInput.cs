@@ -63,14 +63,12 @@ namespace CrossyBro
 
         void Turn(InputActionOutput actionOutput)
         {
-            /*
             float output = actionOutput.Get<float>();
 
             if (output < 0.0f)
                 m_CharacterMovement.TurnLeft();
             else if (output > 0.0f)
                 m_CharacterMovement.TurnRight();
-                */
         }
 
         void Rotate(InputActionOutput actionOutput)
