@@ -32,7 +32,7 @@ InputBindings:
               InputKeyName: Invalid
     InputInteractions:
       - InputInteractionType: ClickRelease
-        InteractionThreshold: 0.5
+        InteractionThreshold: 0.25
         Mode: Click
   - InputActionID: 7925034265926402795
     KeyBindings:
@@ -63,3 +63,7 @@ InputBindings:
             InputKeySettings:
               InputKeyBindingType: Key
               InputKeyName: Invalid
+  - InputActionID: 2955353540329735492
+    KeyBindings:
+      - InputKeyBindingType: Key
+        InputKeyName: MouseMoveAxisXY

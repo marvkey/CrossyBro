@@ -242,3 +242,9 @@ Assets:
   - Asset: 14236158759897223039
     Type: Prefab
     Path: Prefabs\Lanes\p_GrassLaneNotrees.Prefab.ProofAsset
+  - Asset: 2955353540329735492
+    Type: InputAction
+    Path: Input\IA_Rotate.InputAction.ProofAsset
+  - Asset: 1731051331610835315
+    Type: ScriptFile
+    Path: Script\CameraMovement.cs

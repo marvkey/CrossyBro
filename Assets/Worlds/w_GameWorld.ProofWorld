@@ -26,7 +26,7 @@ World:
       TransformComponent:
         Location: [0, 2.79999995, 0]
         Rotation: [0, 0, 0]
-        Scale: [1, 1, 1]
+        Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
         Children: [15815644261519557984]
@@ -46,6 +46,9 @@ World:
               - NameID: CrossyBro.CharacterInput.MoveAction
                 Type: InputAction
                 Data: 2813241134489422334
+              - NameID: CrossyBro.CharacterInput.RotateAction
+                Type: InputAction
+                Data: 2955353540329735492
               - NameID: CrossyBro.CharacterInput.TurnAction
                 Type: InputAction
                 Data: 7925034265926402795
@@ -65,6 +68,9 @@ World:
               - NameID: CrossyBro.CharacterMovement.JumpDuration
                 Type: Float
                 Data: 0.219999999
+              - NameID: CrossyBro.CharacterMovement.Camera
+                Type: Entity
+                Data: 6181421400864435290
       BoxColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -95,12 +101,27 @@ World:
         Tag: Camera
         tags: []
       TransformComponent:
-        Location: [0.87856102, 0, 0.0199377537]
-        Rotation: [0, 0, 0]
+        Location: [0.458849192, 7.78661633, 0.533051252]
+        Rotation: [0.164060935, 0, 0]
         Scale: [1, 1, 1]
       HierarchyComponent:
-        ParentHandle: 15815644261519557984
+        ParentHandle: 0
         Children: []
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.CameraMovement
+            ScriptClassName: CrossyBro.CameraMovement
+            ScriptName: CrossyBro.CameraMovement
+            Fields:
+              - NameID: CrossyBro.CameraMovement.Target
+                Type: Entity
+                Data: 8186743049044046354
+              - NameID: CrossyBro.CameraMovement.FollowY
+                Type: Float
+                Data: 2.5
+              - NameID: CrossyBro.CameraMovement.FollowSpeed
+                Type: Float
+                Data: 12
       CameraComponent:
         NearPlane: 0.300000012
         FarPlane: 50
@@ -185,4 +206,4 @@ World:
         Scale: [1, 1, 1]
       HierarchyComponent:
         ParentHandle: 8186743049044046354
-        Children: [6181421400864435290]
+        Children: []

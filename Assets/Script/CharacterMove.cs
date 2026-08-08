@@ -11,6 +11,8 @@ namespace CrossyBro
 		public float JumpDuration = 0.22f;
 		public float RotationSpeed = 10.0f;
 
+		public Entity Camera;
+
 		private RigidBodyComponent m_RigidBody;
 
 		private bool m_IsJumping = false;
@@ -21,6 +23,9 @@ namespace CrossyBro
 		private bool m_IsTurning = false;
 		private float m_TargetYRotation = 0.0f;
 
+		private Vector2 m_RotateRate = Vector2.Zero;
+		private float m_RotationAccumulator = 0.0f;
+
 		public bool IsJumping => m_IsJumping;
 		public bool IsTurning => m_IsTurning;
 
@@ -28,10 +33,12 @@ namespace CrossyBro
 		{
 			m_RigidBody = GetComponent<RigidBodyComponent>();
 			m_TargetYRotation = Transform.Rotation.y;
+			m_RotationAccumulator = Transform.Rotation.y;
 		}
 
 		void OnUpdate(float deltaTime)
 		{
+			UpdateRotate();
 		}
 
 		void OnPhysicsUpdate(float fixedPhysicsDeltaTime)
@@ -40,12 +47,37 @@ namespace CrossyBro
 			UpdateJump(fixedPhysicsDeltaTime);
 		}
 
+		public void Rotate(Vector2 axis)
+		{
+			m_RotateRate += axis;
+		}
+
+		private void UpdateRotate()
+		{
+			if (m_RotateRate == Vector2.Zero)
+				return;
+
+			float rotationAmount = m_RotateRate.x * RotationSpeed * World.GetDeltaTime();
+
+			m_RotationAccumulator += rotationAmount;
+
+			Quaternion rotation = Quaternion.EularToQuat(new Vector3(0.0f, -Mathf.DegreesToRadians(m_RotationAccumulator), 0.0f));
+
+			m_RigidBody.Rotation = rotation;
+
+			if (Camera != null)
+				Camera.Transform.RotationQuat = rotation;
+
+			m_TargetYRotation = -m_RotationAccumulator;
+
+			m_RotateRate = Vector2.Zero;
+		}
+
 		public bool Jump(Vector3 direction)
 		{
 			if (m_IsJumping || m_IsTurning || !IsGrounded())
 				return false;
 
-			
 			float moveDistance = WorldData.GridSize * 0.5f;
 
 			direction.y = 0.0f;
@@ -76,7 +108,9 @@ namespace CrossyBro
 				return false;
 
 			m_TargetYRotation += 90.0f;
+			m_RotationAccumulator = -m_TargetYRotation;
 			m_IsTurning = true;
+
 			return true;
 		}
 
@@ -86,9 +120,12 @@ namespace CrossyBro
 				return false;
 
 			m_TargetYRotation -= 90.0f;
+			m_RotationAccumulator = -m_TargetYRotation;
 			m_IsTurning = true;
+
 			return true;
 		}
+
 		private bool CanJump(Vector3 direction, float distance)
 		{
 			RaycastData data = new RaycastData();
@@ -107,6 +144,7 @@ namespace CrossyBro
 
 			return true;
 		}
+
 		private void UpdateJump(float deltaTime)
 		{
 			if (!m_IsJumping)
@@ -129,8 +167,8 @@ namespace CrossyBro
 				m_RigidBody.Gravity = true;
 
 				m_IsJumping = false;
-				Log.Trace($"New Position {Transform.Location.ToString()}");
 
+				Log.Trace($"New Position {Transform.Location.ToString()}");
 			}
 		}
 
@@ -143,6 +181,9 @@ namespace CrossyBro
 
 			m_RigidBody.Rotation = Quaternion.Lerp(m_RigidBody.Rotation, targetRotation, deltaTime * RotationSpeed);
 
+			if (Camera != null)
+				Camera.Transform.RotationQuat = m_RigidBody.Rotation;
+
 			float dot = Mathf.Abs(Quaternion.Dot(m_RigidBody.Rotation, targetRotation));
 			dot = Mathf.Clamp(dot, 0.0f, 1.0f);
 
@@ -151,6 +192,11 @@ namespace CrossyBro
 			if (angleDifference < 0.01f)
 			{
 				m_RigidBody.Rotation = targetRotation;
+
+				if (Camera != null)
+					Camera.Transform.RotationQuat = targetRotation;
+
+				m_RotationAccumulator = -m_TargetYRotation;
 				m_IsTurning = false;
 
 				Log.Trace($"New rotation {Transform.Rotation.ToString()}");

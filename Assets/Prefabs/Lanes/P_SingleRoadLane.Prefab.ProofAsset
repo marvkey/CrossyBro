@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 4494858977215965303
-EntityOwner: 3370699862261422234
+EntityOwner: 17731328331005498076
 Entities:
-  - Entity: 3370699862261422234
+  - Entity: 17731328331005498076
     TagComponent:
       Tag: SingleRoadLane
       tags: []
@@ -34,9 +34,9 @@ Entities:
               Data: 8
             - NameID: CrossyBro.SingleRoadLane.Cars
               Type: Prefab
-              Length: 0
+              Length: 1
               Data:
-                []
+                - 5124677930488879996
             - NameID: CrossyBro.SingleRoadLane.EdgeSpawnPadding
               Type: Float
               Data: 24
@@ -58,7 +58,7 @@ Entities:
     BoxColliderComponent:
       IsTrigger: false
       Center: [0, 0, 0]
-      Size: [1, 1, 1]
+      Size: [1, 2, 1]
       PhysicsMaterialPointerID: 0
     RigidBodyComponent:
       Mass: 1

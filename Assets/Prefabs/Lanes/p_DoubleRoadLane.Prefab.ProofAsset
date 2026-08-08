@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 18108221406145107977
-EntityOwner: 16084721836304101037
+EntityOwner: 11391004999573538912
 Entities:
-  - Entity: 16084721836304101037
+  - Entity: 11391004999573538912
     TagComponent:
       Tag: DoubleRoadLane
       tags: []
@@ -31,9 +31,9 @@ Entities:
               Data: 8
             - NameID: CrossyBro.DoubleRoadLane.Cars
               Type: Prefab
-              Length: 0
+              Length: 1
               Data:
-                []
+                - 5124677930488879996
             - NameID: CrossyBro.DoubleRoadLane.MaxSpeed
               Type: Float
               Data: 12
@@ -55,7 +55,7 @@ Entities:
     BoxColliderComponent:
       IsTrigger: false
       Center: [0, 0, 0]
-      Size: [1, 1, 1]
+      Size: [1, 2, 1]
       PhysicsMaterialPointerID: 0
     RigidBodyComponent:
       Mass: 1

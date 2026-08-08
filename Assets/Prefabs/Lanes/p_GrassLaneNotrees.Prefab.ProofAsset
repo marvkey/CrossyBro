@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 14236158759897223039
-EntityOwner: 12755430984607468727
+EntityOwner: 1306034627806349802
 Entities:
-  - Entity: 12755430984607468727
+  - Entity: 1306034627806349802
     TagComponent:
       Tag: SingleRoadLane
       tags: []

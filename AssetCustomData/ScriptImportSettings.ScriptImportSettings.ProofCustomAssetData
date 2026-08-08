@@ -1,9 +1,16 @@
 ScriptImportSettings:
   Scripts:
+    - Script: CrossyBro.CameraMovement
+      ScriptName: CrossyBro.CameraMovement
+      Fields:
+        []
     - Script: CrossyBro.CharacterInput
       ScriptName: CrossyBro.CharacterInput
       Fields:
         - NameID: CrossyBro.CharacterInput.MoveAction
+          Type: InputAction
+          Data: 0
+        - NameID: CrossyBro.CharacterInput.RotateAction
           Type: InputAction
           Data: 0
         - NameID: CrossyBro.CharacterInput.TurnAction
