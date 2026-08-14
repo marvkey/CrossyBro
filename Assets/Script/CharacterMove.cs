@@ -29,11 +29,18 @@ namespace CrossyBro
 		public bool IsJumping => m_IsJumping;
 		public bool IsTurning => m_IsTurning;
 
+		private bool m_Dead = false;
+		public bool Dead =>m_Dead;
+
+		private MovingLaneObject m_CurrentMovingObject;
 		void OnCreate()
 		{
 			m_RigidBody = GetComponent<RigidBodyComponent>();
 			m_TargetYRotation = Transform.Rotation.y;
 			m_RotationAccumulator = Transform.Rotation.y;
+			CollisionStayEvent +=OnCollisionStay;
+			CollisionEnterEvent += OnCollisionEnter;
+			CollisionLeaveEvent += OnCollisionLeave;
 		}
 
 		void OnUpdate(float deltaTime)
@@ -44,9 +51,111 @@ namespace CrossyBro
 		void OnPhysicsUpdate(float fixedPhysicsDeltaTime)
 		{
 			UpdateRotation(fixedPhysicsDeltaTime);
-			UpdateJump(fixedPhysicsDeltaTime);
+			if(!Dead)
+				UpdateJump(fixedPhysicsDeltaTime);
+
+			//if (m_CurrentMovingObject != null && Entity.IsValid(m_CurrentMovingObject))
+				//m_RigidBody.Translate(m_CurrentMovingObject.MovementDelta);
 		}
 
+		void OnCollisionEnter(Entity e)
+		{
+			if(e.HasScript<Car>())
+			{
+
+				Car car = e.GetScriptInstance<Car>();
+				if (car == null)
+					return;
+
+				SetDead(car.Velocity);
+			}
+		}
+		private void SetDead(Vector3 carVelocity)
+		{
+			SetDead();
+
+			m_RigidBody.Constraints = PhysicsActorConstraint.None;
+
+			Vector3 hitDirection = carVelocity.Normalized;
+			float hitStrength = carVelocity.Magnitude;
+
+			m_RigidBody.Gravity = true;
+			m_RigidBody.Velocity = Vector3.Zero;
+
+			// Throw the player in the direction the car is travelling.
+			m_RigidBody.AddForce(
+				hitDirection * hitStrength * 2.0f + Mathf.Up * 5.0f,
+				ForceMode.Impulse
+			);
+
+			// Rotate around an axis perpendicular to the car movement,
+			// so the player tumbles in the direction of the crash.
+			Vector3 tumbleAxis = new Vector3(
+				hitDirection.z,
+				0.0f,
+				-hitDirection.x
+			);
+
+			m_RigidBody.AddTorque(
+				tumbleAxis * hitStrength * 4.0f,
+				ForceMode.Impulse
+			);
+		}
+		void SetDead()
+		{
+			m_Dead = true; 
+			Log.Info("Player dead");
+		}
+
+		void OnCollisionStay(Entity e)
+		{
+			if (IsJumping)
+				return;
+
+			if (m_CurrentMovingObject != null)
+				return;
+
+
+			MovingLaneObject movingObject = e.GetScriptInstance<MovingLaneObject>();
+
+			if (movingObject == null)
+				return;
+
+			if (!movingObject.CarryPlayer)
+				return;
+
+			m_CurrentMovingObject = movingObject;
+			this.Parent = m_CurrentMovingObject.MovementRoot;
+			m_RigidBody.Velocity = Vector3.Zero;
+			m_RigidBody.Gravity = false;
+			m_RigidBody.IsKinematic = true; // whatever your exposed setter is
+			Log.Info("Set parent");
+					
+
+		}
+
+		void OnCollisionLeave(Entity e)
+		{
+			if (!e.HasScriptInstance<MovingLaneObject>())
+				return;
+
+			MovingLaneObject obj = e.GetScriptInstance<MovingLaneObject>();
+
+			if (obj == m_CurrentMovingObject)
+			{
+				m_CurrentMovingObject = null;
+				Parent = null;
+				{
+					Parent = null;
+
+					m_RigidBody.IsKinematic = false;
+					m_RigidBody.Velocity = Vector3.Zero;
+
+					m_CurrentMovingObject = null;
+				}
+
+			}
+		}
 		public void Rotate(Vector2 axis)
 		{
 			m_RotateRate += axis;
@@ -78,7 +187,18 @@ namespace CrossyBro
 			if (m_IsJumping || m_IsTurning || !IsGrounded())
 				return false;
 
-			float moveDistance = WorldData.GridSize * 0.5f;
+			if(Parent != null)
+			{
+				Parent = null;
+
+				m_RigidBody.IsKinematic = false;
+				m_RigidBody.Velocity = Vector3.Zero;
+
+				m_CurrentMovingObject = null;
+			}
+				
+
+			float moveDistance = WorldData.GridSize;
 
 			direction.y = 0.0f;
 			direction.x = Mathf.Round(direction.x);
@@ -140,6 +260,8 @@ namespace CrossyBro
 			{
 				if (hit.Entity.HasSubTag("Tree"))
 					return false;
+				if(hit.Entity.Name == "Wall")
+					return false; 
 			}
 
 			return true;

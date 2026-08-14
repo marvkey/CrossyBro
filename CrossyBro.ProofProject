@@ -2,10 +2,10 @@ Project:
   Name: CrossyBro
   AssetDirectory: Assets
   AssetManager: Assets/AssetManager.ProofAssetManager
-  StartWorld: 0
+  StartWorld: 14350594835460630091
   ScriptModuleDirectory: Binaries/ScriptApp
   OnCloseStartWorldEditLastOpen: true
-  StartWorldEdit: 12011726453359119438
+  StartWorldEdit: 8356341418287868379
   Input:
     ActionMapping:
       []
@@ -21,3 +21,13 @@ Project:
       - Name: Default
         CollidesWith:
           - Name: Default
+          - Name: Player
+      - Name: SideWall
+        CollidesWith:
+          - Name: SideWall
+          - Name: Player
+      - Name: Player
+        CollidesWith:
+          - Name: Default
+          - Name: SideWall
+          - Name: Player

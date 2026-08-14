@@ -78,6 +78,9 @@ ScriptImportSettings:
           Length: 0
           Data:
             []
+        - NameID: CrossyBro.LaneManager.SideWall
+          Type: Prefab
+          Data: 0
     - Script: CrossyBro.Car
       ScriptName: CrossyBro.Car
       Fields:
@@ -88,5 +91,18 @@ ScriptImportSettings:
         []
     - Script: CrossyBro.MovingLaneObject
       ScriptName: CrossyBro.MovingLaneObject
+      Fields:
+        []
+    - Script: CrossyBro.CharacterHUD
+      ScriptName: CrossyBro.CharacterHUD
+      Fields:
+        - NameID: CrossyBro.CharacterHUD.PlayerDefaultHUD
+          Type: UIPanel
+          Data: 0
+        - NameID: CrossyBro.CharacterHUD.EndScreenHUD
+          Type: UIPanel
+          Data: 0
+    - Script: CrossyBro.MainMenu
+      ScriptName: CrossyBro.MainMenu
       Fields:
         []

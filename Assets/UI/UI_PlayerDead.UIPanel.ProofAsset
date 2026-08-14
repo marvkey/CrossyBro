@@ -1,0 +1,180 @@
+AssetType: UIPanel
+ID: 13348299037624730690
+VariableRegistry:
+  VariableRegistryID: 8362508008042997912
+  Variables:
+    - Name: Score
+      Type: String
+      UUID: 5629218257068295568
+      Data: 15
+    - Name: BestScore
+      Type: String
+      UUID: 2027101657654312263
+      Data: "BEST: 18"
+UIElements:
+  - UIElement: 17811556212425865962
+    UICoreComponent:
+      ElementID: 17811556212425865962
+      Name: Button
+      UIElementType: Button
+      Position: [2.5, 0]
+      Rotation: [0, 0]
+      Size: [1200, 800]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: []
+    UIButtonComponent:
+      TintColor:
+        Value: [0.0430603586, 0.481959373, 0.686274529, 1]
+        BindedVariableID: 0
+      Texture:
+        AssetID: 0
+        AssetType: Texture
+        BindedVariableID: 0
+  - UIElement: 17812377153825248585
+    UICoreComponent:
+      ElementID: 17812377153825248585
+      Name: VerticalBox
+      UIElementType: VerticalBox
+      Position: [-4.44999981, 0.75]
+      Rotation: [0, 0]
+      Size: [100, 100]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: [5691628817878628998, 6145198909037462408]
+    UIVerticalBoxComponent:
+      Spacing: 2
+      DrawBorders: false
+      BorderColor: [1, 1, 1, 1]
+      BorderThickness: 1
+  - UIElement: 6145198909037462408
+    UICoreComponent:
+      ElementID: 6145198909037462408
+      Name: Score
+      UIElementType: Text
+      Position: [-4.44999981, 4.75]
+      Rotation: [0, 0]
+      Size: [3, 3]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [300, -68.5]
+      ParentHandle: 17812377153825248585
+      Children: []
+    UITextComponent:
+      Text:
+        Value: 15
+        BindedVariableID: 5629218257068295568
+      Color: [1, 1, 1, 1]
+      Kerning: 0
+      LineSpacing: 1
+      OutlineColor: [0, 0.0222222209, 0.00839505717, 1]
+      OutlineThickness: 0
+      FontAssetID: 2770893976428777736
+  - UIElement: 1977116079519366233
+    UICoreComponent:
+      ElementID: 1977116079519366233
+      Name: HorizontalBox
+      UIElementType: HorizontalBox
+      Position: [-0.600000024, -1]
+      Rotation: [0, 0]
+      Size: [500, 250]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: [2298140328578288078, 17145616068363444412]
+    UIHorizontalBoxComponent:
+      Spacing: 0.200000003
+      DrawBorders: false
+      BorderColor: [1, 1, 1, 1]
+      BorderThickness: 1
+  - UIElement: 5691628817878628998
+    UICoreComponent:
+      ElementID: 5691628817878628998
+      Name: Highest
+      UIElementType: Text
+      Position: [-4.44999981, 0.75]
+      Rotation: [0, 0]
+      Size: [2, 2]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [172.899994, 0]
+      ParentHandle: 17812377153825248585
+      Children: []
+    UITextComponent:
+      Text:
+        Value: "BEST: 18"
+        BindedVariableID: 2027101657654312263
+      Color: [1, 1, 1, 1]
+      Kerning: 0
+      LineSpacing: 1
+      OutlineColor: [0, 0, 0, 1]
+      OutlineThickness: 0
+      FontAssetID: 2770893976428777736
+  - UIElement: 2298140328578288078
+    UICoreComponent:
+      ElementID: 2298140328578288078
+      Name: Image
+      UIElementType: Image
+      Position: [-0.600000024, -1]
+      Rotation: [0, 0]
+      Size: [1, 1]
+      AnchorMinimum: [0, 0]
+      AnchorMaximum: [0, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 1977116079519366233
+      Children: []
+    UIImageComponent:
+      TintColor:
+        Value: [1, 1, 1, 1]
+        BindedVariableID: 0
+      Texture:
+        AssetID: 6019980673795199497
+        AssetType: Texture
+        BindedVariableID: 0
+  - UIElement: 17145616068363444412
+    UICoreComponent:
+      ElementID: 17145616068363444412
+      Name: Image_00
+      UIElementType: Image
+      Position: [0.600000024, -1]
+      Rotation: [0, 0]
+      Size: [1, 1]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 1977116079519366233
+      Children: []
+    UIImageComponent:
+      TintColor:
+        Value: [1, 1, 1, 1]
+        BindedVariableID: 0
+      Texture:
+        AssetID: 3086053585324883651
+        AssetType: Texture
+        BindedVariableID: 0

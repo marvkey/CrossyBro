@@ -15,7 +15,7 @@ World:
       DirectionalLightComponent:
         Color: [1, 1, 1]
         Intensity: 1
-        CastShadow: true
+        CastShadow: false
         ShadowStrength: 0.5
         CastSoftShadow: true
         ShadowSoftness: 0.5
@@ -24,14 +24,14 @@ World:
         Tag: Player
         tags: []
       TransformComponent:
-        Location: [0, 2.79999995, 0]
+        Location: [0, 9.49928284, 0]
         Rotation: [0, 0, 0]
         Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
         Children: [15815644261519557984]
       MeshComponent:
-        MeshAssetPointerID: 50
+        MeshAssetPointerID: 52
         Visible: true
         MaterialTable:
           - Material: ""
@@ -58,7 +58,7 @@ World:
             Fields:
               - NameID: CrossyBro.CharacterMovement.PlayerHeight
                 Type: Float
-                Data: 2
+                Data: 4
               - NameID: CrossyBro.CharacterMovement.RotationSpeed
                 Type: Float
                 Data: 10
@@ -71,20 +71,31 @@ World:
               - NameID: CrossyBro.CharacterMovement.Camera
                 Type: Entity
                 Data: 6181421400864435290
-      BoxColliderComponent:
+          - Script: CrossyBro.CharacterHUD
+            ScriptClassName: CrossyBro.CharacterHUD
+            ScriptName: CrossyBro.CharacterHUD
+            Fields:
+              - NameID: CrossyBro.CharacterHUD.PlayerDefaultHUD
+                Type: UIPanel
+                Data: 10219996003842407385
+              - NameID: CrossyBro.CharacterHUD.EndScreenHUD
+                Type: UIPanel
+                Data: 13348299037624730690
+      CapsuleColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
-        Size: [1, 1, 1]
+        Radius: 0.5
+        Height: 2
+        Direction: Y
         PhysicsMaterialPointerID: 0
       RigidBodyComponent:
         Mass: 2
         LinearDrag: 0.00999999978
-        PhysicsLayerID: 0
+        PhysicsLayerID: 2
         AngularDrag: 0.0500000007
         Gravity: true
         Type: Dynamic
-        FreezeLocation: [false, false, false]
-        FreezeRotation: [false, false, false]
+        Constraints: 40
         Kinematic: false
         CollisionDetection: Discrete
       PlayerInputComponent:
@@ -96,6 +107,32 @@ World:
         InputPlayer: Player0
         PlayerPrefab: 0
         DontSpawn: true
+      PlayerHUDComponent:
+        UITable:
+          - Layer: Menu
+            Visible: true
+            Panels:
+              []
+          - Layer: Modal
+            Visible: true
+            Panels:
+              []
+          - Layer: Content
+            Visible: true
+            Panels:
+              []
+          - Layer: HUD
+            Visible: true
+            Panels:
+              - PanelID: 10219996003842407385
+                Visible: true
+                VariableRegistry:
+                  VariableRegistryID: 13281337438328240673
+                  Variables:
+                    - Name: Score
+                      Type: String
+                      UUID: 13404902664288318310
+                      Data: 2500
     - Entity: 6181421400864435290
       TagComponent:
         Tag: Camera
@@ -124,8 +161,8 @@ World:
                 Data: 12
       CameraComponent:
         NearPlane: 0.300000012
-        FarPlane: 50
-        FOV: 90
+        FarPlane: 2000
+        FOV: 75
         UseLocalRotation: false
         ActiveForRendering: true
     - Entity: 10911410020527272395
@@ -145,12 +182,6 @@ World:
             ScriptClassName: CrossyBro.LaneManager
             ScriptName: CrossyBro.LaneManager
             Fields:
-              - NameID: CrossyBro.LaneManager.Player
-                Type: Entity
-                Data: 8186743049044046354
-              - NameID: CrossyBro.LaneManager.RowsBehind
-                Type: Int32
-                Data: 5
               - NameID: CrossyBro.LaneManager.SingleRoadLanes
                 Type: Prefab
                 Length: 1
@@ -158,14 +189,21 @@ World:
                   - 4494858977215965303
               - NameID: CrossyBro.LaneManager.GrassLanes
                 Type: Prefab
-                Length: 1
+                Length: 2
                 Data:
                   - 13853933251573635778
+                  - 3982219062159942845
+              - NameID: CrossyBro.LaneManager.RowsBehind
+                Type: Int32
+                Data: 5
+              - NameID: CrossyBro.LaneManager.Player
+                Type: Entity
+                Data: 8186743049044046354
               - NameID: CrossyBro.LaneManager.WaterLanes
                 Type: Prefab
-                Length: 1
+                Length: 0
                 Data:
-                  - 10840193749363587454
+                  []
               - NameID: CrossyBro.LaneManager.RowsAhead
                 Type: Int32
                 Data: 20
@@ -180,13 +218,16 @@ World:
               - NameID: CrossyBro.LaneManager.PlayerBaseLane
                 Type: Prefab
                 Data: 14236158759897223039
+              - NameID: CrossyBro.LaneManager.SideWall
+                Type: Prefab
+                Data: 12679012871097345053
     - Entity: 714930392968599139
       TagComponent:
         Tag: Sky Light
         tags: []
       TransformComponent:
         Location: [0, 0, 0]
-        Rotation: [0.0349065848, 0.0174532924, 0]
+        Rotation: [-0.0558505356, 0.186750218, 0.696386397]
         Scale: [1, 1, 1]
       HierarchyComponent:
         ParentHandle: 0
@@ -196,8 +237,8 @@ World:
         SkyBoxLod: 0
         MapRotation: 0
         Intensity: 1
-        EnvironmentState: PreethamSky
-        TextureDataImage: 0
+        EnvironmentState: EnvironmentTexture
+        TextureDataImage: 5695980564062989695
         HosekWilkieTurbidity: 4
         HosekWilkieGroundReflectance: 0.100000001
         PreethamTurbidity: 4

@@ -19,6 +19,7 @@ namespace CrossyBro
         {
             m_CharacterMovement = GetScript<CharacterMovement>();
             m_PlayerInputComponent = GetComponent<PlayerInputComponent>();
+
             if (m_PlayerInputComponent == null)
             {
                 Log.Error($"{Name} PlayerInput Script needs a PlayerInputComponent");
@@ -28,11 +29,19 @@ namespace CrossyBro
             BindInputAction(m_PlayerInputComponent,RotateAction,InteractionEvent.Triggered,Rotate);
             //BindInputAction(m_PlayerInputComponent,TurnAction,InteractionEvent.Triggered,Turn);
             Mouse.SetCursorMode(MouseCursorMode.Locked);
+            Log.Info("cAN YOU WORK");
         }
 
         // OnUpdate is called once every frame while this script is active in the world
         void OnUpdate(float deltaTime)
         {
+            if(GetScript<CharacterMovement>().Dead == true)
+            {
+                if(Input.IsKeyClicked(KeyBoardKey.R))
+                    World.Restart();
+                if(Input.IsKeyClicked(KeyBoardKey.Q))
+                    Application.Shutdown();
+            }
         }
 
         // OnPhysicsUpdate is called at a fixed timestep for physics-related logic
@@ -73,8 +82,10 @@ namespace CrossyBro
 
         void Rotate(InputActionOutput actionOutput)
         {
+
             if (m_CharacterMovement != null)
             {
+
                 m_CharacterMovement.Rotate(actionOutput.Get<Vector2>());
             }
         }

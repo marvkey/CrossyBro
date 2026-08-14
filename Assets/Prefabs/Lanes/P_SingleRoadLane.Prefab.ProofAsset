@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 4494858977215965303
-EntityOwner: 4336489497327475606
+EntityOwner: 792366586556968747
 Entities:
-  - Entity: 4336489497327475606
+  - Entity: 792366586556968747
     TagComponent:
       Tag: SingleRoadLane
       tags: []
@@ -31,24 +31,28 @@ Entities:
               Data: 1
             - NameID: CrossyBro.SingleRoadLane.MovingObjects
               Type: Prefab
-              Length: 1
+              Length: 5
               Data:
                 - 5124677930488879996
+                - 9566239160619801486
+                - 3340939678477561482
+                - 6850729018431043983
+                - 11589848229661894838
             - NameID: CrossyBro.SingleRoadLane.MinSpawnPadding
               Type: Float
-              Data: 24
+              Data: 35
             - NameID: CrossyBro.SingleRoadLane.SpawnHeight
               Type: Float
               Data: 0
             - NameID: CrossyBro.SingleRoadLane.MinSpeed
               Type: Float
-              Data: 8
+              Data: 12
             - NameID: CrossyBro.SingleRoadLane.MaxSpeed
               Type: Float
-              Data: 12
+              Data: 20
             - NameID: CrossyBro.SingleRoadLane.MaxSpawnPadding
               Type: Float
-              Data: 35
+              Data: 45
             - NameID: CrossyBro.SingleRoadLane.SpawnPaddingPerSpeed
               Type: Float
               Data: 0.5

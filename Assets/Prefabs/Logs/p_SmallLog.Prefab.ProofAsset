@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 5905817804326057340
-EntityOwner: 9820817720670061065
+EntityOwner: 14932070867808221587
 Entities:
-  - Entity: 9820817720670061065
+  - Entity: 14932070867808221587
     TagComponent:
       Tag: SmallLog
       tags: []
@@ -29,6 +29,9 @@ Entities:
             - NameID: CrossyBro.FloatingLog.Speed
               Type: Float
               Data: 8
+            - NameID: CrossyBro.FloatingLog.CarryPlayer
+              Type: Bool
+              Data: true
     BoxColliderComponent:
       IsTrigger: false
       Center: [0, 0, 0]
@@ -40,8 +43,8 @@ Entities:
       PhysicsLayerID: 0
       AngularDrag: 0.0500000007
       Gravity: true
-      Type: Static
+      Type: Dynamic
       FreezeLocation: [false, false, false]
       FreezeRotation: [false, false, false]
-      Kinematic: false
+      Kinematic: true
       CollisionDetection: Discrete

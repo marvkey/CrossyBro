@@ -1,0 +1,102 @@
+AssetType: UIPanel
+ID: 13038676435625128433
+VariableRegistry:
+  VariableRegistryID: 8572250005827628315
+  Variables:
+    []
+UIElements:
+  - UIElement: 17094808490536926545
+    UICoreComponent:
+      ElementID: 17094808490536926545
+      Name: Text
+      UIElementType: Text
+      Position: [-361.5, -100]
+      Rotation: [0, 0]
+      Size: [80, 80]
+      AnchorMinimum: [0.5, 0]
+      AnchorMaximum: [0.5, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: []
+    UITextComponent:
+      Text:
+        Value: CROSSY bRO
+        BindedVariableID: 0
+      Color: [1, 1, 1, 1]
+      Kerning: 0
+      LineSpacing: 1
+      OutlineColor: [0, 0, 0, 1]
+      OutlineThickness: 0.200000003
+      FontAssetID: 1940989758253902364
+  - UIElement: 8060786844834040195
+    UICoreComponent:
+      ElementID: 8060786844834040195
+      Name: VerticalBox
+      UIElementType: VerticalBox
+      Position: [0, -1]
+      Rotation: [0, 0]
+      Size: [669.25, 300]
+      AnchorMinimum: [0.5, 0.5]
+      AnchorMaximum: [0.5, 0.5]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: [6499443709507279781, 9597205332246030405]
+    UIVerticalBoxComponent:
+      Spacing: 0.100000001
+      DrawBorders: false
+      BorderColor: [1, 1, 1, 1]
+      BorderThickness: 1
+  - UIElement: 6499443709507279781
+    UICoreComponent:
+      ElementID: 6499443709507279781
+      Name: Image
+      UIElementType: Image
+      Position: [0, -1]
+      Rotation: [0, 0]
+      Size: [1, 1]
+      AnchorMinimum: [0, 0]
+      AnchorMaximum: [0, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 88]
+      ParentHandle: 8060786844834040195
+      Children: []
+    UIImageComponent:
+      TintColor:
+        Value: [1, 1, 1, 1]
+        BindedVariableID: 0
+      Texture:
+        AssetID: 3086053585324883651
+        AssetType: Texture
+        BindedVariableID: 0
+  - UIElement: 9597205332246030405
+    UICoreComponent:
+      ElementID: 9597205332246030405
+      Name: Image_00
+      UIElementType: Image
+      Position: [0, 0.100000024]
+      Rotation: [0, 0]
+      Size: [1, 1]
+      AnchorMinimum: [0, 0]
+      AnchorMaximum: [0, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 8060786844834040195
+      Children: []
+    UIImageComponent:
+      TintColor:
+        Value: [1, 1, 1, 1]
+        BindedVariableID: 0
+      Texture:
+        AssetID: 12581111831354569971
+        AssetType: Texture
+        BindedVariableID: 0

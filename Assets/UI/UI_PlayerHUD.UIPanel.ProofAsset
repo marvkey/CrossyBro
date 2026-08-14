@@ -1,0 +1,57 @@
+AssetType: UIPanel
+ID: 10219996003842407385
+VariableRegistry:
+  VariableRegistryID: 13281337438328240673
+  Variables:
+    - Name: Score
+      Type: String
+      UUID: 13404902664288318310
+      Data: 0
+UIElements:
+  - UIElement: 5025700532949794110
+    UICoreComponent:
+      ElementID: 5025700532949794110
+      Name: HorizontalBox
+      UIElementType: HorizontalBox
+      Position: [0.400000006, 0]
+      Rotation: [0, 0]
+      Size: [100, 100]
+      AnchorMinimum: [0, 0]
+      AnchorMaximum: [0, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 0
+      Children: [6967841484650080709]
+    UIHorizontalBoxComponent:
+      Spacing: 10
+      DrawBorders: true
+      BorderColor: [1, 1, 1, 1]
+      BorderThickness: 1
+  - UIElement: 6967841484650080709
+    UICoreComponent:
+      ElementID: 6967841484650080709
+      Name: ScoreText
+      UIElementType: Text
+      Position: [0.400000006, 0]
+      Rotation: [0, 0]
+      Size: [1, 1]
+      AnchorMinimum: [0, 0]
+      AnchorMaximum: [0, 0]
+      Visible:
+        Value: true
+        BindedVariableID: 0
+      PositionOffset: [0, 0]
+      ParentHandle: 5025700532949794110
+      Children: []
+    UITextComponent:
+      Text:
+        Value: 0
+        BindedVariableID: 13404902664288318310
+      Color: [1, 1, 1, 1]
+      Kerning: 0
+      LineSpacing: 1
+      OutlineColor: [0, 0, 0, 1]
+      OutlineThickness: 0.150000006
+      FontAssetID: 1940989758253902364

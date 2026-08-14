@@ -1,0 +1,57 @@
+AssetType: Prefab
+ID: 3982219062159942845
+EntityOwner: 7841884738278891845
+Entities:
+  - Entity: 7841884738278891845
+    TagComponent:
+      Tag: DarkGrassTile
+      tags: []
+    TransformComponent:
+      Location: [36.5918846, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [8, 1, 64]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 10040218922609215507
+          Index: 0
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.GrassLane
+          ScriptClassName: CrossyBro.GrassLane
+          ScriptName: CrossyBro.GrassLane
+          Fields:
+            - NameID: CrossyBro.GrassLane.Trees
+              Type: Prefab
+              Length: 0
+              Data:
+                []
+            - NameID: CrossyBro.GrassLane.MinTreeDensity
+              Type: Float
+              Data: 0.200000003
+            - NameID: CrossyBro.GrassLane.MaxTreeDensity
+              Type: Float
+              Data: 0.5
+            - NameID: CrossyBro.GrassLane.LaneWidth
+              Type: Float
+              Data: 64
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete

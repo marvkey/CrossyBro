@@ -22,6 +22,8 @@ namespace CrossyBro
 		public Prefab[] DoubleRoadLanes;
 		public Prefab[] WaterLanes;
 
+		public Prefab SideWall;
+
 		public int RowsAhead = 20;
 		public int RowsBehind = 5;
 
@@ -34,9 +36,40 @@ namespace CrossyBro
 		private float m_LastSpawnPos = 0.0f;
 		private bool m_FirstSpawn = true;
 
+		private Entity m_NegativeSideWall;
+		private Entity m_PositiveSideWall;
+
+		public float DifficultyScale()
+		{
+			float difficulty  = PlayerScore() / 100.0f;
+			return Mathf.Clamp(0.0f,1.0f,difficulty);
+		}
+
+		/*
+		 *Difficulty = 0.0f;
+		IncreaseByDifficulty(10.0f, 50.0f); // 10
+
+		Difficulty = 0.5f;
+		IncreaseByDifficulty(10.0f, 50.0f); // 12.5
+
+		Difficulty = 1.0f;
+		IncreaseByDifficulty(10.0f, 50.0f); // 15
+		 */
+		public float IncreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it increases at max difficulty
+		{
+			return val * (1.0f + DifficultyScale() * (scale / 100.0f));
+		}
+
+		public float DecreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it decreases at max difficulty
+		{
+			return val * (1.0f - DifficultyScale() * (scale / 100.0f));
+		}
+
 		void OnCreate()
 		{
 			if (Player == null) return;
+
+			SpawnSideWalls();
 
 			m_CurrentPlayerRow = GetPlayerRow();
 			m_NextRow = m_CurrentPlayerRow - RowsBehind;
@@ -45,9 +78,19 @@ namespace CrossyBro
 			GenerateUntil(m_CurrentPlayerRow + RowsAhead);
 		}
 
+		public int PlayerScore()
+		{
+			   if(Player.HasScript<CharacterHUD>())
+				   return Player.GetScript<CharacterHUD>().Score;
+
+			   return 0;
+		}
+
 		void OnUpdate(float deltaTime)
 		{
 			if (Player == null) return;
+
+			UpdateSideWalls();
 
 			int playerRow = GetPlayerRow();
 			if (playerRow == m_CurrentPlayerRow) return;
@@ -56,6 +99,42 @@ namespace CrossyBro
 
 			GenerateUntil(m_CurrentPlayerRow + RowsAhead);
 			DeleteLanesBehind(m_CurrentPlayerRow - RowsBehind);
+		}
+
+		private void SpawnSideWalls()
+		{
+			if (SideWall == null)
+				return;
+
+			Vector3 negativeWallPosition = Transform.Location;
+			negativeWallPosition.x = Player.Transform.Location.x;
+			negativeWallPosition.z = -32.0f;
+
+			Vector3 positiveWallPosition = Transform.Location;
+			positiveWallPosition.x = Player.Transform.Location.x;
+			positiveWallPosition.z = 32.0f;
+
+			m_NegativeSideWall = World.Instantiate(SideWall, negativeWallPosition);
+			m_PositiveSideWall = World.Instantiate(SideWall, positiveWallPosition);
+		}
+
+		private void UpdateSideWalls()
+		{
+			if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
+			{
+				Vector3 position = m_NegativeSideWall.Transform.Location;
+				position.x = Player.Transform.Location.x;
+				position.z = -32.0f;
+				m_NegativeSideWall.Transform.Location = position;
+			}
+
+			if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
+			{
+				Vector3 position = m_PositiveSideWall.Transform.Location;
+				position.x = Player.Transform.Location.x;
+				position.z = 32.0f;
+				m_PositiveSideWall.Transform.Location = position;
+			}
 		}
 
 		private void SpawnInitialLanes()
@@ -234,6 +313,12 @@ namespace CrossyBro
 			}
 
 			m_ActiveLanes.Clear();
+
+			if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
+				World.DeleteEntity(m_NegativeSideWall);
+
+			if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
+				World.DeleteEntity(m_PositiveSideWall);
 		}
 	}
 }

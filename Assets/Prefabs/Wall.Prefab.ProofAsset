@@ -1,0 +1,37 @@
+AssetType: Prefab
+ID: 12679012871097345053
+EntityOwner: 16995570453783134275
+Entities:
+  - Entity: 16995570453783134275
+    TagComponent:
+      Tag: Wall
+      tags: []
+    TransformComponent:
+      Location: [-2.17799997, 6.59999704, 32]
+      Rotation: [1.57079637, 0, 1.57079637]
+      Scale: [75, 1, 539.5]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 10040218922609215507
+          Index: 0
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 1
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete

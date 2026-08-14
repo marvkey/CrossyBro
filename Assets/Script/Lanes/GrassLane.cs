@@ -29,7 +29,7 @@ namespace CrossyBro
             if (Trees == null || Trees.Length == 0)
                 return;
 
-            float tileSize = WorldData.GridSize * 0.5f;
+            float tileSize = WorldData.GridSize;
             int slotCount = Mathf.FloorToInt(LaneWidth / tileSize);
 
             if (slotCount <= 1)

@@ -1,15 +1,78 @@
 AssetType: Prefab
-ID: 10840193749363587454
-EntityOwner: 18296275337838084969
+ID: 3384881861181428789
+EntityOwner: 10300091600719672883
 Entities:
-  - Entity: 18296275337838084969
+  - Entity: 10300091600719672883
     TagComponent:
-      Tag: Base Prefab
+      Tag: WaterLane
       tags: []
     TransformComponent:
-      Location: [0, 0, 0]
+      Location: [60, 0, -0.0617669225]
       Rotation: [0, 0, 0]
-      Scale: [1, 1, 1]
+      Scale: [8, 0.5, 128]
     HierarchyComponent:
       ParentHandle: 0
       Children: []
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 6703406187088560127
+          Index: 0
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.WaterLane
+          ScriptClassName: CrossyBro.WaterLane
+          ScriptName: CrossyBro.WaterLane
+          Fields:
+            - NameID: CrossyBro.WaterLane.EdgeSpawnPadding
+              Type: Float
+              Data: 24
+            - NameID: CrossyBro.WaterLane.MaxSpeed
+              Type: Float
+              Data: 15
+            - NameID: CrossyBro.WaterLane.Direction
+              Type: Int32
+              Data: 1
+            - NameID: CrossyBro.WaterLane.SpawnPaddingPerSpeed
+              Type: Float
+              Data: 0.5
+            - NameID: CrossyBro.WaterLane.MovingObjects
+              Type: Prefab
+              Length: 3
+              Data:
+                - 5905817804326057340
+                - 11001776052585427340
+                - 2118340032093922690
+            - NameID: CrossyBro.WaterLane.MinSpawnPadding
+              Type: Float
+              Data: 8
+            - NameID: CrossyBro.WaterLane.SpawnHeight
+              Type: Float
+              Data: 1
+            - NameID: CrossyBro.WaterLane.MinSpeed
+              Type: Float
+              Data: 10
+            - NameID: CrossyBro.WaterLane.MaxSpawnPadding
+              Type: Float
+              Data: 8.5
+            - NameID: CrossyBro.WaterLane.LaneWidth
+              Type: Float
+              Data: 64
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 2, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      FreezeLocation: [false, false, false]
+      FreezeRotation: [false, false, false]
+      Kinematic: false
+      CollisionDetection: Discrete

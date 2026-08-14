@@ -36,13 +36,15 @@ namespace CrossyBro
 
 		private List<Entity> m_SpawnedObjects = new List<Entity>();
 
+		LaneManager m_LaneManager ;
 		protected virtual void OnCreate()
 		{
+			m_LaneManager = World.TryFindEntityByTag("LaneManager").GetScript<LaneManager>();
 			if (MovingObjects == null || MovingObjects.Length == 0)
 				return;
-
-			float minSpeed = MinSpeed;
-			float maxSpeed = MaxSpeed;
+			float minSpeed = m_LaneManager!= null ? m_LaneManager.IncreaseByDifficulty(MinSpeed,40.0f) : MinSpeed;
+			float maxSpeed =  m_LaneManager != null ? m_LaneManager.IncreaseByDifficulty(MaxSpeed,40.0f) : MaxSpeed;
+			
 
 			if (minSpeed < 0.1f)
 				minSpeed = 0.1f;
@@ -146,8 +148,8 @@ namespace CrossyBro
 			float speedPadding = m_Speed * SpawnPaddingPerSpeed;		//Speed 6  → spacing receives +3 units
 																	//Speed 12 → spacing receives +6 units
 
-			float minimumDistance = MinSpawnPadding + speedPadding;
-			float maximumDistance = MaxSpawnPadding + speedPadding;
+			float minimumDistance =  m_LaneManager!= null? m_LaneManager.DecreaseByDifficulty(MinSpawnPadding + speedPadding, 20.0f) : MinSpawnPadding + speedPadding;
+			float maximumDistance =  m_LaneManager!= null ? m_LaneManager.DecreaseByDifficulty(MaxSpawnPadding + speedPadding, 20.0f) : MaxSpawnPadding + speedPadding;
 
 			if (maximumDistance < minimumDistance)
 				maximumDistance = minimumDistance;

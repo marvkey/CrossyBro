@@ -1,13 +1,13 @@
 Assets:
+  - Asset: 7926897985642502757
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_white.png
   - Asset: 5552814101948105576
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Firetruck\Firetruck.fbx
   - Asset: 10779809030910958185
     Type: InputBindingContext
     Path: Input\IB_CharacterMovement.InputBindingContext.ProofAsset
-  - Asset: 7926897985642502757
-    Type: Texture
-    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_white.png
   - Asset: 11504867747892748888
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Hatchback\Hatchback.fbx
@@ -17,24 +17,24 @@ Assets:
   - Asset: 4064393673162086786
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_purple.png
-  - Asset: 3822512906096149810
-    Type: Texture
-    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_cyan.png
-  - Asset: 711063280098633727
-    Type: Texture
-    Path: Textures\Log.png
   - Asset: 12550584486862917536
     Type: Material
     Path: Materials\m_OneLaneGrid.Material.ProofAsset
+  - Asset: 711063280098633727
+    Type: Texture
+    Path: Textures\Log.png
+  - Asset: 3822512906096149810
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_cyan.png
   - Asset: 9295879751421473566
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_pink.png
-  - Asset: 9557603770653395776
-    Type: Texture
-    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_normal.png
   - Asset: 2813241134489422334
     Type: InputAction
     Path: Input\IA_Move.InputAction.ProofAsset
+  - Asset: 9557603770653395776
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_normal.png
   - Asset: 9592454411987497901
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Taxi\Taxi.fbx
@@ -59,42 +59,48 @@ Assets:
   - Asset: 9527969207428906263
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_brown.png
+  - Asset: 17031507126295987400
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Monster Truck\Monster Truck.fbx
   - Asset: 4597026409517987644
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green1.png
   - Asset: 16728913287645260424
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_orange.png
-  - Asset: 17031507126295987400
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Monster Truck\Monster Truck.fbx
-  - Asset: 8399477019720286908
-    Type: Texture
-    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green2.png
-  - Asset: 3070666344971500363
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Muscle\Police Muscle.fbx
   - Asset: 6374224968914657865
     Type: Material
     Path: Materials\m_Grid.Material.ProofAsset
   - Asset: 1971837349121219481
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Muscle\Muscle.fbx
-  - Asset: 3418031846723459216
-    Type: Prefab
-    Path: Prefabs\Trees\TallTree.Prefab.ProofAsset
+  - Asset: 8399477019720286908
+    Type: Texture
+    Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green2.png
+  - Asset: 3070666344971500363
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Muscle\Police Muscle.fbx
   - Asset: 10921158918994213502
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green3.png
+  - Asset: 3418031846723459216
+    Type: Prefab
+    Path: Prefabs\Trees\TallTree.Prefab.ProofAsset
+  - Asset: 11589848229661894838
+    Type: Prefab
+    Path: Prefabs\Cars\Taxi.Prefab.ProofAsset
   - Asset: 6709721670982325930
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey1.png
-  - Asset: 14512856475224668411
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Truck\Truck.fbx
   - Asset: 4312778283651883251
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey2.png
+  - Asset: 2770893976428777736
+    Type: Font
+    Path: Fonts\Determination\determination.ttf
+  - Asset: 14512856475224668411
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Truck\Truck.fbx
   - Asset: 13850971847090447574
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey3.png
@@ -104,57 +110,69 @@ Assets:
   - Asset: 6138703702806618358
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey4.png
+  - Asset: 3340939678477561482
+    Type: Prefab
+    Path: Prefabs\Cars\SUV.Prefab.ProofAsset
   - Asset: 11211857988642080187
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_olive.png
-  - Asset: 5015500688139947100
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Van\Van.fbx
   - Asset: 5216678231565415865
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_red.png
-  - Asset: 5773312660425688614
+  - Asset: 5015500688139947100
     Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sports\Police Sports.fbx
-  - Asset: 8608494002335834397
-    Type: Material
-    Path: Materials\m_Black.Material.ProofAsset
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Van\Van.fbx
   - Asset: 10435445134820361027
     Type: Mesh
     Path: Meshes\Cars\PoliceSports.Mesh.ProofAsset
-  - Asset: 13077629818733049876
+  - Asset: 8608494002335834397
+    Type: Material
+    Path: Materials\m_Black.Material.ProofAsset
+  - Asset: 12581111831354569971
+    Type: Texture
+    Path: Textures\PressPToPlay.png
+  - Asset: 5773312660425688614
     Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\All vehicles.fbx
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sports\Police Sports.fbx
   - Asset: 1346495505928541322
     Type: ScriptFile
     Path: Script\Lanes\Lane.cs
+  - Asset: 13077629818733049876
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\All vehicles.fbx
+  - Asset: 6850729018431043983
+    Type: Prefab
+    Path: Prefabs\Cars\Van.Prefab.ProofAsset
   - Asset: 13549522107164269480
     Type: Material
     Path: Materials\m_Tree.Material.ProofAsset
   - Asset: 9885106835534353386
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Ambulance\Ambulance.fbx
-  - Asset: 4352790529145298051
-    Type: Material
-    Path: Materials\m_TreeWood.Material.ProofAsset
   - Asset: 9545860178206264038
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Limousine\Limousine.fbx
   - Asset: 5099432416236590989
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Sports\Sports.fbx
-  - Asset: 12657631146130693231
-    Type: ScriptFile
-    Path: Script\Lanes\RoadLane.cs
-  - Asset: 1848860107628645725
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Roadster\Roadster.fbx
-  - Asset: 14480898567318740075
-    Type: MeshSourceFile
-    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sedan\Police Sedan.fbx
+  - Asset: 4352790529145298051
+    Type: Material
+    Path: Materials\m_TreeWood.Material.ProofAsset
   - Asset: 13693147779349410403
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Muscle 2\Muscle 2.fbx
+  - Asset: 14480898567318740075
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Police Sedan\Police Sedan.fbx
+  - Asset: 1848860107628645725
+    Type: MeshSourceFile
+    Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Roadster\Roadster.fbx
+  - Asset: 3384881861181428789
+    Type: Prefab
+    Path: Prefabs\Lanes\P_WaterLane.Prefab.ProofAsset
+  - Asset: 12657631146130693231
+    Type: ScriptFile
+    Path: Script\Lanes\RoadLane.cs
   - Asset: 1098182486674326457
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Pickup\Pickup.fbx
@@ -179,6 +197,9 @@ Assets:
   - Asset: 2139510519972232775
     Type: ScriptFile
     Path: Script\CharacterMove.cs
+  - Asset: 12679012871097345053
+    Type: Prefab
+    Path: Prefabs\Wall.Prefab.ProofAsset
   - Asset: 1369138178875155048
     Type: ScriptFile
     Path: Script\CharacterInput.cs
@@ -215,6 +236,9 @@ Assets:
   - Asset: 5124677930488879996
     Type: Prefab
     Path: Prefabs\Cars\DM_PoliceSedan.Prefab.ProofAsset
+  - Asset: 10040218922609215507
+    Type: Material
+    Path: Materials\m_WallGrasss.Material.ProofAsset
   - Asset: 9147501192425585373
     Type: Texture
     Path: Textures\DoubleRoadLane.png
@@ -269,9 +293,6 @@ Assets:
   - Asset: 6202444041681783610
     Type: ScriptFile
     Path: Script\Objects\FloatingLog.cs
-  - Asset: 10840193749363587454
-    Type: Prefab
-    Path: Prefabs\Lanes\p_WaterLane.Prefab.ProofAsset
   - Asset: 5905817804326057340
     Type: Prefab
     Path: Prefabs\Logs\p_SmallLog.Prefab.ProofAsset
@@ -281,3 +302,87 @@ Assets:
   - Asset: 2118340032093922690
     Type: Prefab
     Path: Prefabs\Logs\P_LargeLog.Prefab.ProofAsset
+  - Asset: 10219996003842407385
+    Type: UIPanel
+    Path: UI\UI_PlayerHUD.UIPanel.ProofAsset
+  - Asset: 1940989758253902364
+    Type: Font
+    Path: Fonts\8BitWonder\8-BIT WONDER.TTF
+  - Asset: 14855122179902887508
+    Type: ScriptFile
+    Path: Script\UI\CharacterHUD.cs
+  - Asset: 13348299037624730690
+    Type: UIPanel
+    Path: UI\UI_PlayerDead.UIPanel.ProofAsset
+  - Asset: 13419791643004491960
+    Type: Font
+    Path: Fonts\edit-undo.ttf
+  - Asset: 6019980673795199497
+    Type: Texture
+    Path: Textures\RtoRetry.png
+  - Asset: 3086053585324883651
+    Type: Texture
+    Path: Textures\PressQQUit.png
+  - Asset: 13038676435625128433
+    Type: UIPanel
+    Path: UI\UI_MainMenu.UIPanel.ProofAsset
+  - Asset: 14350594835460630091
+    Type: World
+    Path: Worlds\w_MainMenu.ProofWorld
+  - Asset: 17653234573650398861
+    Type: Texture
+    Path: Textures\Voxel_Skybox_free\TextureHDR\Cloudy-Bright-Day.hdr
+  - Asset: 14134304634166432278
+    Type: Texture
+    Path: Textures\Voxel_Skybox_free\TextureHDR\Cotton-Candy-Morning.hdr
+  - Asset: 2186388088959108838
+    Type: Texture
+    Path: Textures\Voxel_Skybox_free\TextureHDR\Deep-Midnight.hdr
+  - Asset: 11628537346185770521
+    Type: Texture
+    Path: Textures\Voxel_Skybox_free\TextureHDR\Tropical-Noon.hdr
+  - Asset: 5143578870329080160
+    Type: Texture
+    Path: Textures\Voxel_Skybox_free\TextureHDR\Warm-Sunrise-Glow.hdr
+  - Asset: 10948896410374916265
+    Type: DynamicMesh
+    Path: Meshes\Cars\Taxi.DynamicMesh.ProofAsset
+  - Asset: 10294099043038146923
+    Type: DynamicMesh
+    Path: Meshes\Cars\SUV.DynamicMesh.ProofAsset
+  - Asset: 7764972491404504594
+    Type: DynamicMesh
+    Path: Meshes\Cars\Hatchback.DynamicMesh.ProofAsset
+  - Asset: 10751586431060731
+    Type: DynamicMesh
+    Path: Meshes\Cars\Pickup.DynamicMesh.ProofAsset
+  - Asset: 3808487902698990598
+    Type: DynamicMesh
+    Path: Meshes\Cars\Van.DynamicMesh.ProofAsset
+  - Asset: 15075406002685266554
+    Type: ScriptFile
+    Path: Script\UI\MainMenu.cs
+  - Asset: 5695980564062989695
+    Type: Texture
+    Path: Textures\sky_14_2k.hdr
+  - Asset: 9566239160619801486
+    Type: Prefab
+    Path: Prefabs\Cars\Pickup.Prefab.ProofAsset
+  - Asset: 3982219062159942845
+    Type: Prefab
+    Path: Prefabs\Lanes\DarkGrassTile.Prefab.ProofAsset
+  - Asset: 1304231415098044440
+    Type: Audio
+    Path: Audios\Car\car-engine.wav
+  - Asset: 15838766310001507094
+    Type: Audio
+    Path: Audios\Car\DiselEngine.wav
+  - Asset: 14550355103564154441
+    Type: Audio
+    Path: Audios\Car\police-siren_D_major.wav
+  - Asset: 8514001281388647773
+    Type: Audio
+    Path: Audios\Car\Sport car.wav
+  - Asset: 11582670000510518193
+    Type: DynamicMesh
+    Path: Meshes\Cars\SportsCar.DynamicMesh.ProofAsset

@@ -8,7 +8,7 @@ if %errorlevel% neq 0 (
     echo An error occurred.
     pause
 )
-
+pause
 popd
 
 		
