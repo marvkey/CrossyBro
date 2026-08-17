@@ -47,6 +47,9 @@ Assets:
   - Asset: 8356341418287868379
     Type: World
     Path: Worlds\w_GridSettings.ProofWorld
+  - Asset: 12304940420453673655
+    Type: Material
+    Path: Materials\PoliceSirens\m_BluePoliceSiren.Material.ProofAsset
   - Asset: 8481359823738590144
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_blue1.png
@@ -128,6 +131,9 @@ Assets:
   - Asset: 8608494002335834397
     Type: Material
     Path: Materials\m_Black.Material.ProofAsset
+  - Asset: 16795607345719283540
+    Type: Material
+    Path: Materials\PoliceSirens\m_RedPoliceSiren.Material.ProofAsset
   - Asset: 12581111831354569971
     Type: Texture
     Path: Textures\PressPToPlay.png
@@ -380,9 +386,24 @@ Assets:
   - Asset: 14550355103564154441
     Type: Audio
     Path: Audios\Car\police-siren_D_major.wav
+  - Asset: 14368541811765227770
+    Type: AudioController
+    Path: AudioControllers\Cars\AC_PoliceSirence.AudioController.ProofAsset
   - Asset: 8514001281388647773
     Type: Audio
     Path: Audios\Car\Sport car.wav
   - Asset: 11582670000510518193
     Type: DynamicMesh
     Path: Meshes\Cars\SportsCar.DynamicMesh.ProofAsset
+  - Asset: 6252227395594077700
+    Type: AudioController
+    Path: AudioControllers\Cars\AC_SportsCar.AudioController.ProofAsset
+  - Asset: 17217579585642053719
+    Type: AudioController
+    Path: AudioControllers\Cars\AC_DieselEngine.AudioController.ProofAsset
+  - Asset: 11843201777383515667
+    Type: AudioController
+    Path: AudioControllers\Cars\AC_CarEngine.AudioController.ProofAsset
+  - Asset: 1649170290338438627
+    Type: ScriptFile
+    Path: Script\PoliceSirenController.cs

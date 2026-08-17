@@ -24,6 +24,8 @@ namespace CrossyBro
 
 		public Prefab SideWall;
 
+
+
 		public int RowsAhead = 20;
 		public int RowsBehind = 5;
 

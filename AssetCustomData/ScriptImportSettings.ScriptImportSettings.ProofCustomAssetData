@@ -93,6 +93,15 @@ ScriptImportSettings:
       ScriptName: CrossyBro.MovingLaneObject
       Fields:
         []
+    - Script: CrossyBro.PoliceSirenController
+      ScriptName: CrossyBro.PoliceSirenController
+      Fields:
+        - NameID: CrossyBro.PoliceSirenController.Red
+          Type: Material
+          Data: 0
+        - NameID: CrossyBro.PoliceSirenController.Blue
+          Type: Material
+          Data: 0
     - Script: CrossyBro.CharacterHUD
       ScriptName: CrossyBro.CharacterHUD
       Fields:

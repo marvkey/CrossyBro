@@ -96,6 +96,7 @@
     <Compile Include="Assets\Script\Objects\Car.cs" />
     <Compile Include="Assets\Script\Objects\FloatingLog.cs" />
     <Compile Include="Assets\Script\Objects\MovingLaneObject.cs" />
+    <Compile Include="Assets\Script\PoliceSirenController.cs" />
     <Compile Include="Assets\Script\UI\CharacterHUD.cs" />
     <Compile Include="Assets\Script\UI\MainMenu.cs" />
     <Compile Include="Assets\Script\WorldSettings.cs" />

@@ -1,0 +1,14 @@
+AssetType: Material
+ID: 16795607345719283540
+ShaderName: ProofPBR_Static
+AlbedoColour: [1, 0.0350000262, 0]
+Roughness: 1
+Metallness: 0
+Emission: 22
+Tiling: [1, 1]
+NormalTextureToggle: false
+Offset: [0, 0]
+AlbedoTexture: 0
+NormalTexture: 0
+MetallicTexture: 0
+RoughnessTexture: 0
