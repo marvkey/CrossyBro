@@ -1,0 +1,380 @@
+AssetType: Prefab
+ID: 13603979699677114106
+EntityOwner: 3363197906597674157
+Entities:
+  - Entity: 11678306276107951816
+    TagComponent:
+      Tag: Sports wheel rear right
+      tags: []
+    TransformComponent:
+      Location: [-1.04066658, 0.399850011, -1.610834]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 10732979095197554354
+      Children: [8799047562391508738, 16091648580682240301]
+  - Entity: 5550784670396986736
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 2
+      MaterialTable:
+        []
+  - Entity: 2118794603308517908
+    TagComponent:
+      Tag: Sports wheel rear left
+      tags: []
+    TransformComponent:
+      Location: [1.04066658, 0.399850011, -1.610834]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 10732979095197554354
+      Children: [15501584053380104455, 14698793456625225516]
+  - Entity: 3363197906597674157
+    TagComponent:
+      Tag: SportsCar
+      tags: []
+    TransformComponent:
+      Location: [-2.57794476, 0.610690594, 2.67835832]
+      Rotation: [0, 0, 0]
+      Scale: [2, 2, 2]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: [10732979095197554354]
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.Car
+          ScriptClassName: CrossyBro.Car
+          ScriptName: CrossyBro.Car
+          Fields:
+            - NameID: CrossyBro.Car.WheelRadius
+              Type: Float
+              Data: 2
+            - NameID: CrossyBro.Car.WheelRotationDirection
+              Type: Float
+              Data: 1
+            - NameID: CrossyBro.Car.Wheels
+              Type: Entity
+              Length: 4
+              Data:
+                - 13603321397401975243
+                - 13117575413566309417
+                - 11678306276107951816
+                - 2118794603308517908
+            - NameID: CrossyBro.Car.Speed
+              Type: Float
+              Data: 8
+            - NameID: CrossyBro.Car.CarryPlayer
+              Type: Bool
+              Data: false
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 2, 0]
+      Size: [2.5, 2.5, 5]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Dynamic
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
+    AudioComponent:
+      AudioController: 6252227395594077700
+      VolumeMultiplier: 0.5
+      PitchMultiplier: 1
+      Looping: true
+      PlayOnAwake: true
+  - Entity: 10732979095197554354
+    TagComponent:
+      Tag: RootNode
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [0, -0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 3363197906597674157
+      Children: [13351065598336073636, 13603321397401975243, 13117575413566309417, 11678306276107951816, 2118794603308517908]
+  - Entity: 13351065598336073636
+    TagComponent:
+      Tag: Sports
+      tags: []
+    TransformComponent:
+      Location: [0, 0.600000024, 0]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 10732979095197554354
+      Children: [9372785076448403702, 8409019611250578842, 5550784670396986736, 7656337368779146841, 18048933449960567260, 11460564421106312804]
+  - Entity: 9372785076448403702
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 0
+      MaterialTable:
+        []
+  - Entity: 8409019611250578842
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 1
+      MaterialTable:
+        []
+  - Entity: 7656337368779146841
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 3
+      MaterialTable:
+        []
+  - Entity: 18048933449960567260
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 4
+      MaterialTable:
+        []
+  - Entity: 11460564421106312804
+    TagComponent:
+      Tag: Cube.006
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13351065598336073636
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 5
+      MaterialTable:
+        []
+  - Entity: 13603321397401975243
+    TagComponent:
+      Tag: Sports wheel front right
+      tags: []
+    TransformComponent:
+      Location: [-1.04066658, 0.399850011, 1.6091671]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 10732979095197554354
+      Children: [10910114861718499948, 2567973027185289819]
+  - Entity: 10910114861718499948
+    TagComponent:
+      Tag: Cube.122
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13603321397401975243
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 6
+      MaterialTable:
+        []
+  - Entity: 2567973027185289819
+    TagComponent:
+      Tag: Cube.122
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13603321397401975243
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 7
+      MaterialTable:
+        []
+  - Entity: 13117575413566309417
+    TagComponent:
+      Tag: Sports wheel front left
+      tags: []
+    TransformComponent:
+      Location: [1.04066658, 0.399850011, 1.6091671]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 10732979095197554354
+      Children: [15858134818651657132, 13159327041188759460]
+  - Entity: 15858134818651657132
+    TagComponent:
+      Tag: Cube.123
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13117575413566309417
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 8
+      MaterialTable:
+        []
+  - Entity: 13159327041188759460
+    TagComponent:
+      Tag: Cube.123
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 13117575413566309417
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 9
+      MaterialTable:
+        []
+  - Entity: 8799047562391508738
+    TagComponent:
+      Tag: Cube.124
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 11678306276107951816
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 10
+      MaterialTable:
+        []
+  - Entity: 16091648580682240301
+    TagComponent:
+      Tag: Cube.124
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 11678306276107951816
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 11
+      MaterialTable:
+        []
+  - Entity: 15501584053380104455
+    TagComponent:
+      Tag: Cube.125
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 2118794603308517908
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 12
+      MaterialTable:
+        []
+  - Entity: 14698793456625225516
+    TagComponent:
+      Tag: Cube.125
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 2118794603308517908
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 11582670000510518193
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 13
+      MaterialTable:
+        []

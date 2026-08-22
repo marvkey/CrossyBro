@@ -8,6 +8,7 @@ namespace CrossyBro
         Grass,
         SingleRoad,
         DoubleRoad,
+        TrainLane,
         Water
     }
 

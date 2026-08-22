@@ -1,0 +1,22 @@
+AssetType: Prefab
+ID: 15154705540187214978
+EntityOwner: 16322575023858643851
+Entities:
+  - Entity: 16322575023858643851
+    TagComponent:
+      Tag: TrainWarnSound
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    AudioComponent:
+      AudioController: 4703157192153045888
+      VolumeMultiplier: 1
+      PitchMultiplier: 1
+      Looping: true
+      PlayOnAwake: true
+      DeleteOnFinished: false

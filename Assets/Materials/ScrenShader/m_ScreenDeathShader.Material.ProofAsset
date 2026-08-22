@@ -1,0 +1,10 @@
+AssetType: Material
+ID: 10303778605263667682
+ShaderName: VignettePostProcess
+u_MaterialUniform.CenterBrightness: 0.800000012
+u_MaterialUniform.Enabled: true
+u_MaterialUniform.GrayscaleStrength: 0.800000012
+u_MaterialUniform.VignetteCenter: [0.5, 0.5]
+u_MaterialUniform.VignetteRadius: 0.349999994
+u_MaterialUniform.VignetteSoftness: 0.349999994
+u_MaterialUniform.VignetteStrength: 0.899999976

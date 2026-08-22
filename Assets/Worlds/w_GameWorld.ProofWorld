@@ -1,31 +1,45 @@
 World:
   ID: 12011726453359119438
   Entities:
-    - Entity: 8990294222327999269
+    - Entity: 6181421400864435290
       TagComponent:
-        Tag: Directional Light
+        Tag: Camera
         tags: []
       TransformComponent:
-        Location: [0, 0, 0]
-        Rotation: [1.39626336, 0.17453292, 0]
+        Location: [0.458849192, 7.78661633, 0.533051252]
+        Rotation: [0.164060935, -1.57079637, 0]
         Scale: [1, 1, 1]
       HierarchyComponent:
         ParentHandle: 0
         Children: []
-      DirectionalLightComponent:
-        Color: [1, 1, 1]
-        Intensity: 1
-        CastShadow: false
-        ShadowStrength: 0.5
-        CastSoftShadow: true
-        ShadowSoftness: 0.5
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.CameraMovement
+            ScriptClassName: CrossyBro.CameraMovement
+            ScriptName: CrossyBro.CameraMovement
+            Fields:
+              - NameID: CrossyBro.CameraMovement.Target
+                Type: Entity
+                Data: 8186743049044046354
+              - NameID: CrossyBro.CameraMovement.FollowY
+                Type: Float
+                Data: 2.5
+              - NameID: CrossyBro.CameraMovement.FollowSpeed
+                Type: Float
+                Data: 12
+      CameraComponent:
+        NearPlane: 0.300000012
+        FarPlane: 2000
+        FOV: 75
+        UseLocalRotation: false
+        ActiveForRendering: true
     - Entity: 8186743049044046354
       TagComponent:
         Tag: Player
         tags: []
       TransformComponent:
         Location: [0, 9.49928284, 0]
-        Rotation: [0, 0, 0]
+        Rotation: [0, 1.57079637, 0]
         Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
@@ -71,6 +85,12 @@ World:
               - NameID: CrossyBro.CharacterMovement.Camera
                 Type: Entity
                 Data: 6181421400864435290
+              - NameID: CrossyBro.CharacterMovement.JumpSound
+                Type: Prefab
+                Data: 6444839241358275207
+              - NameID: CrossyBro.CharacterMovement.DeadByCar
+                Type: Prefab
+                Data: 5741151375264998896
           - Script: CrossyBro.CharacterHUD
             ScriptClassName: CrossyBro.CharacterHUD
             ScriptName: CrossyBro.CharacterHUD
@@ -81,6 +101,27 @@ World:
               - NameID: CrossyBro.CharacterHUD.EndScreenHUD
                 Type: UIPanel
                 Data: 13348299037624730690
+              - NameID: CrossyBro.CharacterHUD.VignetteMaterial
+                Type: Material
+                Data: 10303778605263667682
+              - NameID: CrossyBro.CharacterHUD.DeathVignetteSoftness
+                Type: Float
+                Data: 0.349999994
+              - NameID: CrossyBro.CharacterHUD.DeathEffectDuration
+                Type: Float
+                Data: 0.449999988
+              - NameID: CrossyBro.CharacterHUD.DeathCenterBrightness
+                Type: Float
+                Data: 0.800000012
+              - NameID: CrossyBro.CharacterHUD.DeathVignetteRadius
+                Type: Float
+                Data: 0.349999994
+              - NameID: CrossyBro.CharacterHUD.DeathGrayscaleStrength
+                Type: Float
+                Data: 0.800000012
+              - NameID: CrossyBro.CharacterHUD.DeathVignetteStrength
+                Type: Float
+                Data: 0.899999976
       CapsuleColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -133,94 +174,24 @@ World:
                       Type: String
                       UUID: 13404902664288318310
                       Data: 2500
-    - Entity: 6181421400864435290
+    - Entity: 8990294222327999269
       TagComponent:
-        Tag: Camera
-        tags: []
-      TransformComponent:
-        Location: [0.458849192, 7.78661633, 0.533051252]
-        Rotation: [0.164060935, 0, 0]
-        Scale: [1, 1, 1]
-      HierarchyComponent:
-        ParentHandle: 0
-        Children: []
-      ScriptComponent:
-        Scripts:
-          - Script: CrossyBro.CameraMovement
-            ScriptClassName: CrossyBro.CameraMovement
-            ScriptName: CrossyBro.CameraMovement
-            Fields:
-              - NameID: CrossyBro.CameraMovement.Target
-                Type: Entity
-                Data: 8186743049044046354
-              - NameID: CrossyBro.CameraMovement.FollowY
-                Type: Float
-                Data: 2.5
-              - NameID: CrossyBro.CameraMovement.FollowSpeed
-                Type: Float
-                Data: 12
-      CameraComponent:
-        NearPlane: 0.300000012
-        FarPlane: 2000
-        FOV: 75
-        UseLocalRotation: false
-        ActiveForRendering: true
-    - Entity: 10911410020527272395
-      TagComponent:
-        Tag: LaneManager
+        Tag: Directional Light
         tags: []
       TransformComponent:
         Location: [0, 0, 0]
-        Rotation: [0, 0, 0]
+        Rotation: [1.39626336, 0.17453292, 0]
         Scale: [1, 1, 1]
       HierarchyComponent:
         ParentHandle: 0
         Children: []
-      ScriptComponent:
-        Scripts:
-          - Script: CrossyBro.LaneManager
-            ScriptClassName: CrossyBro.LaneManager
-            ScriptName: CrossyBro.LaneManager
-            Fields:
-              - NameID: CrossyBro.LaneManager.SingleRoadLanes
-                Type: Prefab
-                Length: 1
-                Data:
-                  - 4494858977215965303
-              - NameID: CrossyBro.LaneManager.GrassLanes
-                Type: Prefab
-                Length: 2
-                Data:
-                  - 13853933251573635778
-                  - 3982219062159942845
-              - NameID: CrossyBro.LaneManager.RowsBehind
-                Type: Int32
-                Data: 5
-              - NameID: CrossyBro.LaneManager.Player
-                Type: Entity
-                Data: 8186743049044046354
-              - NameID: CrossyBro.LaneManager.WaterLanes
-                Type: Prefab
-                Length: 0
-                Data:
-                  []
-              - NameID: CrossyBro.LaneManager.RowsAhead
-                Type: Int32
-                Data: 20
-              - NameID: CrossyBro.LaneManager.DoubleRoadLanes
-                Type: Prefab
-                Length: 1
-                Data:
-                  - 18108221406145107977
-              - NameID: CrossyBro.LaneManager.OriginX
-                Type: Float
-                Data: 0
-              - NameID: CrossyBro.LaneManager.PlayerBaseLane
-                Type: Prefab
-                Data: 14236158759897223039
-              - NameID: CrossyBro.LaneManager.SideWall
-                Type: Prefab
-                Data: 12679012871097345053
+      DirectionalLightComponent:
+        Color: [1, 1, 1]
+        Intensity: 1
+        CastShadow: false
+        ShadowStrength: 0.5
+        CastSoftShadow: true
+        ShadowSoftness: 0.5
     - Entity: 714930392968599139
       TagComponent:
         Tag: Sky Light
@@ -242,6 +213,67 @@ World:
         HosekWilkieTurbidity: 4
         HosekWilkieGroundReflectance: 0.100000001
         PreethamTurbidity: 4
+    - Entity: 10911410020527272395
+      TagComponent:
+        Tag: LaneManager
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.LaneManager
+            ScriptClassName: CrossyBro.LaneManager
+            ScriptName: CrossyBro.LaneManager
+            Fields:
+              - NameID: CrossyBro.LaneManager.TrainLanes
+                Type: Prefab
+                Length: 1
+                Data:
+                  - 8502786276926227088
+              - NameID: CrossyBro.LaneManager.SingleRoadLanes
+                Type: Prefab
+                Length: 1
+                Data:
+                  - 4494858977215965303
+              - NameID: CrossyBro.LaneManager.GrassLanes
+                Type: Prefab
+                Length: 2
+                Data:
+                  - 13853933251573635778
+                  - 3982219062159942845
+              - NameID: CrossyBro.LaneManager.RowsBehind
+                Type: Int32
+                Data: 5
+              - NameID: CrossyBro.LaneManager.Player
+                Type: Entity
+                Data: 8186743049044046354
+              - NameID: CrossyBro.LaneManager.RowsAhead
+                Type: Int32
+                Data: 20
+              - NameID: CrossyBro.LaneManager.WaterLanes
+                Type: Prefab
+                Length: 0
+                Data:
+                  []
+              - NameID: CrossyBro.LaneManager.DoubleRoadLanes
+                Type: Prefab
+                Length: 1
+                Data:
+                  - 18108221406145107977
+              - NameID: CrossyBro.LaneManager.OriginX
+                Type: Float
+                Data: 0
+              - NameID: CrossyBro.LaneManager.PlayerBaseLane
+                Type: Prefab
+                Data: 14236158759897223039
+              - NameID: CrossyBro.LaneManager.SideWall
+                Type: Prefab
+                Data: 12679012871097345053
     - Entity: 15815644261519557984
       TagComponent:
         Tag: Empty Entity
@@ -253,3 +285,26 @@ World:
       HierarchyComponent:
         ParentHandle: 8186743049044046354
         Children: []
+    - Entity: 14360190858210241012
+      TagComponent:
+        Tag: PostProcessVolume
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      PostProcessVolumeComponent:
+        IsGlobal: true
+        BoxSize: [1, 1, 1]
+        Enabled: true
+        Priority: 0
+        MaterialTable:
+          - Material: ""
+            AssetID: 18032563417679479287
+            Index: 0
+          - Material: ""
+            AssetID: 10303778605263667682
+            Index: 1

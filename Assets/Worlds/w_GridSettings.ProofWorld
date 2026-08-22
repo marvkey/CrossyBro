@@ -166,7 +166,7 @@ World:
         tags: []
       TransformComponent:
         Location: [4, 1.68453562, 4]
-        Rotation: [0, 1.57079637, 0]
+        Rotation: [0, -1.57079637, 0]
         Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
@@ -212,6 +212,12 @@ World:
               - NameID: CrossyBro.CharacterMovement.Camera
                 Type: Entity
                 Data: 0
+              - NameID: CrossyBro.CharacterMovement.JumpSound
+                Type: Prefab
+                Data: 0
+              - NameID: CrossyBro.CharacterMovement.DeadByCar
+                Type: Prefab
+                Data: 0
       BoxColliderComponent:
         IsTrigger: false
         Center: [0, 0, 0]
@@ -236,6 +242,11 @@ World:
         InputPlayer: Player0
         PlayerPrefab: 0
         DontSpawn: true
+      AudioListenerComponent:
+        Active: true
+        ConeInnerAngleInRadians: 2.09439516
+        ConeOuterAngleInRadians: 6.28318501
+        ConeOuterGain: 0.600000024
     - Entity: 3683302534023677514
       TagComponent:
         Tag: TextSettings
@@ -466,7 +477,7 @@ World:
         CollisionDetection: Discrete
     - Entity: 13884608884879809657
       TagComponent:
-        Tag: DM_PoliceSedan
+        Tag: DM_PoliceSedanSiren
         tags: []
       TransformComponent:
         Location: [10.4200363, 1.15600002, -0.800000012]
@@ -474,7 +485,7 @@ World:
         Scale: [2, 2, 2]
       HierarchyComponent:
         ParentHandle: 0
-        Children: [18123892674464829098]
+        Children: [18123892674464829098, 5291424511666544811]
       ScriptComponent:
         Scripts:
           - Script: CrossyBro.Car
@@ -516,6 +527,13 @@ World:
         Constraints: 0
         Kinematic: false
         CollisionDetection: Discrete
+      AudioComponent:
+        AudioController: 6252227395594077700
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 5025985560254681984
       TagComponent:
         Tag: GrassTile
@@ -783,7 +801,7 @@ World:
         Scale: [100, 99.9999924, 99.9999924]
       HierarchyComponent:
         ParentHandle: 18123892674464829098
-        Children: [10690428498100087902, 12167115611068768151, 9018143050649097943, 14583237553024968684, 10141686563820452269, 6916218382690454468, 10994307258558082218]
+        Children: [10690428498100087902, 12167115611068768151, 9018143050649097943, 14583237553024968684, 10141686563820452269, 6916218382690454468, 10994307258558082218, 2108723600541489167]
     - Entity: 4679308145379180253
       TagComponent:
         Tag: Cube.002
@@ -1299,6 +1317,20 @@ World:
         SubMeshIndex: 0
         MaterialTable:
           []
+    - Entity: 363608353360571496
+      TagComponent:
+        Tag: RailRoadCrossing
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 0
+        Visible: true
     - Entity: 9763159416721852190
       TagComponent:
         Tag: Cube.130
@@ -1644,6 +1676,44 @@ World:
         SubMeshIndex: 13
         MaterialTable:
           []
+    - Entity: 10322220184419940915
+      TagComponent:
+        Tag: Train
+        tags: []
+      TransformComponent:
+        Location: [147.776016, 0.5, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [14446292981961125997, 17728937741492513182]
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.Vehicle
+            ScriptClassName: CrossyBro.Vehicle
+            ScriptName: CrossyBro.Vehicle
+            Fields:
+              - NameID: CrossyBro.Vehicle.Speed
+                Type: Float
+                Data: 45
+              - NameID: CrossyBro.Vehicle.CarryPlayer
+                Type: Bool
+                Data: false
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 2.4000001, -18.2999992]
+        Size: [5.5999999, 5, 69]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Dynamic
+        Constraints: 0
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 8285742343268621641
       TagComponent:
         Tag: Cube.109
@@ -1677,7 +1747,7 @@ World:
         MeshAssetPointerID: 53
         Visible: true
       MeshColliderComponent:
-        ColliderID: 14699648669351661742
+        ColliderID: 5801555807677628984
         IsTrigger: false
         UseSharedShape: false
         PhysicsMaterialPointerID: 0
@@ -1863,6 +1933,42 @@ World:
         AngularDrag: 0.0500000007
         Gravity: true
         Type: Dynamic
+        Constraints: 0
+        Kinematic: false
+        CollisionDetection: Discrete
+      AudioComponent:
+        AudioController: 11843201777383515667
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
+    - Entity: 10294687621933568709
+      TagComponent:
+        Tag: RailRoadCrossingWarn
+        tags: []
+      TransformComponent:
+        Location: [-0.375, 6.73041487, -0.119691163]
+        Rotation: [0, 1.57045102, 0]
+        Scale: [0.0374999978, 15, 0.87499994]
+      HierarchyComponent:
+        ParentHandle: 15939392415643122026
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 7626791067877132048
+        Visible: true
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [0.25, 1, 0.200000003]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 3
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
         Constraints: 0
         Kinematic: false
         CollisionDetection: Discrete
@@ -2247,6 +2353,13 @@ World:
         Constraints: 0
         Kinematic: false
         CollisionDetection: Discrete
+      AudioComponent:
+        AudioController: 11843201777383515667
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 5703685672451228522
       TagComponent:
         Tag: SUV wheel front right
@@ -2364,6 +2477,13 @@ World:
         Constraints: 0
         Kinematic: false
         CollisionDetection: Discrete
+      AudioComponent:
+        AudioController: 17217579585642053719
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 3816425171183723985
       TagComponent:
         Tag: RootNode
@@ -2505,6 +2625,24 @@ World:
       HierarchyComponent:
         ParentHandle: 3816425171183723985
         Children: [11189293493531025677, 18178025320111757207]
+    - Entity: 1286545814499720763
+      TagComponent:
+        Tag: TrainWarnSound
+        tags: []
+      TransformComponent:
+        Location: [0, 0, 0]
+        Rotation: [0, 0, 0]
+        Scale: [1, 1, 1]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: []
+      AudioComponent:
+        AudioController: 4703157192153045888
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 11189293493531025677
       TagComponent:
         Tag: Cube.026
@@ -2805,6 +2943,7 @@ World:
         PitchMultiplier: 1
         Looping: true
         PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 10616315153809293616
       TagComponent:
         Tag: Cube.132
@@ -2951,6 +3090,13 @@ World:
         Constraints: 0
         Kinematic: false
         CollisionDetection: Discrete
+      AudioComponent:
+        AudioController: 11843201777383515667
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
     - Entity: 7417809827105954073
       TagComponent:
         Tag: Cube.122
@@ -3157,6 +3303,99 @@ World:
       HierarchyComponent:
         ParentHandle: 8120931878351807287
         Children: [14857193791643676630, 17607181678690700926]
+    - Entity: 15939392415643122026
+      TagComponent:
+        Tag: TrainLane
+        tags: []
+      TransformComponent:
+        Location: [96.5, 0, -0.0617669225]
+        Rotation: [0, 0, 0]
+        Scale: [8, 0.5, 200]
+      HierarchyComponent:
+        ParentHandle: 0
+        Children: [1720736787961183424, 17237638039258762623, 10294687621933568709, 18320234565634936672]
+      MeshComponent:
+        MeshAssetPointerID: 50
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 18222663250217117664
+            Index: 0
+      ScriptComponent:
+        Scripts:
+          - Script: CrossyBro.TrainLane
+            ScriptClassName: CrossyBro.TrainLane
+            ScriptName: CrossyBro.TrainLane
+            Fields:
+              - NameID: CrossyBro.TrainLane.RailCrossing
+                Type: Entity
+                Length: 3
+                Data:
+                  - 17237638039258762623
+                  - 10294687621933568709
+                  - 18320234565634936672
+              - NameID: CrossyBro.TrainLane.BrightRailRoad
+                Type: Mesh
+                Data: 13921679695552587378
+              - NameID: CrossyBro.TrainLane.DarkRailRoad
+                Type: Mesh
+                Data: 7626791067877132048
+              - NameID: CrossyBro.TrainLane.WarningFlashInterval
+                Type: Float
+                Data: 0.25
+              - NameID: CrossyBro.TrainLane.RailAlarm
+                Type: Prefab
+                Data: 15154705540187214978
+              - NameID: CrossyBro.TrainLane.Direction
+                Type: Int32
+                Data: 1
+              - NameID: CrossyBro.TrainLane.MovingObjects
+                Type: Prefab
+                Length: 1
+                Data:
+                  - 12250544775770939285
+              - NameID: CrossyBro.TrainLane.SpawnHeight
+                Type: Float
+                Data: 0.5
+              - NameID: CrossyBro.TrainLane.MaxWarningTime
+                Type: Float
+                Data: 2
+              - NameID: CrossyBro.TrainLane.MinSpeed
+                Type: Float
+                Data: 55
+              - NameID: CrossyBro.TrainLane.MaxSpeed
+                Type: Float
+                Data: 65
+              - NameID: CrossyBro.TrainLane.MinWaitTime
+                Type: Float
+                Data: 5
+              - NameID: CrossyBro.TrainLane.MaxWaitTime
+                Type: Float
+                Data: 12
+              - NameID: CrossyBro.TrainLane.MinWarningTime
+                Type: Float
+                Data: 1.5
+              - NameID: CrossyBro.TrainLane.EdgeSpawnPadding
+                Type: Float
+                Data: 12
+              - NameID: CrossyBro.TrainLane.LaneWidth
+                Type: Float
+                Data: 64
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [1, 1, 1]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 0
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        Constraints: 0
+        Kinematic: false
+        CollisionDetection: Discrete
     - Entity: 14857193791643676630
       TagComponent:
         Tag: Cube.068
@@ -3632,3 +3871,146 @@ World:
         SubMeshIndex: 13
         MaterialTable:
           []
+    - Entity: 5291424511666544811
+      TagComponent:
+        Tag: Empty Entity
+        tags: []
+      TransformComponent:
+        Location: [-5.21001816, -0.578000009, 0.400000006]
+        Rotation: [0, -0, 0]
+        Scale: [0.5, 0.5, 0.5]
+      HierarchyComponent:
+        ParentHandle: 13884608884879809657
+        Children: []
+      AudioComponent:
+        AudioController: 14368541811765227770
+        VolumeMultiplier: 1
+        PitchMultiplier: 1
+        Looping: true
+        PlayOnAwake: true
+        DeleteOnFinished: false
+    - Entity: 14446292981961125997
+      TagComponent:
+        Tag: HighSpeedTrainFront
+        tags: []
+      TransformComponent:
+        Location: [0, -5.1650545e-10, -2.77617216]
+        Rotation: [0, 1.57045102, 0]
+        Scale: [2.99999928, 3, 2.5]
+      HierarchyComponent:
+        ParentHandle: 10322220184419940915
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 11445950239189847107
+        Visible: true
+    - Entity: 17728937741492513182
+      TagComponent:
+        Tag: HighSpeedWagon
+        tags: []
+      TransformComponent:
+        Location: [0, 0, -36.0999985]
+        Rotation: [0, 1.57045102, 0]
+        Scale: [2.99999952, 3, 2.5]
+      HierarchyComponent:
+        ParentHandle: 10322220184419940915
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 7149685692922908410
+        Visible: true
+    - Entity: 1720736787961183424
+      TagComponent:
+        Tag: TrainTrack
+        tags: []
+      TransformComponent:
+        Location: [-4.67300415e-05, 1.75508857, 0.000308834598]
+        Rotation: [0, 1.57045102, 0]
+        Scale: [0.0199999977, 8, 0.49999997]
+      HierarchyComponent:
+        ParentHandle: 15939392415643122026
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 8586793975658014307
+        Visible: true
+        MaterialTable:
+          - Material: ""
+            AssetID: 15266807666719475100
+            Index: 0
+          - Material: ""
+            AssetID: 8852454833740019989
+            Index: 1
+    - Entity: 18320234565634936672
+      TagComponent:
+        Tag: RailRoadCrossingWarn
+        tags: []
+      TransformComponent:
+        Location: [-0.375, 6.73041487, 0.120308824]
+        Rotation: [0, 1.57079637, 0]
+        Scale: [0.0370000005, 15, 0.875016391]
+      HierarchyComponent:
+        ParentHandle: 15939392415643122026
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 7626791067877132048
+        Visible: true
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [0.25, 1, 0.200000003]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 3
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        Constraints: 0
+        Kinematic: false
+        CollisionDetection: Discrete
+    - Entity: 2108723600541489167
+      TagComponent:
+        Tag: Cube.002
+        tags: []
+      TransformComponent:
+        Location: [0, 0, -1.25728548e-07]
+        Rotation: [1.4210853e-14, -0, 0]
+        Scale: [1.00000012, 1.00000012, 1.00000012]
+      HierarchyComponent:
+        ParentHandle: 14173978324522178158
+        Children: []
+      DynamicMeshComponent:
+        DynamicMeshAssetPointerID: 264337976024594251
+        CastShadow: true
+        Visible: true
+        SubMeshIndex: 0
+        MaterialTable:
+          []
+    - Entity: 17237638039258762623
+      TagComponent:
+        Tag: RailRoadCrossingWarn
+        tags: []
+      TransformComponent:
+        Location: [-0.375, 6.73041487, 0.000308834598]
+        Rotation: [0, 1.57045102, 0]
+        Scale: [0.0374999978, 15, 0.87499994]
+      HierarchyComponent:
+        ParentHandle: 15939392415643122026
+        Children: []
+      MeshComponent:
+        MeshAssetPointerID: 7626791067877132048
+        Visible: true
+      BoxColliderComponent:
+        IsTrigger: false
+        Center: [0, 0, 0]
+        Size: [0.25, 1, 0.200000003]
+        PhysicsMaterialPointerID: 0
+      RigidBodyComponent:
+        Mass: 1
+        LinearDrag: 0.00999999978
+        PhysicsLayerID: 3
+        AngularDrag: 0.0500000007
+        Gravity: true
+        Type: Static
+        Constraints: 0
+        Kinematic: false
+        CollisionDetection: Discrete

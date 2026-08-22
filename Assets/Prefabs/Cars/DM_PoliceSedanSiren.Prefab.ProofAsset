@@ -1,0 +1,419 @@
+AssetType: Prefab
+ID: 2085647296786186526
+EntityOwner: 11375026025183344942
+Entities:
+  - Entity: 11375026025183344942
+    TagComponent:
+      Tag: DM_PoliceSedanSiren
+      tags: []
+    TransformComponent:
+      Location: [10.4200363, 1.15600002, -0.800000012]
+      Rotation: [0, 0, 0]
+      Scale: [2, 2, 2]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: [11705026430516694882, 5742135978242647917]
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.Car
+          ScriptClassName: CrossyBro.Car
+          ScriptName: CrossyBro.Car
+          Fields:
+            - NameID: CrossyBro.Car.WheelRadius
+              Type: Float
+              Data: 2
+            - NameID: CrossyBro.Car.WheelRotationDirection
+              Type: Float
+              Data: 1
+            - NameID: CrossyBro.Car.Wheels
+              Type: Entity
+              Length: 4
+              Data:
+                - 8318387598506055354
+                - 9381785865797878762
+                - 7684007587225015751
+                - 9449329513485498429
+            - NameID: CrossyBro.Car.Speed
+              Type: Float
+              Data: 8
+            - NameID: CrossyBro.Car.CarryPlayer
+              Type: Bool
+              Data: false
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 2, 0]
+      Size: [2.5, 2, 5]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Dynamic
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
+    AudioComponent:
+      AudioController: 6252227395594077700
+      VolumeMultiplier: 0.5
+      PitchMultiplier: 1
+      Looping: true
+      PlayOnAwake: true
+  - Entity: 10120382138755613441
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 4
+      MaterialTable:
+        []
+  - Entity: 9190488515543955507
+    TagComponent:
+      Tag: Cube.109
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 4.65661287e-10]
+      Rotation: [0, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 9449329513485498429
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 13
+      MaterialTable:
+        []
+  - Entity: 3220717102138976041
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 3
+      MaterialTable:
+        []
+  - Entity: 5976368585602321102
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 2
+      MaterialTable:
+        - Material: ""
+          AssetID: 16795607345719283540
+          Index: 2
+  - Entity: 8318387598506055354
+    TagComponent:
+      Tag: Police Sedan wheel rear right
+      tags: []
+    TransformComponent:
+      Location: [-1.02653885, 0.400000036, -1.60882568]
+      Rotation: [1.22871184, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 11705026430516694882
+      Children: [16381017522897769500, 13093202411028654914]
+  - Entity: 11705026430516694882
+    TagComponent:
+      Tag: RootNode
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [0, -0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 11375026025183344942
+      Children: [6915014796437615211, 8318387598506055354, 9381785865797878762, 7684007587225015751, 9449329513485498429]
+  - Entity: 7684007587225015751
+    TagComponent:
+      Tag: Police Sedan wheel rear left
+      tags: []
+    TransformComponent:
+      Location: [1.02653885, 0.400000036, -1.60882568]
+      Rotation: [-0.260054052, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 11705026430516694882
+      Children: [18008744182404111882, 14650148903489784680]
+  - Entity: 6915014796437615211
+    TagComponent:
+      Tag: Police Sedan
+      tags: []
+    TransformComponent:
+      Location: [0, 0.600000024, 0]
+      Rotation: [-1.57079649, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 11705026430516694882
+      Children: [10143080631933106297, 8260025884914077123, 5976368585602321102, 3220717102138976041, 10120382138755613441, 6342901269938836994, 14900018379338371727]
+  - Entity: 10143080631933106297
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, -1.25728548e-07]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 0
+      MaterialTable:
+        []
+  - Entity: 8260025884914077123
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 1
+      MaterialTable:
+        []
+  - Entity: 14650148903489784680
+    TagComponent:
+      Tag: Cube.108
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 7684007587225015751
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 12
+      MaterialTable:
+        []
+  - Entity: 6342901269938836994
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 5
+      MaterialTable:
+        []
+  - Entity: 14900018379338371727
+    TagComponent:
+      Tag: Cube.002
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 6915014796437615211
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 6
+      MaterialTable:
+        - Material: ""
+          AssetID: 12304940420453673655
+          Index: 6
+  - Entity: 16381017522897769500
+    TagComponent:
+      Tag: Cube.106
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 8318387598506055354
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 7
+      MaterialTable:
+        []
+  - Entity: 13093202411028654914
+    TagComponent:
+      Tag: Cube.106
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 8318387598506055354
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 8
+      MaterialTable:
+        []
+  - Entity: 9381785865797878762
+    TagComponent:
+      Tag: Police Sedan wheel front left
+      tags: []
+    TransformComponent:
+      Location: [1.02653885, 0.400000036, 1.60882378]
+      Rotation: [-1.65806282, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 11705026430516694882
+      Children: [13998220004256931210, 16999953426997797144]
+  - Entity: 13998220004256931210
+    TagComponent:
+      Tag: Cube.107
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 9381785865797878762
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 9
+      MaterialTable:
+        []
+  - Entity: 16999953426997797144
+    TagComponent:
+      Tag: Cube.107
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 9381785865797878762
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 10
+      MaterialTable:
+        []
+  - Entity: 18008744182404111882
+    TagComponent:
+      Tag: Cube.108
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 0]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 7684007587225015751
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 11
+      MaterialTable:
+        []
+  - Entity: 9449329513485498429
+    TagComponent:
+      Tag: Police Sedan wheel front right
+      tags: []
+    TransformComponent:
+      Location: [-1.02653885, 0.400000036, 1.60882378]
+      Rotation: [2.86059451, 0, 0]
+      Scale: [100, 99.9999924, 99.9999924]
+    HierarchyComponent:
+      ParentHandle: 11705026430516694882
+      Children: [9190488515543955507, 12172811206452801242]
+  - Entity: 12172811206452801242
+    TagComponent:
+      Tag: Cube.109
+      tags: []
+    TransformComponent:
+      Location: [0, 1.86264515e-09, 4.65661287e-10]
+      Rotation: [1.4210853e-14, -0, 0]
+      Scale: [1.00000012, 1.00000012, 1.00000012]
+    HierarchyComponent:
+      ParentHandle: 9449329513485498429
+      Children: []
+    DynamicMeshComponent:
+      DynamicMeshAssetPointerID: 264337976024594251
+      CastShadow: true
+      Visible: true
+      SubMeshIndex: 14
+      MaterialTable:
+        []
+  - Entity: 5742135978242647917
+    TagComponent:
+      Tag: Empty Entity
+      tags: []
+    TransformComponent:
+      Location: [-5.21001816, -0.578000009, 0.400000006]
+      Rotation: [0, -0, 0]
+      Scale: [0.5, 0.5, 0.5]
+    HierarchyComponent:
+      ParentHandle: 11375026025183344942
+      Children: []
+    AudioComponent:
+      AudioController: 14368541811765227770
+      VolumeMultiplier: 1
+      PitchMultiplier: 1
+      Looping: true
+      PlayOnAwake: true

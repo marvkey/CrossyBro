@@ -1,8 +1,8 @@
 AssetType: Prefab
 ID: 3982219062159942845
-EntityOwner: 7841884738278891845
+EntityOwner: 13049760054975604109
 Entities:
-  - Entity: 7841884738278891845
+  - Entity: 13049760054975604109
     TagComponent:
       Tag: DarkGrassTile
       tags: []
@@ -28,9 +28,11 @@ Entities:
           Fields:
             - NameID: CrossyBro.GrassLane.Trees
               Type: Prefab
-              Length: 0
+              Length: 3
               Data:
-                []
+                - 322701242459618158
+                - 14876304689120704362
+                - 3418031846723459216
             - NameID: CrossyBro.GrassLane.MinTreeDensity
               Type: Float
               Data: 0.200000003

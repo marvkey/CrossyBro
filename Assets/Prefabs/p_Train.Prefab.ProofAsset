@@ -1,0 +1,70 @@
+AssetType: Prefab
+ID: 12250544775770939285
+EntityOwner: 1366074566002737959
+Entities:
+  - Entity: 1366074566002737959
+    TagComponent:
+      Tag: Train
+      tags: []
+    TransformComponent:
+      Location: [96.5189972, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: [8030933425140116825, 10144150370639845959]
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.Vehicle
+          ScriptClassName: CrossyBro.Vehicle
+          ScriptName: CrossyBro.Vehicle
+          Fields:
+            - NameID: CrossyBro.Vehicle.Speed
+              Type: Float
+              Data: 45
+            - NameID: CrossyBro.Vehicle.CarryPlayer
+              Type: Bool
+              Data: false
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 2.4000001, -18.2999992]
+      Size: [5.5999999, 5, 69]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Dynamic
+      Constraints: 0
+      Kinematic: true
+      CollisionDetection: Discrete
+  - Entity: 8030933425140116825
+    TagComponent:
+      Tag: HighSpeedTrainFront
+      tags: []
+    TransformComponent:
+      Location: [0, -5.1650545e-10, -2.77617216]
+      Rotation: [0, 1.57045102, 0]
+      Scale: [2.99999928, 3, 2.99999928]
+    HierarchyComponent:
+      ParentHandle: 1366074566002737959
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 11445950239189847107
+      Visible: true
+  - Entity: 10144150370639845959
+    TagComponent:
+      Tag: HighSpeedWagon
+      tags: []
+    TransformComponent:
+      Location: [0, 0, -36.0999985]
+      Rotation: [0, 1.57045102, 0]
+      Scale: [2.99999952, 3, 2.99999952]
+    HierarchyComponent:
+      ParentHandle: 1366074566002737959
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 7149685692922908410
+      Visible: true

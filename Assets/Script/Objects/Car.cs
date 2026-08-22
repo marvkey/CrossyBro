@@ -3,7 +3,13 @@ using Proof;
 
 namespace CrossyBro
 {
-    public class Car : MovingLaneObject
+    // just for the train as well
+    public class Vehicle : MovingLaneObject
+    {
+      
+
+    }
+    public class Car : Vehicle
     {
         public float WheelRadius = 2.0f;
         public float WheelRotationDirection = -1.0f;
@@ -20,6 +26,7 @@ namespace CrossyBro
 
         void OnUpdate(float deltaTime)
         {
+            base.OnUpdate(deltaTime);
             UpdateWheels(deltaTime);
         }
 

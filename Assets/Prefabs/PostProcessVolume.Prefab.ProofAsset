@@ -1,0 +1,27 @@
+AssetType: Prefab
+ID: 17040285743686035890
+EntityOwner: 7931855453370114509
+Entities:
+  - Entity: 7931855453370114509
+    TagComponent:
+      Tag: PostProcessVolume
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    PostProcessVolumeComponent:
+      IsGlobal: true
+      BoxSize: [1, 1, 1]
+      Enabled: true
+      Priority: 0
+      MaterialTable:
+        - Material: ""
+          AssetID: 18032563417679479287
+          Index: 0
+        - Material: ""
+          AssetID: 10303778605263667682
+          Index: 1

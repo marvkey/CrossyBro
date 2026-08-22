@@ -32,6 +32,9 @@ namespace CrossyBro
 		private bool m_Dead = false;
 		public bool Dead =>m_Dead;
 
+		[SeperatorAttribute]
+		public Prefab JumpSound;
+		public Prefab DeadByCar;
 		private MovingLaneObject m_CurrentMovingObject;
 		void OnCreate()
 		{
@@ -60,10 +63,10 @@ namespace CrossyBro
 
 		void OnCollisionEnter(Entity e)
 		{
-			if(e.HasScript<Car>())
+			if(e.HasScriptInstance<Vehicle>())
 			{
 
-				Car car = e.GetScriptInstance<Car>();
+				Vehicle car = e.GetScriptInstance<Vehicle>();
 				if (car == null)
 					return;
 
@@ -100,6 +103,7 @@ namespace CrossyBro
 				tumbleAxis * hitStrength * 4.0f,
 				ForceMode.Impulse
 			);
+			World.Instantiate(DeadByCar,Location);
 		}
 		void SetDead()
 		{
@@ -219,6 +223,7 @@ namespace CrossyBro
 			m_JumpTime = 0.0f;
 			m_IsJumping = true;
 
+			World.Instantiate(JumpSound,Location);
 			return true;
 		}
 
@@ -262,6 +267,8 @@ namespace CrossyBro
 					return false;
 				if(hit.Entity.Name == "Wall")
 					return false; 
+				if(hit.Entity.Name == "RailRoadCrossingWarn")
+					return false;
 			}
 
 			return true;

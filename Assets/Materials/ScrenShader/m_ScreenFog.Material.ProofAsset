@@ -1,0 +1,7 @@
+AssetType: Material
+ID: 18032563417679479287
+ShaderName: FogPostProcess
+u_MaterialUniform.FogColor: [0.519999981, 0.720000029, 0.879999995]
+u_MaterialUniform.FogFallOffDistance: 45
+u_MaterialUniform.FogStartDistance: 10
+u_MaterialUniform.FogStrength: 1

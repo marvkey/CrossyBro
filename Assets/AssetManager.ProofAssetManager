@@ -20,12 +20,12 @@ Assets:
   - Asset: 12550584486862917536
     Type: Material
     Path: Materials\m_OneLaneGrid.Material.ProofAsset
-  - Asset: 711063280098633727
-    Type: Texture
-    Path: Textures\Log.png
   - Asset: 3822512906096149810
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_cyan.png
+  - Asset: 711063280098633727
+    Type: Texture
+    Path: Textures\Log.png
   - Asset: 9295879751421473566
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_pink.png
@@ -86,12 +86,12 @@ Assets:
   - Asset: 10921158918994213502
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_green3.png
+  - Asset: 559553797059764233
+    Type: Prefab
+    Path: Prefabs\Cars\DM_PoliceSedan.Prefab.ProofAsset
   - Asset: 3418031846723459216
     Type: Prefab
     Path: Prefabs\Trees\TallTree.Prefab.ProofAsset
-  - Asset: 11589848229661894838
-    Type: Prefab
-    Path: Prefabs\Cars\Taxi.Prefab.ProofAsset
   - Asset: 6709721670982325930
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey1.png
@@ -113,9 +113,6 @@ Assets:
   - Asset: 6138703702806618358
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_grey4.png
-  - Asset: 3340939678477561482
-    Type: Prefab
-    Path: Prefabs\Cars\SUV.Prefab.ProofAsset
   - Asset: 11211857988642080187
     Type: Texture
     Path: Textures\GridBoxPrototypeTextures\Textures\prototype_512x512_olive.png
@@ -146,15 +143,15 @@ Assets:
   - Asset: 13077629818733049876
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\All vehicles.fbx
-  - Asset: 6850729018431043983
-    Type: Prefab
-    Path: Prefabs\Cars\Van.Prefab.ProofAsset
   - Asset: 13549522107164269480
     Type: Material
     Path: Materials\m_Tree.Material.ProofAsset
   - Asset: 9885106835534353386
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Ambulance\Ambulance.fbx
+  - Asset: 4708706185226122947
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_metallic.png
   - Asset: 9545860178206264038
     Type: MeshSourceFile
     Path: Models\Free Low Poly Vehicles Pack by Rgsdev\Limousine\Limousine.fbx
@@ -200,6 +197,9 @@ Assets:
   - Asset: 12011726453359119438
     Type: World
     Path: Worlds\w_GameWorld.ProofWorld
+  - Asset: 18030978099437381929
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_preview.jpg
   - Asset: 2139510519972232775
     Type: ScriptFile
     Path: Script\CharacterMove.cs
@@ -233,15 +233,15 @@ Assets:
   - Asset: 264337976024594251
     Type: DynamicMesh
     Path: Meshes\Cars\DM_PoliceSedan.DynamicMesh.ProofAsset
+  - Asset: 15154318452431731609
+    Type: Audio
+    Path: Audios\TrainSound.wav
   - Asset: 5908798640950620153
     Type: Texture
     Path: Textures\SingleRoadLane.png
   - Asset: 18222663250217117664
     Type: Material
     Path: Materials\Raoad\m_Road.Material.ProofAsset
-  - Asset: 5124677930488879996
-    Type: Prefab
-    Path: Prefabs\Cars\DM_PoliceSedan.Prefab.ProofAsset
   - Asset: 10040218922609215507
     Type: Material
     Path: Materials\m_WallGrasss.Material.ProofAsset
@@ -251,9 +251,6 @@ Assets:
   - Asset: 8217162502355390526
     Type: Material
     Path: Materials\Raoad\m_DoubleRoadLane.Material.ProofAsset
-  - Asset: 266272970648956663
-    Type: Prefab
-    Path: Prefabs\Cars\DM_PoliceSedan (01).Prefab.ProofAsset
   - Asset: 4854325169121026772
     Type: ScriptFile
     Path: Script\Lanes\LaneManager.cs
@@ -266,12 +263,18 @@ Assets:
   - Asset: 18108221406145107977
     Type: Prefab
     Path: Prefabs\Lanes\p_DoubleRoadLane.Prefab.ProofAsset
+  - Asset: 18373900011152765097
+    Type: Material
+    Path: Materials\Railway\m_CrossinngGuardRedBase.Material.ProofAsset
   - Asset: 4494858977215965303
     Type: Prefab
     Path: Prefabs\Lanes\P_SingleRoadLane.Prefab.ProofAsset
   - Asset: 8182283305766683014
     Type: Material
     Path: Materials\Raoad\m_DoubelLaneRepeat.Material.ProofAsset
+  - Asset: 10880667652624279285
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_WagonOpenContainer.obj
   - Asset: 14236158759897223039
     Type: Prefab
     Path: Prefabs\Lanes\p_GrassLaneNotrees.Prefab.ProofAsset
@@ -296,6 +299,9 @@ Assets:
   - Asset: 10041239326079976972
     Type: ScriptFile
     Path: Script\Lanes\MovingObjectLane.cs
+  - Asset: 13056405150410898763
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_preview.jpg
   - Asset: 6202444041681783610
     Type: ScriptFile
     Path: Script\Objects\FloatingLog.cs
@@ -308,6 +314,9 @@ Assets:
   - Asset: 2118340032093922690
     Type: Prefab
     Path: Prefabs\Logs\P_LargeLog.Prefab.ProofAsset
+  - Asset: 6444839241358275207
+    Type: Prefab
+    Path: Prefabs\Sounds\p_JumpSound.Prefab.ProofAsset
   - Asset: 10219996003842407385
     Type: UIPanel
     Path: UI\UI_PlayerHUD.UIPanel.ProofAsset
@@ -320,6 +329,9 @@ Assets:
   - Asset: 13348299037624730690
     Type: UIPanel
     Path: UI\UI_PlayerDead.UIPanel.ProofAsset
+  - Asset: 14353903875503180767
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_normal-ogl.png
   - Asset: 13419791643004491960
     Type: Font
     Path: Fonts\edit-undo.ttf
@@ -332,9 +344,15 @@ Assets:
   - Asset: 13038676435625128433
     Type: UIPanel
     Path: UI\UI_MainMenu.UIPanel.ProofAsset
+  - Asset: 15118763804701895514
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\Container.blend
   - Asset: 14350594835460630091
     Type: World
     Path: Worlds\w_MainMenu.ProofWorld
+  - Asset: 9592437118855119735
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\Locomotive_Wagon.obj
   - Asset: 17653234573650398861
     Type: Texture
     Path: Textures\Voxel_Skybox_free\TextureHDR\Cloudy-Bright-Day.hdr
@@ -365,15 +383,18 @@ Assets:
   - Asset: 3808487902698990598
     Type: DynamicMesh
     Path: Meshes\Cars\Van.DynamicMesh.ProofAsset
+  - Asset: 17040285743686035890
+    Type: Prefab
+    Path: Prefabs\PostProcessVolume.Prefab.ProofAsset
+  - Asset: 13537692113750428433
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_Front.obj
   - Asset: 15075406002685266554
     Type: ScriptFile
     Path: Script\UI\MainMenu.cs
   - Asset: 5695980564062989695
     Type: Texture
     Path: Textures\sky_14_2k.hdr
-  - Asset: 9566239160619801486
-    Type: Prefab
-    Path: Prefabs\Cars\Pickup.Prefab.ProofAsset
   - Asset: 3982219062159942845
     Type: Prefab
     Path: Prefabs\Lanes\DarkGrassTile.Prefab.ProofAsset
@@ -392,6 +413,9 @@ Assets:
   - Asset: 8514001281388647773
     Type: Audio
     Path: Audios\Car\Sport car.wav
+  - Asset: 9493847027440467091
+    Type: Prefab
+    Path: Prefabs\Cars\Taxi.Prefab.ProofAsset
   - Asset: 11582670000510518193
     Type: DynamicMesh
     Path: Meshes\Cars\SportsCar.DynamicMesh.ProofAsset
@@ -407,3 +431,249 @@ Assets:
   - Asset: 1649170290338438627
     Type: ScriptFile
     Path: Script\PoliceSirenController.cs
+  - Asset: 13603979699677114106
+    Type: Prefab
+    Path: Prefabs\Cars\SportsCar.Prefab.ProofAsset
+  - Asset: 2085647296786186526
+    Type: Prefab
+    Path: Prefabs\Cars\DM_PoliceSedanSiren.Prefab.ProofAsset
+  - Asset: 251079606457185592
+    Type: Prefab
+    Path: Prefabs\Cars\SUV.Prefab.ProofAsset
+  - Asset: 4761367490131529760
+    Type: Prefab
+    Path: Prefabs\Cars\Pickup.Prefab.ProofAsset
+  - Asset: 6521643238333384174
+    Type: Prefab
+    Path: Prefabs\Cars\Van.Prefab.ProofAsset
+  - Asset: 13068625293152081525
+    Type: AudioMixer
+    Path: Audios\AM_GameAudio.AudioMixer.ProofAsset
+  - Asset: 532248929003951131
+    Type: Audio
+    Path: Audios\Player\jump.wav
+  - Asset: 6862928418438999957
+    Type: AudioController
+    Path: AudioControllers\AC_Jump.AudioController.ProofAsset
+  - Asset: 1092723756384742210
+    Type: Audio
+    Path: Audios\Player\DeadByCar.wav
+  - Asset: 10940545482130919565
+    Type: AudioController
+    Path: AudioControllers\AC_DeadByCar.AudioController.ProofAsset
+  - Asset: 18032563417679479287
+    Type: Material
+    Path: Materials\ScrenShader\m_ScreenFog.Material.ProofAsset
+  - Asset: 5741151375264998896
+    Type: Prefab
+    Path: Prefabs\Sounds\p_DeadByCar.Prefab.ProofAsset
+  - Asset: 10303778605263667682
+    Type: Material
+    Path: Materials\ScrenShader\m_ScreenDeathShader.Material.ProofAsset
+  - Asset: 16309133590686068058
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_Front.blend
+  - Asset: 6638552861559017700
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_WagonOpenContainer.blend
+  - Asset: 11445950239189847107
+    Type: Mesh
+    Path: Meshes\Trains\HighSpeedFront.Mesh.ProofAsset
+  - Asset: 7705651027776714949
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\Locomotive_CoalTender.fbx
+  - Asset: 10443990933907984912
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\HighSpeed_Front.fbx
+  - Asset: 7430989419304415915
+    Type: Texture
+    Path: Models\Trains\Preview.png
+  - Asset: 16558717296045566612
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_Container.obj
+  - Asset: 14538008750592552034
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_CoalContainer.blend
+  - Asset: 14754623276855907227
+    Type: ScriptFile
+    Path: Script\Lanes\TrainLane.cs
+  - Asset: 10251386261343926750
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_Container.blend
+  - Asset: 13839598332503957571
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_Wagon.blend
+  - Asset: 13921679695552587378
+    Type: Mesh
+    Path: Meshes\Trains\BrightRailroad.Mesh.ProofAsset
+  - Asset: 1794538110861486836
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\CargoTrain_WagonEmpty.blend
+  - Asset: 17528827414220247182
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\HighSpeed_Front.blend
+  - Asset: 7928167496104111427
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\RailwayTrack_Curve.obj
+  - Asset: 9806278043733945697
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\HighSpeed_Wagon.blend
+  - Asset: 14094299343092683566
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\Locomotive_CoalTender.blend
+  - Asset: 13633049164204552885
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\Locomotive_Front.blend
+  - Asset: 17943208146242033274
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\Locomotive_PassengerWagon.blend
+  - Asset: 16526485255113024576
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\Locomotive_Wagon.blend
+  - Asset: 1413130373145944365
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\RailwayTrack_Curve.blend
+  - Asset: 4307066213183392882
+    Type: MeshSourceFile
+    Path: Models\Trains\Blends\RailwayTrack_Straight.blend
+  - Asset: 16440572748707551240
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_CoalContainer.fbx
+  - Asset: 1747348069783831161
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_Container.fbx
+  - Asset: 13116577687962363994
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_Front.fbx
+  - Asset: 3234343678787889824
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_Wagon.fbx
+  - Asset: 9618545229984404518
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_WagonEmpty.fbx
+  - Asset: 11520043759209254985
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\Locomotive_PassengerWagon.fbx
+  - Asset: 3369782861810115026
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\CargoTrain_WagonOpenContainer.fbx
+  - Asset: 10592105673019581346
+    Type: MeshSourceFile
+    Path: Models\Railroad crossing by Jair Trejo - cf0st_E2csq\model.obj
+  - Asset: 6678655859183082129
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\HighSpeed_Wagon.fbx
+  - Asset: 16714402438081970249
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\Locomotive_Front.fbx
+  - Asset: 3170073791247513146
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\Locomotive_Wagon.fbx
+  - Asset: 1035956202129880970
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_roughness.png
+  - Asset: 10499558080069377128
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\RailwayTrack_Curve.fbx
+  - Asset: 6052902614355735709
+    Type: MeshSourceFile
+    Path: Models\Trains\FBX\RailwayTrack_Straight.fbx
+  - Asset: 2778194294235042140
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_CoalContainer.obj
+  - Asset: 1702661024172756170
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_Wagon.obj
+  - Asset: 3376014066063895674
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\CargoTrain_WagonEmpty.obj
+  - Asset: 6639718331816468138
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\HighSpeed_Front.obj
+  - Asset: 12945967760811135178
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\HighSpeed_Wagon.obj
+  - Asset: 12119237320536689805
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\Locomotive_CoalTender.obj
+  - Asset: 1171428913024528431
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\Locomotive_Front.obj
+  - Asset: 1080744999616723464
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\Locomotive_PassengerWagon.obj
+  - Asset: 6409625223772949163
+    Type: MeshSourceFile
+    Path: Models\Trains\OBJ\RailwayTrack_Straight.obj
+  - Asset: 7149685692922908410
+    Type: Mesh
+    Path: Meshes\Trains\HighSpeedWagon.Mesh.ProofAsset
+  - Asset: 8586793975658014307
+    Type: Mesh
+    Path: Meshes\Trains\Track.Mesh.ProofAsset
+  - Asset: 7178666575621983913
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_albedo.png
+  - Asset: 8654376198487646566
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_ao.png
+  - Asset: 3774627350981185750
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_height.png
+  - Asset: 13664581822023558252
+    Type: Texture
+    Path: Textures\dark-wood-stain-bl\dark-wood-stain-bl\dark-wood-stain_roughness.png
+  - Asset: 13760260173590779847
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_albedo.png
+  - Asset: 4203231524790849135
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_ao.png
+  - Asset: 14316732824318279678
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_height.png
+  - Asset: 7955152037240423421
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_metallic.png
+  - Asset: 16846037866744618174
+    Type: Texture
+    Path: Textures\scratched-up-steel-bl\scratched-up-steel_normal-ogl.png
+  - Asset: 8852454833740019989
+    Type: Material
+    Path: Materials\Pbr\m_TrackWood.Material.ProofAsset
+  - Asset: 15266807666719475100
+    Type: Material
+    Path: Materials\Pbr\m_TrackMetal.Material.ProofAsset
+  - Asset: 10712405127270115604
+    Type: AudioController
+    Path: AudioControllers\AC_TrainTrack.AudioController.ProofAsset
+  - Asset: 12250544775770939285
+    Type: Prefab
+    Path: Prefabs\p_Train.Prefab.ProofAsset
+  - Asset: 11267408803736578837
+    Type: Material
+    Path: Materials\Railway\m_CrossyGuardRedBright.Material.ProofAsset
+  - Asset: 8856967777031019546
+    Type: ScriptFile
+    Path: Script\Lanes\WarningObjectLane.cs
+  - Asset: 7626791067877132048
+    Type: Mesh
+    Path: Meshes\Trains\DarkRailroadCrossing.Mesh.ProofAsset
+  - Asset: 5201442066866054150
+    Type: Audio
+    Path: Audios\freesound_community-train-crossing-105569.mp3
+  - Asset: 4703157192153045888
+    Type: AudioController
+    Path: AudioControllers\AC_TrainWarn.AudioController.ProofAsset
+  - Asset: 15154705540187214978
+    Type: Prefab
+    Path: Prefabs\Sounds\TrainWarnSound.Prefab.ProofAsset
+  - Asset: 8502786276926227088
+    Type: Prefab
+    Path: Prefabs\Lanes\p_TrainLane.Prefab.ProofAsset
+  - Asset: 15382324203664102032
+    Type: AudioController
+    Path: AudioControllers\AC_GameMusic.AudioController.ProofAsset
+  - Asset: 6911967790214182984
+    Type: Audio
+    Path: Audios\HEX last of the chill iteration now i will TRANSFORM.mp3

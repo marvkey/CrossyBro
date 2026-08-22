@@ -1,0 +1,40 @@
+AssetType: AudioMixer
+ID: 13068625293152081525
+MasterGroupID: 2655314879842753387
+Groups:
+  - ID: 7793085954352546348
+    Name: Train
+    ParentID: 12498749070856155671
+    Volume: 0.794328213
+    Effects:
+      []
+  - ID: 2655314879842753387
+    Name: Master
+    ParentID: 0
+    Volume: 1
+    Effects:
+      []
+  - ID: 10673774649273428813
+    Name: Player
+    ParentID: 12498749070856155671
+    Volume: 1.58489323
+    Effects:
+      []
+  - ID: 12498749070856155671
+    Name: SFX
+    ParentID: 2655314879842753387
+    Volume: 0.84139514
+    Effects:
+      []
+  - ID: 15817934215497462103
+    Name: Traffic
+    ParentID: 12498749070856155671
+    Volume: 1
+    Effects:
+      []
+  - ID: 6152031465126327300
+    Name: GameMusic
+    ParentID: 2655314879842753387
+    Volume: 0.251188636
+    Effects:
+      []

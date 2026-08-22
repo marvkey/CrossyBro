@@ -1,0 +1,11 @@
+AssetType: Mesh
+ID: 13921679695552587378
+AssetSource: 10592105673019581346
+MaterialTable:
+  - Material: ""
+    AssetID: 11267408803736578837
+    Index: 9
+Translation: [0, 0, 0]
+RotationDeg: [0, 0, 0]
+Scale: 1
+SubMeshes: [0, 1, 2, 3, 4, 5]

@@ -1,6 +1,8 @@
 AssetType: AudioController
 ID: 11843201777383515667
 AudioSource: 1304231415098044440
+AudioMixer: 13068625293152081525
+AudioMixerGroup: 15817934215497462103
 MinPitch: 0.800000012
 MaxPitch: 1.20000005
 MasterReverbSend: 0.0500000007
@@ -10,10 +12,10 @@ SpatializationEnabled: true
 AttenuationMod: Linear
 MinGain: 0
 MaxGain: 1
-MinDistance: 1
-MaxDistance: 100
+MinDistance: 8
+MaxDistance: 70
 ConeInnerAngleInRadians: 6.28318548
 ConeOuterAngleInRadians: 6.28318548
 ConeOuterGain: 1
-DopplerFactor: 1
+DopplerFactor: 0.150000006
 Rolloff: 1

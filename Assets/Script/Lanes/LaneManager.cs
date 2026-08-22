@@ -4,323 +4,360 @@ using Proof;
 
 namespace CrossyBro
 {
-	public class LaneManager : Entity
-	{
-		private class ActiveLane
-		{
-			public Entity Entity;
-			public Lane Lane;
-			public int StartRow;
-			public int RowCount;
-		}
+    public class LaneManager : Entity
+    {
+        private class ActiveLane
+        {
+            public Entity Entity;
+            public Lane Lane;
+            public int StartRow;
+            public int RowCount;
+        }
 
-		public Entity Player;
+        public Entity Player;
 
-		public Prefab PlayerBaseLane;
-		public Prefab[] GrassLanes;
-		public Prefab[] SingleRoadLanes;
-		public Prefab[] DoubleRoadLanes;
-		public Prefab[] WaterLanes;
+        public Prefab PlayerBaseLane;
+        public Prefab[] GrassLanes;
+        public Prefab[] SingleRoadLanes;
+        public Prefab[] DoubleRoadLanes;
+        public Prefab[] WaterLanes;
+        public Prefab[] TrainLanes;
 
-		public Prefab SideWall;
+        public Prefab SideWall;
 
 
+        public int RowsAhead = 20;
+        public int RowsBehind = 5;
 
-		public int RowsAhead = 20;
-		public int RowsBehind = 5;
+        public float OriginX = 0.0f;
 
-		public float OriginX = 0.0f;
+        private readonly List<ActiveLane> m_ActiveLanes = new List<ActiveLane>();
 
-		private readonly List<ActiveLane> m_ActiveLanes = new List<ActiveLane>();
+        private int m_CurrentPlayerRow;
+        private int m_NextRow;
+        private float m_LastSpawnPos = 0.0f;
+        private bool m_FirstSpawn = true;
 
-		private int m_CurrentPlayerRow;
-		private int m_NextRow;
-		private float m_LastSpawnPos = 0.0f;
-		private bool m_FirstSpawn = true;
-
-		private Entity m_NegativeSideWall;
-		private Entity m_PositiveSideWall;
-
-		public float DifficultyScale()
-		{
-			float difficulty  = PlayerScore() / 100.0f;
-			return Mathf.Clamp(0.0f,1.0f,difficulty);
-		}
-
-		/*
-		 *Difficulty = 0.0f;
-		IncreaseByDifficulty(10.0f, 50.0f); // 10
-
-		Difficulty = 0.5f;
-		IncreaseByDifficulty(10.0f, 50.0f); // 12.5
-
-		Difficulty = 1.0f;
-		IncreaseByDifficulty(10.0f, 50.0f); // 15
-		 */
-		public float IncreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it increases at max difficulty
-		{
-			return val * (1.0f + DifficultyScale() * (scale / 100.0f));
-		}
-
-		public float DecreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it decreases at max difficulty
-		{
-			return val * (1.0f - DifficultyScale() * (scale / 100.0f));
-		}
-
-		void OnCreate()
-		{
-			if (Player == null) return;
-
-			SpawnSideWalls();
-
-			m_CurrentPlayerRow = GetPlayerRow();
-			m_NextRow = m_CurrentPlayerRow - RowsBehind;
-
-			SpawnInitialLanes();
-			GenerateUntil(m_CurrentPlayerRow + RowsAhead);
-		}
-
-		public int PlayerScore()
-		{
-			   if(Player.HasScript<CharacterHUD>())
-				   return Player.GetScript<CharacterHUD>().Score;
-
-			   return 0;
-		}
-
-		void OnUpdate(float deltaTime)
-		{
-			if (Player == null) return;
-
-			UpdateSideWalls();
-
-			int playerRow = GetPlayerRow();
-			if (playerRow == m_CurrentPlayerRow) return;
-
-			m_CurrentPlayerRow = playerRow;
-
-			GenerateUntil(m_CurrentPlayerRow + RowsAhead);
-			DeleteLanesBehind(m_CurrentPlayerRow - RowsBehind);
-		}
-
-		private void SpawnSideWalls()
-		{
-			if (SideWall == null)
-				return;
-
-			Vector3 negativeWallPosition = Transform.Location;
-			negativeWallPosition.x = Player.Transform.Location.x;
-			negativeWallPosition.z = -32.0f;
-
-			Vector3 positiveWallPosition = Transform.Location;
-			positiveWallPosition.x = Player.Transform.Location.x;
-			positiveWallPosition.z = 32.0f;
-
-			m_NegativeSideWall = World.Instantiate(SideWall, negativeWallPosition);
-			m_PositiveSideWall = World.Instantiate(SideWall, positiveWallPosition);
-		}
-
-		private void UpdateSideWalls()
-		{
-			if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
-			{
-				Vector3 position = m_NegativeSideWall.Transform.Location;
-				position.x = Player.Transform.Location.x;
-				position.z = -32.0f;
-				m_NegativeSideWall.Transform.Location = position;
-			}
-
-			if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
-			{
-				Vector3 position = m_PositiveSideWall.Transform.Location;
-				position.x = Player.Transform.Location.x;
-				position.z = 32.0f;
-				m_PositiveSideWall.Transform.Location = position;
-			}
-		}
-
-		private void SpawnInitialLanes()
-		{
-			// Everything behind the player starts as normal grass.
-			while (m_NextRow < m_CurrentPlayerRow)
-			{
-				Prefab grassPrefab = GetRandomPrefab(LaneType.Grass);
-				if (grassPrefab == null || !SpawnLane(LaneType.Grass, grassPrefab)) return;
-			}
-
-			// The tile directly underneath the player is the special grass tile with no trees.
-			if (PlayerBaseLane != null)
-				SpawnLane(LaneType.Grass, PlayerBaseLane);
-		}
-
-		private int GetPlayerRow()
-		{
-			return Mathf.RoundToInt((Player.Transform.Location.x - OriginX) / WorldData.GridSize);
-		}
-
-		private void GenerateUntil(int targetRow)
-		{
-			while (m_NextRow <= targetRow)
-			{
-				if (!SpawnNextLane()) break;
-			}
-		}
-
-		private bool SpawnNextLane()
-		{
-			LaneType laneType = ChooseNextLaneType();
-			Prefab prefab = GetRandomPrefab(laneType);
-
-			if (prefab == null) return false;
-
-			return SpawnLane(laneType, prefab);
-		}
-
-		private bool SpawnLane(LaneType laneType, Prefab prefab)
-		{
-			Vector3 spawnPosition = Transform.Location;
-
-			if (m_FirstSpawn)
-			{
-				spawnPosition.x = OriginX + m_NextRow * WorldData.GridSize;
-				m_FirstSpawn = false;
-			}
-			else
-			{
-				Lane previousLane = m_ActiveLanes[m_ActiveLanes.Count - 1].Lane;
-
-				float spacing = 8.0f;
-
-				if (previousLane.Type == LaneType.DoubleRoad && laneType == LaneType.DoubleRoad)
-					spacing = 16.0f;
-				else if (previousLane.Type == LaneType.DoubleRoad || laneType == LaneType.DoubleRoad)
-					spacing = 12.0f;
-
-				spawnPosition.x = m_LastSpawnPos + spacing;
-			}
-
-			m_LastSpawnPos = spawnPosition.x;
-
-			Entity laneEntity = World.Instantiate(prefab, spawnPosition);
-			Lane lane = laneEntity.GetScriptInstance<Lane>();
-
-			if (lane == null)
-			{
-				World.DeleteEntity(laneEntity);
-				return false;
-			}
-
-			int startRow = m_NextRow;
-
-			lane.Initialize(startRow);
-
-			ActiveLane activeLane = new ActiveLane();
-			activeLane.Entity = laneEntity;
-			activeLane.Lane = lane;
-			activeLane.StartRow = startRow;
-			activeLane.RowCount = lane.RowCount;
-
-			m_ActiveLanes.Add(activeLane);
-
-			m_NextRow += lane.RowCount;
-
-			return true;
-		}
-
-		private LaneType ChooseNextLaneType()
-		{
-			LaneType[] availableTypes = new LaneType[4];
-			int availableCount = 0;
-
-			if (HasPrefabs(GrassLanes) && CanSpawnType(LaneType.Grass))
-				availableTypes[availableCount++] = LaneType.Grass;
-
-			if (HasPrefabs(SingleRoadLanes) && CanSpawnType(LaneType.SingleRoad))
-				availableTypes[availableCount++] = LaneType.SingleRoad;
-
-			if (HasPrefabs(DoubleRoadLanes) && CanSpawnType(LaneType.DoubleRoad))
-				availableTypes[availableCount++] = LaneType.DoubleRoad;
-
-			if (HasPrefabs(WaterLanes) && CanSpawnType(LaneType.Water))
-				availableTypes[availableCount++] = LaneType.Water;
-
-			if (availableCount == 0) return LaneType.Grass;
-
-			return availableTypes[Proof.Random.Int(0, availableCount - 1)];
-		}
-
-		private bool CanSpawnType(LaneType nextType)
-		{
-			if (m_ActiveLanes.Count == 0) return true;
-
-			Lane previousLane = m_ActiveLanes[m_ActiveLanes.Count - 1].Lane;
-			if (previousLane == null) return true;
-
-			if (previousLane.Type == nextType && !previousLane.CanSpawnBackToBack) return false;
-
-			LaneType[] cannotSpawnAfter = previousLane.CannotSpawnAfter;
-
-			if (cannotSpawnAfter != null)
-			{
-				for (int i = 0; i < cannotSpawnAfter.Length; i++)
-					if (cannotSpawnAfter[i] == nextType) return false;
-			}
-
-			return true;
-		}
-
-		private Prefab GetRandomPrefab(LaneType laneType)
-		{
-			Prefab[] prefabs = null;
-
-			switch (laneType)
-			{
-				case LaneType.Grass: prefabs = GrassLanes; break;
-				case LaneType.SingleRoad: prefabs = SingleRoadLanes; break;
-				case LaneType.DoubleRoad: prefabs = DoubleRoadLanes; break;
-				case LaneType.Water: prefabs = WaterLanes; break;
-			}
-
-			if (!HasPrefabs(prefabs)) return null;
-
-			return prefabs[Proof.Random.Int(0, prefabs.Length - 1)];
-		}
-
-		private bool HasPrefabs(Prefab[] prefabs)
-		{
-			return prefabs != null && prefabs.Length > 0;
-		}
-
-		private void DeleteLanesBehind(int minimumRow)
-		{
-			for (int i = m_ActiveLanes.Count - 1; i >= 0; i--)
-			{
-				ActiveLane activeLane = m_ActiveLanes[i];
-				int laneEndRow = activeLane.StartRow + activeLane.RowCount - 1;
-
-				if (laneEndRow >= minimumRow) continue;
-
-				if (Entity.IsValid(activeLane.Entity)) World.DeleteEntity(activeLane.Entity);
-
-				m_ActiveLanes.RemoveAt(i);
-			}
-		}
-
-		protected override void OnDestroy()
-		{
-			for (int i = 0; i < m_ActiveLanes.Count; i++)
-			{
-				Entity laneEntity = m_ActiveLanes[i].Entity;
-				if (Entity.IsValid(laneEntity)) World.DeleteEntity(laneEntity);
-			}
-
-			m_ActiveLanes.Clear();
-
-			if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
-				World.DeleteEntity(m_NegativeSideWall);
-
-			if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
-				World.DeleteEntity(m_PositiveSideWall);
-		}
-	}
+        private int m_GeneratedLaneCount = 0;
+
+        private Entity m_NegativeSideWall;
+        private Entity m_PositiveSideWall;
+
+
+        public float DifficultyScale()
+        {   
+            var score  =  PlayerScore();
+            if(score == 0)
+                return 0;
+            float difficulty = PlayerScore() / 100.0f;
+            return Mathf.Clamp(0.0f, 1.0f, difficulty);
+        }
+
+        /*
+         *Difficulty = 0.0f;
+        IncreaseByDifficulty(10.0f, 50.0f); // 10
+
+        Difficulty = 0.5f;
+        IncreaseByDifficulty(10.0f, 50.0f); // 12.5
+
+        Difficulty = 1.0f;
+        IncreaseByDifficulty(10.0f, 50.0f); // 15
+        */
+        public float IncreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it increases at max difficulty
+        {
+            return val * (1.0f + DifficultyScale() * (scale / 100.0f));
+        }
+
+        public float DecreaseByDifficulty(float val, float scale = 100.0f) // val is the value and scale is how much percent it decreases at max difficulty
+        {
+            return val * (1.0f - DifficultyScale() * (scale / 100.0f));
+        }
+
+
+        void OnCreate()
+        {
+            if (Player == null) return;
+
+            SpawnSideWalls();
+
+            m_CurrentPlayerRow = GetPlayerRow();
+            m_NextRow = m_CurrentPlayerRow - RowsBehind;
+
+            SpawnInitialLanes();
+            GenerateUntil(m_CurrentPlayerRow + RowsAhead);
+        }
+
+
+        public int PlayerScore()
+        {
+            if (Player.HasScript<CharacterHUD>())
+                return Player.GetScript<CharacterHUD>().Score;
+
+            return 0;
+        }
+
+
+        void OnUpdate(float deltaTime)
+        {
+            if (Player == null) return;
+
+            UpdateSideWalls();
+
+            int playerRow = GetPlayerRow();
+            if (playerRow == m_CurrentPlayerRow) return;
+
+            m_CurrentPlayerRow = playerRow;
+
+            GenerateUntil(m_CurrentPlayerRow + RowsAhead);
+            DeleteLanesBehind(m_CurrentPlayerRow - RowsBehind);
+        }
+
+
+        private void SpawnSideWalls()
+        {
+            if (SideWall == null)
+                return;
+
+            Vector3 negativeWallPosition = Transform.Location;
+            negativeWallPosition.x = Player.Transform.Location.x;
+            negativeWallPosition.z = -32.0f;
+
+            Vector3 positiveWallPosition = Transform.Location;
+            positiveWallPosition.x = Player.Transform.Location.x;
+            positiveWallPosition.z = 32.0f;
+
+            m_NegativeSideWall = World.Instantiate(SideWall, negativeWallPosition);
+            m_PositiveSideWall = World.Instantiate(SideWall, positiveWallPosition);
+        }
+
+
+        private void UpdateSideWalls()
+        {
+            if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
+            {
+                Vector3 position = m_NegativeSideWall.Transform.Location;
+                position.x = Player.Transform.Location.x;
+                position.z = -32.0f;
+                m_NegativeSideWall.Transform.Location = position;
+            }
+
+            if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
+            {
+                Vector3 position = m_PositiveSideWall.Transform.Location;
+                position.x = Player.Transform.Location.x;
+                position.z = 32.0f;
+                m_PositiveSideWall.Transform.Location = position;
+            }
+        }
+
+
+        private void SpawnInitialLanes()
+        {
+            // Everything behind the player starts as normal grass.
+            while (m_NextRow < m_CurrentPlayerRow)
+            {
+                Prefab grassPrefab = GetRandomPrefab(LaneType.Grass);
+                if (grassPrefab == null || !SpawnLane(LaneType.Grass, grassPrefab)) return;
+            }
+
+            // The tile directly underneath the player is the special grass tile with no trees.
+            if (PlayerBaseLane != null)
+                SpawnLane(LaneType.Grass, PlayerBaseLane);
+        }
+
+
+        private int GetPlayerRow()
+        {
+            return Mathf.RoundToInt((Player.Transform.Location.x - OriginX) / WorldData.GridSize);
+        }
+
+
+        private void GenerateUntil(int targetRow)
+        {
+            while (m_NextRow <= targetRow)
+            {
+                if (!SpawnNextLane()) break;
+            }
+        }
+
+
+        private bool SpawnNextLane()
+        {
+            LaneType laneType = ChooseNextLaneType();
+            Prefab prefab = GetRandomPrefab(laneType);
+
+            if (prefab == null) return false;
+
+            if (!SpawnLane(laneType, prefab))
+                return false;
+
+            m_GeneratedLaneCount++;
+
+            return true;
+        }
+
+
+        private bool SpawnLane(LaneType laneType, Prefab prefab)
+        {
+            Vector3 spawnPosition = Transform.Location;
+
+            if (m_FirstSpawn)
+            {
+                spawnPosition.x = OriginX + m_NextRow * WorldData.GridSize;
+                m_FirstSpawn = false;
+            }
+            else
+            {
+                Lane previousLane = m_ActiveLanes[m_ActiveLanes.Count - 1].Lane;
+
+                float spacing = 8.0f;
+
+                if (previousLane.Type == LaneType.DoubleRoad && laneType == LaneType.DoubleRoad)
+                    spacing = 16.0f;
+                else if (previousLane.Type == LaneType.DoubleRoad || laneType == LaneType.DoubleRoad)
+                    spacing = 12.0f;
+
+                spawnPosition.x = m_LastSpawnPos + spacing;
+            }
+
+            m_LastSpawnPos = spawnPosition.x;
+
+            Entity laneEntity = World.Instantiate(prefab, spawnPosition);
+            Lane lane = laneEntity.GetScriptInstance<Lane>();
+
+            if (lane == null)
+            {
+                World.DeleteEntity(laneEntity);
+                return false;
+            }
+
+            int startRow = m_NextRow;
+
+            lane.Initialize(startRow);
+
+            ActiveLane activeLane = new ActiveLane();
+            activeLane.Entity = laneEntity;
+            activeLane.Lane = lane;
+            activeLane.StartRow = startRow;
+            activeLane.RowCount = lane.RowCount;
+
+            m_ActiveLanes.Add(activeLane);
+
+            m_NextRow += lane.RowCount;
+
+            return true;
+        }
+
+
+        private LaneType ChooseNextLaneType()
+        {
+            LaneType[] availableTypes = new LaneType[5];
+            int availableCount = 0;
+
+            if (HasPrefabs(GrassLanes) && CanSpawnType(LaneType.Grass))
+                availableTypes[availableCount++] = LaneType.Grass;
+
+            if (HasPrefabs(SingleRoadLanes) && CanSpawnType(LaneType.SingleRoad))
+                availableTypes[availableCount++] = LaneType.SingleRoad;
+
+            if (HasPrefabs(DoubleRoadLanes) && CanSpawnType(LaneType.DoubleRoad))
+                availableTypes[availableCount++] = LaneType.DoubleRoad;
+
+            if (HasPrefabs(WaterLanes) && CanSpawnType(LaneType.Water))
+                availableTypes[availableCount++] = LaneType.Water;
+
+            if (HasPrefabs(TrainLanes) && CanSpawnType(LaneType.TrainLane))
+                availableTypes[availableCount++] = LaneType.TrainLane;
+
+            if (availableCount == 0) return LaneType.Grass;
+
+            return availableTypes[Proof.Random.Int(0, availableCount - 1)];
+        }
+
+
+        private bool CanSpawnType(LaneType nextType)
+        {
+            // Train lanes cannot spawn in the first 3 generated lanes.
+            if (nextType == LaneType.TrainLane && m_GeneratedLaneCount < 3)
+                return false;
+
+            if (m_ActiveLanes.Count == 0) return true;
+
+            Lane previousLane = m_ActiveLanes[m_ActiveLanes.Count - 1].Lane;
+            if (previousLane == null) return true;
+
+            if (previousLane.Type == nextType && !previousLane.CanSpawnBackToBack) return false;
+
+            LaneType[] cannotSpawnAfter = previousLane.CannotSpawnAfter;
+            if (cannotSpawnAfter != null)
+            {
+                for (int i = 0; i < cannotSpawnAfter.Length; i++)
+                    if (cannotSpawnAfter[i] == nextType) return false;
+            }
+
+            return true;
+        }
+
+
+        private Prefab GetRandomPrefab(LaneType laneType)
+        {
+            Prefab[] prefabs = null;
+
+            switch (laneType)
+            {
+                case LaneType.Grass: prefabs = GrassLanes; break;
+                case LaneType.SingleRoad: prefabs = SingleRoadLanes; break;
+                case LaneType.DoubleRoad: prefabs = DoubleRoadLanes; break;
+                case LaneType.Water: prefabs = WaterLanes; break;
+                case LaneType.TrainLane: prefabs = TrainLanes; break;
+            }
+
+            if (!HasPrefabs(prefabs)) return null;
+
+            return prefabs[Proof.Random.Int(0, prefabs.Length - 1)];
+        }
+
+
+        private bool HasPrefabs(Prefab[] prefabs)
+        {
+            return prefabs != null && prefabs.Length > 0;
+        }
+
+
+        private void DeleteLanesBehind(int minimumRow)
+        {
+            for (int i = m_ActiveLanes.Count - 1; i >= 0; i--)
+            {
+                ActiveLane activeLane = m_ActiveLanes[i];
+                int laneEndRow = activeLane.StartRow + activeLane.RowCount - 1;
+
+                if (laneEndRow >= minimumRow) continue;
+
+                if (Entity.IsValid(activeLane.Entity))
+                    World.DeleteEntity(activeLane.Entity);
+
+                m_ActiveLanes.RemoveAt(i);
+            }
+        }
+
+
+        protected override void OnDestroy()
+        {
+            for (int i = 0; i < m_ActiveLanes.Count; i++)
+            {
+                Entity laneEntity = m_ActiveLanes[i].Entity;
+
+                if (Entity.IsValid(laneEntity))
+                    World.DeleteEntity(laneEntity);
+            }
+
+            m_ActiveLanes.Clear();
+
+            if (m_NegativeSideWall != null && Entity.IsValid(m_NegativeSideWall))
+                World.DeleteEntity(m_NegativeSideWall);
+
+            if (m_PositiveSideWall != null && Entity.IsValid(m_PositiveSideWall))
+                World.DeleteEntity(m_PositiveSideWall);
+        }
+    }
 }

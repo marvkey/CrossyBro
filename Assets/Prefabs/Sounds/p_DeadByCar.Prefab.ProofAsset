@@ -1,0 +1,22 @@
+AssetType: Prefab
+ID: 5741151375264998896
+EntityOwner: 3354753299652171219
+Entities:
+  - Entity: 3354753299652171219
+    TagComponent:
+      Tag: Base Prefab
+      tags: []
+    TransformComponent:
+      Location: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: []
+    AudioComponent:
+      AudioController: 10940545482130919565
+      VolumeMultiplier: 1
+      PitchMultiplier: 1
+      Looping: false
+      PlayOnAwake: true
+      DeleteOnFinished: true

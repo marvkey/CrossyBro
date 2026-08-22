@@ -4,10 +4,23 @@ ScriptImportSettings:
       ScriptName: CrossyBro.CameraMovement
       Fields:
         []
-    - Script: CrossyBro.DoubleRoadLane
-      ScriptName: CrossyBro.DoubleRoadLane
+    - Script: CrossyBro.Vehicle
+      ScriptName: CrossyBro.Vehicle
       Fields:
-        - NameID: CrossyBro.DoubleRoadLane.MovingObjects
+        []
+    - Script: CrossyBro.TrainLane
+      ScriptName: CrossyBro.TrainLane
+      Fields:
+        - NameID: CrossyBro.TrainLane.BrightRailRoad
+          Type: Mesh
+          Data: 0
+        - NameID: CrossyBro.TrainLane.DarkRailRoad
+          Type: Mesh
+          Data: 0
+        - NameID: CrossyBro.TrainLane.RailAlarm
+          Type: Prefab
+          Data: 0
+        - NameID: CrossyBro.TrainLane.MovingObjects
           Type: Prefab
           Length: 0
           Data:
@@ -24,6 +37,23 @@ ScriptImportSettings:
         - NameID: CrossyBro.CharacterInput.TurnAction
           Type: InputAction
           Data: 0
+    - Script: CrossyBro.DoubleRoadLane
+      ScriptName: CrossyBro.DoubleRoadLane
+      Fields:
+        - NameID: CrossyBro.DoubleRoadLane.MovingObjects
+          Type: Prefab
+          Length: 0
+          Data:
+            []
+    - Script: CrossyBro.CharacterMovement
+      ScriptName: CrossyBro.CharacterMovement
+      Fields:
+        - NameID: CrossyBro.CharacterMovement.JumpSound
+          Type: Prefab
+          Data: 0
+        - NameID: CrossyBro.CharacterMovement.DeadByCar
+          Type: Prefab
+          Data: 0
     - Script: CrossyBro.SingleRoadLane
       ScriptName: CrossyBro.SingleRoadLane
       Fields:
@@ -32,22 +62,10 @@ ScriptImportSettings:
           Length: 0
           Data:
             []
-    - Script: CrossyBro.CharacterMovement
-      ScriptName: CrossyBro.CharacterMovement
-      Fields:
-        []
     - Script: CrossyBro.GrassLane
       ScriptName: CrossyBro.GrassLane
       Fields:
         - NameID: CrossyBro.GrassLane.Trees
-          Type: Prefab
-          Length: 0
-          Data:
-            []
-    - Script: CrossyBro.WaterLane
-      ScriptName: CrossyBro.WaterLane
-      Fields:
-        - NameID: CrossyBro.WaterLane.MovingObjects
           Type: Prefab
           Length: 0
           Data:
@@ -68,6 +86,11 @@ ScriptImportSettings:
         - NameID: CrossyBro.LaneManager.PlayerBaseLane
           Type: Prefab
           Data: 0
+        - NameID: CrossyBro.LaneManager.TrainLanes
+          Type: Prefab
+          Length: 0
+          Data:
+            []
         - NameID: CrossyBro.LaneManager.SingleRoadLanes
           Type: Prefab
           Length: 0
@@ -81,6 +104,14 @@ ScriptImportSettings:
         - NameID: CrossyBro.LaneManager.SideWall
           Type: Prefab
           Data: 0
+    - Script: CrossyBro.WaterLane
+      ScriptName: CrossyBro.WaterLane
+      Fields:
+        - NameID: CrossyBro.WaterLane.MovingObjects
+          Type: Prefab
+          Length: 0
+          Data:
+            []
     - Script: CrossyBro.Car
       ScriptName: CrossyBro.Car
       Fields:
@@ -110,6 +141,9 @@ ScriptImportSettings:
           Data: 0
         - NameID: CrossyBro.CharacterHUD.EndScreenHUD
           Type: UIPanel
+          Data: 0
+        - NameID: CrossyBro.CharacterHUD.VignetteMaterial
+          Type: Material
           Data: 0
     - Script: CrossyBro.MainMenu
       ScriptName: CrossyBro.MainMenu

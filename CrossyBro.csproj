@@ -92,6 +92,8 @@
     <Compile Include="Assets\Script\Lanes\LaneManager.cs" />
     <Compile Include="Assets\Script\Lanes\MovingObjectLane.cs" />
     <Compile Include="Assets\Script\Lanes\RoadLane.cs" />
+    <Compile Include="Assets\Script\Lanes\TrainLane.cs" />
+    <Compile Include="Assets\Script\Lanes\WarningObjectLane.cs" />
     <Compile Include="Assets\Script\Lanes\WaterLane.cs" />
     <Compile Include="Assets\Script\Objects\Car.cs" />
     <Compile Include="Assets\Script\Objects\FloatingLog.cs" />

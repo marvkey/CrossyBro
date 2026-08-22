@@ -1,0 +1,205 @@
+AssetType: Prefab
+ID: 8502786276926227088
+EntityOwner: 8234300999596442232
+Entities:
+  - Entity: 2409609269589619161
+    TagComponent:
+      Tag: RailRoadCrossingWarn
+      tags: []
+    TransformComponent:
+      Location: [-0.375, 6.73041487, 0.000308834598]
+      Rotation: [0, 1.57045102, 0]
+      Scale: [0.0374999978, 15, 0.87499994]
+    HierarchyComponent:
+      ParentHandle: 8234300999596442232
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 7626791067877132048
+      Visible: true
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [0.25, 1, 0.200000003]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 3
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
+  - Entity: 8234300999596442232
+    TagComponent:
+      Tag: TrainLane
+      tags: []
+    TransformComponent:
+      Location: [96.5, 0, -0.0617669225]
+      Rotation: [0, 0, 0]
+      Scale: [8, 0.5, 200]
+    HierarchyComponent:
+      ParentHandle: 0
+      Children: [8169303455515017792, 2409609269589619161, 9436893602172899045, 9037805231170166774]
+    MeshComponent:
+      MeshAssetPointerID: 50
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 18222663250217117664
+          Index: 0
+    ScriptComponent:
+      Scripts:
+        - Script: CrossyBro.TrainLane
+          ScriptClassName: CrossyBro.TrainLane
+          ScriptName: CrossyBro.TrainLane
+          Fields:
+            - NameID: CrossyBro.TrainLane.RailCrossing
+              Type: Entity
+              Length: 3
+              Data:
+                - 2409609269589619161
+                - 9436893602172899045
+                - 9037805231170166774
+            - NameID: CrossyBro.TrainLane.BrightRailRoad
+              Type: Mesh
+              Data: 13921679695552587378
+            - NameID: CrossyBro.TrainLane.DarkRailRoad
+              Type: Mesh
+              Data: 7626791067877132048
+            - NameID: CrossyBro.TrainLane.WarningFlashInterval
+              Type: Float
+              Data: 0.25
+            - NameID: CrossyBro.TrainLane.RailAlarm
+              Type: Prefab
+              Data: 15154705540187214978
+            - NameID: CrossyBro.TrainLane.Direction
+              Type: Int32
+              Data: 1
+            - NameID: CrossyBro.TrainLane.MovingObjects
+              Type: Prefab
+              Length: 1
+              Data:
+                - 12250544775770939285
+            - NameID: CrossyBro.TrainLane.SpawnHeight
+              Type: Float
+              Data: 0.5
+            - NameID: CrossyBro.TrainLane.MaxWarningTime
+              Type: Float
+              Data: 3.9000001
+            - NameID: CrossyBro.TrainLane.MinSpeed
+              Type: Float
+              Data: 55
+            - NameID: CrossyBro.TrainLane.MaxSpeed
+              Type: Float
+              Data: 65
+            - NameID: CrossyBro.TrainLane.MinWaitTime
+              Type: Float
+              Data: 4
+            - NameID: CrossyBro.TrainLane.MaxWaitTime
+              Type: Float
+              Data: 10
+            - NameID: CrossyBro.TrainLane.MinWarningTime
+              Type: Float
+              Data: 3.5
+            - NameID: CrossyBro.TrainLane.EdgeSpawnPadding
+              Type: Float
+              Data: 12
+            - NameID: CrossyBro.TrainLane.LaneWidth
+              Type: Float
+              Data: 64
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [1, 1, 1]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 0
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
+  - Entity: 8169303455515017792
+    TagComponent:
+      Tag: TrainTrack
+      tags: []
+    TransformComponent:
+      Location: [-4.67300415e-05, 1.75508857, 0.000308834598]
+      Rotation: [0, 1.57045102, 0]
+      Scale: [0.0199999977, 8, 0.49999997]
+    HierarchyComponent:
+      ParentHandle: 8234300999596442232
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 8586793975658014307
+      Visible: true
+      MaterialTable:
+        - Material: ""
+          AssetID: 15266807666719475100
+          Index: 0
+        - Material: ""
+          AssetID: 8852454833740019989
+          Index: 1
+  - Entity: 9436893602172899045
+    TagComponent:
+      Tag: RailRoadCrossingWarn
+      tags: []
+    TransformComponent:
+      Location: [-0.375, 6.73041487, -0.119691163]
+      Rotation: [0, 1.57045102, 0]
+      Scale: [0.0374999978, 15, 0.87499994]
+    HierarchyComponent:
+      ParentHandle: 8234300999596442232
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 7626791067877132048
+      Visible: true
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [0.25, 1, 0.200000003]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 3
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
+  - Entity: 9037805231170166774
+    TagComponent:
+      Tag: RailRoadCrossingWarn
+      tags: []
+    TransformComponent:
+      Location: [-0.375, 6.73041487, 0.120308824]
+      Rotation: [0, 1.57079637, 0]
+      Scale: [0.0370000005, 15, 0.875016391]
+    HierarchyComponent:
+      ParentHandle: 8234300999596442232
+      Children: []
+    MeshComponent:
+      MeshAssetPointerID: 7626791067877132048
+      Visible: true
+    BoxColliderComponent:
+      IsTrigger: false
+      Center: [0, 0, 0]
+      Size: [0.25, 1, 0.200000003]
+      PhysicsMaterialPointerID: 0
+    RigidBodyComponent:
+      Mass: 1
+      LinearDrag: 0.00999999978
+      PhysicsLayerID: 3
+      AngularDrag: 0.0500000007
+      Gravity: true
+      Type: Static
+      Constraints: 0
+      Kinematic: false
+      CollisionDetection: Discrete
